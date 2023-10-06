@@ -87,9 +87,6 @@ header, footer{
     margin: 0%;
     width: 100%;
 }
-
-
-
 /* header */
 header{
     height: 76px;
@@ -208,6 +205,7 @@ letter-spacing: -0.095px;
     position: relative;
     right: -18%;
     color: var(--simil-blanco);
+    
 }
 .corazon{
     top: 22px;
@@ -291,11 +289,26 @@ h2.nombreUsuario{
 /* header */
 
 /* body */
+ section img.btnright{
+    position: absolute;
+    top: 42%;
+    right: 3px;
+    cursor: pointer;
+    
+}
+section img.btnleft{
+    position: absolute;
+    top: 42%;
+    left: 3px;
+    cursor: pointer;
+    
+}
 .body_container h1{
     margin-bottom: -1%;
     margin-left: 2%;
     margin-top: 3%;
 }
+
 
 ul.carruselUl{
     display: flex;
@@ -317,7 +330,9 @@ li.carruselLi{
     margin: 5px;
     box-shadow: 50%;
 }
-
+li.carruselLi .infocard:hover{
+    opacity: 1;
+}
 .cajaCard{
     display: grid;
     grid-template-columns: repeat(2, 1fr);

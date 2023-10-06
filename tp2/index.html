@@ -107,7 +107,7 @@
     <section class="body_container">
         <div class="carruselGrande">
             <h1>Juegos nuevos</h1>
-            <ul class="carruselUl">
+            <ul class="carruselUl" id="carrusel">
             <li class="carruselLi">
                 <div class="cardGrande">
                     <img src="img/cards/CarruselGrande/BattleForKingdom.png">
@@ -249,7 +249,30 @@
                     </div>
                 </div>
             </li>
+            <li class="carruselLi">
+                <div class="cardGrande">
+                    <img src="img/cards/CarruselGrande/MarioKart.png">
+                    <div class="infocard">
+                        <div class="infocardtxt">
+                        <p class="txtCardGrande">Mario Kart</p>
+                        <p class="txtCardGrande">$300</p>
+                        </div>
+                        <img class="carrito" src="img/carrito.png">
+                    </div> 
+                </div>
+                </li>
+                
             </ul>
+            <div class="btncarrusel">
+           
+                    <button class="buttom-next" id="button-next" >
+                         <img class="btnright" src="img/right.png">
+                    </button>
+                 
+                    <button class="buttom-prev" id="button-prev" >
+                        <img class="btnleft" src="img/left.png">
+                    </button>
+            </div>
         </div>
 
         <div class="carruselJuegosSugeridos">
@@ -578,6 +601,8 @@
         </div>
     </footer>
     <script type="text/javascript" src="./js/navegacion.js"></script>
+    <script type="text/javascript" src="./js/carrusel.js"></script>
+
 </body>
 
 </html>
