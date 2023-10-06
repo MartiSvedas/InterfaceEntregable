@@ -101,7 +101,7 @@ header{
 
 .nav_labelJuegos{
     border-radius: 20px;
-    left: 5%;
+    left: 45px;
     top: 25%;
     position: relative;
 
@@ -157,11 +157,10 @@ a:hover{
     left: 14%;
     padding-left: 0;
 }
-.logoname{
+a .logo .logoname{
     width: 127px;
     height: 40px;
-    bottom: 15%;
-    left: 20%;
+    margin-top: 20px;
 }
 
 .buscador{
@@ -297,10 +296,7 @@ h2.nombreUsuario{
     
 }
 section img.btnleft{
-
     left: 3px;
-  
-    
 }
 .body_container h1{
     margin-bottom: -1%;
@@ -318,10 +314,16 @@ ul.carruselUl{
     margin-top: 0.5%;
     margin-bottom: -2%;
     scroll-behavior: smooth;
-
 }
 ::-webkit-scrollbar{
     display: none;
+}
+
+ul.carruselUl.activeder{
+    transform:  skew(-6deg);
+}
+ul.carruselUl.activeizq{
+    transform:  skew(6deg);
 }
 
 li.carruselLi{
@@ -330,6 +332,7 @@ li.carruselLi{
     margin: 5px;
     box-shadow: 50%;
     cursor: pointer;
+
 }
 li.carruselLi .infocard:hover{
     opacity: 1;
@@ -370,6 +373,8 @@ li.carruselLi .infocard:hover{
     border-bottom-right-radius: 10px;
     bottom: 52%;
     height: 49%;
+    box-shadow: 4px 7px 4px 0px rgba(0, 0, 0, 0.24);
+
 }
 
 .infocardtxt{
@@ -691,6 +696,13 @@ body.bodyinicio{
     top: 40px;
     
 }
+.logodib{
+    margin-right: -25px;
+}
+.logo{
+    margin-left: 20%;
+}
+
 form{
     margin-top: 20%;
 }
@@ -792,6 +804,10 @@ a.registrate{
 }
 a.registrate:hover, .breadcrumbs:hover{
     text-decoration: none;
+}
+a.li_breadcrumbs:hover{
+    color: var(--simil-blanco);
+
 }
 .inicioCaja p{
     margin-left: 47%;

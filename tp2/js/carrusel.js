@@ -8,10 +8,13 @@ const slidersection = document.querySelector(".carruselLi")
 
 btnright.addEventListener('click', ()=>{
     slider.scrollLeft += slider.offsetWidth;
-
+   setTimeout( slider.classList.toggle("activeder"),100)
+    
 })
 btnleft.addEventListener('click', ()=>{    
     
-    slider.scrollLeft = slider.offsetWidth;
+    slider.scrollLeft -= slider.offsetWidth;
+    setTimeout( slider.classList.toggle("activeizq"),100)
+
 
 })
