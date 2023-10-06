@@ -139,8 +139,8 @@ header{
     background-color: var(--color-primario-sombra2);
     border-radius: 6px;
     border: 2px solid var(--color-primario-sombra1);
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 0.3s ease-out;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    transition: clip-path 0.2s ease-out
    
 }
 .nav_itemJuegos{
@@ -238,7 +238,7 @@ letter-spacing: -0.095px;
     border-radius: 6px;
     border: 1px solid var(--color-primario-sombra1);
     background: var(--color-primario-sombra2);
-    clip-path: polygon(100% 2%, 100% 100%, 100% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.3s ease-out;
     color: var(--simil-blanco);
 
