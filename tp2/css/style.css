@@ -289,7 +289,7 @@ h2.nombreUsuario{
 /* header */
 
 /* body */
- section img.btnright{
+ section img.btnright,section img.btnleft{
     position: absolute;
     top: 42%;
     right: 3px;
@@ -297,10 +297,9 @@ h2.nombreUsuario{
     
 }
 section img.btnleft{
-    position: absolute;
-    top: 42%;
+
     left: 3px;
-    cursor: pointer;
+  
     
 }
 .body_container h1{
@@ -318,6 +317,7 @@ ul.carruselUl{
     padding-left: 0%;
     margin-top: 0.5%;
     margin-bottom: -2%;
+    scroll-behavior: smooth;
 
 }
 ::-webkit-scrollbar{
@@ -329,6 +329,7 @@ li.carruselLi{
     vertical-align: middle;
     margin: 5px;
     box-shadow: 50%;
+    cursor: pointer;
 }
 li.carruselLi .infocard:hover{
     opacity: 1;
