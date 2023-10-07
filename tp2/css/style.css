@@ -733,8 +733,16 @@ article h2{
     left: 52%;
     top: 22%;
 }
-.button-container button:hover{
+.button-container label img:hover{
+    width: 30px;
+    height: 30px;
+   animation: girar 0.5s linear;
+}
+
+.button-container label:hover{
+    transition-duration: 0.5s;
     background-color: var(--color-secundario-sombra2);
+    color: var(--simil-blanco);
 }
 .menuCompartir{
     position: absolute;
@@ -743,7 +751,7 @@ article h2{
     right: 0;
     bottom: 0;
     margin: auto;
-    z-index: 1000;
+    z-index: 2000;
     background-color: var(--color-primario);
     width: 398px;
     height: 242px;    
@@ -799,6 +807,21 @@ article h2{
 }
 .menuCompartir ul li img {
     margin-top: 19%;
+}
+.publicidad{
+    display: inline-block;
+}
+.publicidad img{
+    position: absolute;
+    right: 2%;
+    width: 370px;
+}
+.publicidad img.ski{
+    top:200%
+}
+.publicidad img.coca{
+    top:138%
+
 }
 /* loader */
 *,*::before,*::after{
@@ -1087,8 +1110,8 @@ a.li_breadcrumbs:hover{
     border-radius: 15px;
     display: block;
     margin-left: 15% ;
-    margin-top: 0.2%;
-    margin-bottom:1.5%;
+    margin-top: 0.3%;
+    margin-bottom:1.9%;
     justify-content: center;
 
     font-family: 'Nunito';
@@ -1132,7 +1155,7 @@ left: 40%;
 }
 
 .cajaRegistro .redes .cajaGoogle{
-    margin-left:2%;
+    margin-left:3%;
 
 } 
 .cajaRegistro .button-container{
