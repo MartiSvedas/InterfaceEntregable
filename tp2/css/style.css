@@ -177,10 +177,18 @@ a .logo .logoname{
     opacity: 0.5;
 }
 
-.h2buscador{
+.inputbuscador{
 opacity: 0.5;
 color: var(--simil-negro);
 letter-spacing: -0.095px;
+border: 0px;
+font-size: 18px;
+font-family: 'Nunito';
+font-weight: 600;
+}
+
+.btnbusqueda{
+    border: 0px;
 }
 
 .logo, .buscador, .seccionmisjuegos{
@@ -203,6 +211,7 @@ letter-spacing: -0.095px;
 .seccionmisjuegos{
     position: relative;
     right: -18%;
+    z-index: 10;
     color: var(--simil-blanco);
     
 }
