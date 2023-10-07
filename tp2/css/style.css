@@ -201,6 +201,7 @@ font-weight: 600;
     display: flex;
     position: relative;
     left: -8%;
+    z-index: 10;
 }
 
 .li_footerul, .li_breadcrumbs{
@@ -406,6 +407,10 @@ li.carruselLi .infocard:hover{
     margin: 1%;
 }
 
+.txtCardChica{
+    width: 110px;
+}
+
 .txtCardGrande{
     font-size: 130%;
     margin: 4%
@@ -429,8 +434,8 @@ li.carruselLi .infocard:hover{
 }
 
 .cardChica .carrito, .cardChica .agregado{
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
 }
 
 .etiquetaTendencia{
@@ -445,6 +450,20 @@ li.carruselLi .infocard:hover{
     bottom: 85%;
 }
 
+.btnJugar{
+    position: inherit;
+    top: 40%;
+    right: 2%;
+    height: fit-content;
+    border: 0px;
+    border-radius: 7px;
+    font-weight: bolder;
+    background-color: var(--color-secundario);
+    padding-left: 3%;
+    padding-right: 3%;
+    color: var(--simil-blanco);
+    margin: 1%;
+}
 
 footer{
     height: 290px;
