@@ -336,18 +336,18 @@ ul.carruselUl{
 }
 
 ul.carruselUl.activeder{
-    animation: rotarder 1s linear;
+    animation: rotarder 0.8s linear;
 
 }
 ul.carruselUl.activeizq{
-    animation:  rotarizq 1s linear;
+    animation:  rotarizq 0.8s linear;
 }
 @keyframes rotarizq {
     0%{
         transform: skew(0);
     }
     50%{
-        transform: skew(-10deg);
+        transform: skew(10deg);
         
     }
     100%{
@@ -360,7 +360,7 @@ ul.carruselUl.activeizq{
         transform: skew(0);
     }
     50%{
-        transform: skew(10deg);
+        transform: skew(-10deg);
     }
     100%{
         transform: skew(0);
