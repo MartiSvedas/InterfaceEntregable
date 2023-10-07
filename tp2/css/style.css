@@ -640,7 +640,84 @@ article h2{
 .bodyjuego footer{
     margin-top: 1%;
 }
+.button-container label{
+    width: 158px;
+    height: 43px;
+    border-radius: 30px;
+    border: 3px solid var(--Secundario, #A83F00);
+    background: none;
+    
+    width: 133.575px;
+    color: var(--Secundario-Luz2, #E67A3A);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.28px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    position:absolute;
+    left: 50%;
+    top: 22%;
+}
+.button-container button:hover{
+    background-color: var(--color-secundario-sombra2);
+}
+.menuCompartir{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1000;
+    background-color: var(--color-primario);
+    width: 398px;
+    height: 242px;    
+    text-align: center;
+    border-radius: 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.5s ease-out;
+}
+.checkbox{
+   opacity: 0;
+}
+.checkbox:checked ~ .menuCompartir{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.menuCompartir h1{
+    padding-top: 2%;
+}
+.menuCompartir ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+}
+.menuCompartir .itemCompartir{
+    background-color: var(--simil-blanco);
+    border-radius: 100%;
+    width: 48px;
+    height: 45px;
+}
+.menuCompartir a{
+    color:var(--color-secundario);
+    font-family: 'Nunito';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.28px;
+    text-decoration-line: underline;
+}
+.menuCompartir ul li img {
+    margin-top: 19%;
+}
 /* loader */
 *,*::before,*::after{
     margin:0;
