@@ -491,7 +491,8 @@ li.carruselLi .infocard:hover{
 .footertxt p{
     opacity: 0.66;
 }
-.btnJugar{
+
+.btnJugar, .linkajuego{
     position: inherit;
     top: 40%;
     right: 2%;
