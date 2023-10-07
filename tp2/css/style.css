@@ -705,12 +705,13 @@ article h2{
     border-radius: 100%;
     width: 48px;
     height: 45px;
+    cursor: pointer;
+    
 }
 .menuCompartir a{
     color:var(--color-secundario);
     font-family: 'Nunito';
     font-size: 15px;
-    font-style: normal;
     font-weight: 700;
     letter-spacing: -0.28px;
     text-decoration-line: underline;
