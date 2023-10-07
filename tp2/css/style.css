@@ -329,17 +329,42 @@ ul.carruselUl{
     margin-top: 0.5%;
     margin-bottom: -2%;
     scroll-behavior: smooth;
+    scroll-timeline: 2s;
 }
 ::-webkit-scrollbar{
     display: none;
 }
 
 ul.carruselUl.activeder{
-    transform: skew(6deg);
+    animation: rotarder 1s linear;
+
 }
 ul.carruselUl.activeizq{
-    transform:  skew(6deg);
+    animation:  rotarizq 1s linear;
+}
+@keyframes rotarizq {
+    0%{
+        transform: skew(0);
+    }
+    50%{
+        transform: skew(-10deg);
+        
+    }
+    100%{
+        transform: skew(0);
+    }
+}
 
+@keyframes rotarder {
+    0%{
+        transform: skew(0);
+    }
+    50%{
+        transform: skew(10deg);
+    }
+    100%{
+        transform: skew(0);
+    }
 }
 
 li.carruselLi{
