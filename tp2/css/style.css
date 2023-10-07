@@ -768,13 +768,13 @@ article h2{
 }
 
 .menuCompartir h1{
-    padding-top: 2%;
+    padding-top: 7%;
 }
 .menuCompartir ul{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 24px;
     margin-bottom: 40px;
     
 }
