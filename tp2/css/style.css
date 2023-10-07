@@ -990,7 +990,7 @@ a.li_breadcrumbs:hover{
     background: #DB4437;
 }
 .inicioCaja .redes .cajaGoogle{
-    margin-left: 1%;
+    margin-left: 2%;
 }
 .redes .cajaFacebook img, .redes .cajaGoogle img{
     width: 29.769px;
@@ -1042,7 +1042,7 @@ a.li_breadcrumbs:hover{
     margin-right: 15%;
     margin-top: 0px;
     letter-spacing: 0.12px;
-    color: var(--color-primario-sombra2);
+    color: var(--simil-blanco);
 }
 .cajaRegistro form{
     display: block;
@@ -1084,17 +1084,17 @@ a.li_breadcrumbs:hover{
     margin-left: 17%;
 }
 .infoRegistro .button-container{
-    margin-left: 22px;
+    margin-left: 0%;
 }
 .cajaRegistro .redes p{
-    margin-left: 55%;
+    margin-left: 52%;
     margin-top: -5%;
     margin-bottom: 1%;
 }
 .cajaRegistro .redesSociales{
 display: flex;
 position: absolute;
-left: 41%;
+left: 40%;
 
 }
 .cajaRegistro .redes .cajaFacebook{
@@ -1107,7 +1107,7 @@ left: 41%;
 } 
 .cajaRegistro .button-container{
     margin-top: -20px;
-    left: 50%;
+    left: 48%;
 }
 img.x{
     height: 20px;
