@@ -214,6 +214,16 @@ font-weight: 600;
     right: -18%;
     z-index: 10;
     color: var(--simil-blanco);
+}
+.seccionmisjuegos:hover{
+    animation: latidos 0.5s infinite;
+    transform-origin: center;
+
+}
+@keyframes latidos {
+    from { transform: none; }
+    50% { transform: scale(1.1); }
+    to { transform: none; }
     
 }
 .corazon{
