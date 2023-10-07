@@ -11,5 +11,5 @@ function active(event){
 let a=document.getElementById('registrobtn');
 a.addEventListener('click',function (event)  {
   event.preventDefault(); 
-  setTimeout(()=> location="index.html",900);
+  setTimeout(()=> location="home.html",900);
 });
