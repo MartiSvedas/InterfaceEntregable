@@ -329,17 +329,25 @@ section img.btnleft{
     left: 3px;
 }
 .body_container h1{
-    margin-bottom: -1%;
+    margin-bottom: -7px;
     margin-left: 2%;
-    margin-top: 3%;
+    margin-top: 46px;
     cursor: pointer;
 }
-
-.body_container h1:hover{
-    transition: text-decoration 2s linear 1s;
+.body_container  .carruselGrande h1{
+    margin-bottom: -12px;
+    margin-top: 35px;
 }
-
-
+.body_container h1:hover, .body_container h1:active{
+    width: 50%;
+    letter-spacing: 5px;
+    transition: all 500ms ease-in-out;
+}
+.body_container h1::after, .body_container h1::before{
+    content: "";
+    display: block;
+    position: relative;
+}
 ul.carruselUl{
     display: flex;
     overflow-x: auto;
@@ -349,7 +357,9 @@ ul.carruselUl{
     margin-top: 0.5%;
     margin-bottom: -2%;
     scroll-behavior: smooth;
-    scroll-timeline: 2s;
+}
+#carrusel{
+    margin-bottom: -3%;
 }
 ::-webkit-scrollbar{
     display: none;
