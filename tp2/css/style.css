@@ -500,7 +500,7 @@ li.carruselLi .infocard:hover{
     border: 0px;
     border-radius: 7px;
     font-weight: bolder;
-    background-color: var(--color-secundario);
+    background-color: var(--color-secundario-luz2);
     padding-left: 3%;
     padding-right: 3%;
     color: var(--simil-blanco);
