@@ -236,7 +236,7 @@ font-weight: 600;
 .nav_menuUsuario{
     display: block;
     position: relative;
-    left: 1%;
+    right: -5px;
     top: 16%;
     z-index: 100;
     width: 317px;
@@ -306,9 +306,13 @@ h2.nombreUsuario{
  section img.btnright,section img.btnleft{
     position: absolute;
     top: 42%;
-    right: 3px;
     cursor: pointer;
-    
+    opacity: 0.7;  
+    width: 30px;
+}
+section img.btnright{
+    right: 3px;
+
 }
 section img.btnleft{
     left: 3px;
@@ -469,7 +473,9 @@ li.carruselLi .infocard:hover{
     right: 100%;
     bottom: 85%;
 }
-
+.footertxt p{
+    opacity: 0.66;
+}
 
 footer{
     height: 290px;
@@ -702,8 +708,8 @@ article h2{
 }
 .menuCompartir{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 3px;
+    left: 190px;
     right: 0;
     bottom: 0;
     margin: auto;
@@ -714,7 +720,7 @@ article h2{
     text-align: center;
     border-radius: 10px;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 0.5s ease-out;
+    transition: clip-path 0.2s ease-out;
 }
 .checkbox{
    opacity: 0;
@@ -741,6 +747,17 @@ article h2{
     height: 45px;
     cursor: pointer;
     
+}
+.itemCompartir .inst{
+    margin: 14%;
+    margin-left: 6px;
+}
+.itemCompartir .face{
+    margin: 8px;
+}
+.itemCompartir .twi{
+    margin: 12px;
+    margin-left: 10px
 }
 .menuCompartir a{
     color:var(--color-secundario);
