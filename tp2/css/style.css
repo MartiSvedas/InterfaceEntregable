@@ -492,6 +492,16 @@ li.carruselLi .infocard:hover{
     opacity: 0.66;
 }
 
+a.linkajuego {
+    padding: 0%;
+    width: 46px;
+    display: contents;
+}
+
+.btnJugar{
+    padding-left: 3%;
+    padding-right: 3%;
+}
 .btnJugar, .linkajuego{
     position: inherit;
     top: 40%;
@@ -501,8 +511,6 @@ li.carruselLi .infocard:hover{
     border-radius: 7px;
     font-weight: bolder;
     background-color: var(--color-secundario-luz2);
-    padding-left: 3%;
-    padding-right: 3%;
     color: var(--simil-blanco);
     margin: 1%;
 }
