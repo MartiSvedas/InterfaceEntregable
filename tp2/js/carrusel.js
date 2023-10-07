@@ -19,3 +19,7 @@ btnleft.addEventListener('click', ()=>{
 
 
 })
+slider.addEventListener('animationend', () => {
+    slider.classList.remove("activeder");
+    slider.classList.remove("activeizq");
+});
