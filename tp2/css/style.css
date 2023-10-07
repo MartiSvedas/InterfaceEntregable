@@ -332,6 +332,11 @@ section img.btnleft{
     margin-bottom: -1%;
     margin-left: 2%;
     margin-top: 3%;
+    cursor: pointer;
+}
+
+.body_container h1:hover{
+    transition: text-decoration 2s linear 1s;
 }
 
 
