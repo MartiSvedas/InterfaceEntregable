@@ -66,7 +66,7 @@ p{
 }
 
 li{
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 350;
 }
 
@@ -333,17 +333,25 @@ section img.btnleft{
     left: 3px;
 }
 .body_container h1{
-    margin-bottom: -1%;
+    margin-bottom: -7px;
     margin-left: 2%;
-    margin-top: 3%;
+    margin-top: 46px;
     cursor: pointer;
 }
-
-.body_container h1:hover{
-    transition: text-decoration 2s linear 1s;
+.body_container  .carruselGrande h1{
+    margin-bottom: -17px;
+    margin-top: 35px;
 }
-
-
+.body_container h1:hover, .body_container h1:active{
+    width: 50%;
+    letter-spacing: 5px;
+    transition: all 500ms ease-in-out;
+}
+.body_container h1::after, .body_container h1::before{
+    content: "";
+    display: block;
+    position: relative;
+}
 ul.carruselUl{
     display: flex;
     overflow-x: auto;
@@ -353,7 +361,9 @@ ul.carruselUl{
     margin-top: 0.5%;
     margin-bottom: -2%;
     scroll-behavior: smooth;
-    scroll-timeline: 2s;
+}
+#carrusel{
+    margin-bottom: -3%;
 }
 ::-webkit-scrollbar{
     display: none;
@@ -635,7 +645,7 @@ footer{
 }
 
 .instruccionesTxt li{
-    margin-bottom: 3%;
+    margin-bottom: 4%;
     font-weight: 550;
     text-align: justify;
 }
@@ -655,6 +665,7 @@ footer{
 
 .imgsDetallesJuego{
     margin: 2%;
+    margin-top: 4%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -698,10 +709,15 @@ section h3{
 }
 article h3, article h2{
     margin-top: 2%;
-    margin-bottom: 1%;
+    margin-bottom: 4%;
 }
 article h2{
     margin-bottom: 1%;
+
+}
+article .comentarioTxt h3{
+    margin-bottom: 1%;
+
 }
 
 .espacioComentar{
@@ -1053,7 +1069,7 @@ a.li_breadcrumbs:hover{
     background: rgba(59, 89, 152, 0.70);
 }
 .inicioCaja .redes .cajaFacebook{
-    margin-left: 28%;
+    margin-left: 31%;
 
 }
 .redes .cajaGoogle{
@@ -1111,7 +1127,7 @@ a.li_breadcrumbs:hover{
 }
 .logoRegistro h1{
     margin-right: 15%;
-    margin-top: 0px;
+    margin-top: 4px;
     letter-spacing: 0.12px;
     color: var(--simil-blanco);
 }
