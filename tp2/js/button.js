@@ -2,8 +2,7 @@
 let btn = document.querySelector("#registrobtn")
 btn.addEventListener("click", active);
 function active(event){
-    event.preventDefault()
-    
+    event.preventDefault()   
     btn.classList.toggle("is_active")
 
 }

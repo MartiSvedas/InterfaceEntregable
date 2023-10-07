@@ -237,7 +237,7 @@ font-weight: 600;
 .nav_menuUsuario{
     display: block;
     position: relative;
-    left: 1%;
+    right: -5px;
     top: 16%;
     z-index: 100;
     width: 317px;
@@ -307,9 +307,13 @@ h2.nombreUsuario{
  section img.btnright,section img.btnleft{
     position: absolute;
     top: 42%;
-    right: 3px;
     cursor: pointer;
-    
+    opacity: 0.7;  
+    width: 30px;
+}
+section img.btnright{
+    right: 3px;
+
 }
 section img.btnleft{
     left: 3px;
@@ -330,17 +334,42 @@ ul.carruselUl{
     margin-top: 0.5%;
     margin-bottom: -2%;
     scroll-behavior: smooth;
+    scroll-timeline: 2s;
 }
 ::-webkit-scrollbar{
     display: none;
 }
 
 ul.carruselUl.activeder{
-    transform: skew(6deg);
+    animation: rotarder 0.8s linear;
+
 }
 ul.carruselUl.activeizq{
-    transform:  skew(6deg);
+    animation:  rotarizq 0.8s linear;
+}
+@keyframes rotarizq {
+    0%{
+        transform: skew(0);
+    }
+    50%{
+        transform: skew(10deg);
+        
+    }
+    100%{
+        transform: skew(0);
+    }
+}
 
+@keyframes rotarder {
+    0%{
+        transform: skew(0);
+    }
+    50%{
+        transform: skew(-10deg);
+    }
+    100%{
+        transform: skew(0);
+    }
 }
 
 li.carruselLi{
@@ -449,7 +478,9 @@ li.carruselLi .infocard:hover{
     right: 100%;
     bottom: 85%;
 }
-
+.footertxt p{
+    opacity: 0.66;
+}
 .btnJugar{
     position: inherit;
     top: 40%;
@@ -696,8 +727,8 @@ article h2{
 }
 .menuCompartir{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 3px;
+    left: 190px;
     right: 0;
     bottom: 0;
     margin: auto;
@@ -708,7 +739,7 @@ article h2{
     text-align: center;
     border-radius: 10px;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 0.5s ease-out;
+    transition: clip-path 0.2s ease-out;
 }
 .checkbox{
    opacity: 0;
@@ -735,6 +766,17 @@ article h2{
     height: 45px;
     cursor: pointer;
     
+}
+.itemCompartir .inst{
+    margin: 14%;
+    margin-left: 6px;
+}
+.itemCompartir .face{
+    margin: 8px;
+}
+.itemCompartir .twi{
+    margin: 12px;
+    margin-left: 10px
 }
 .menuCompartir a{
     color:var(--color-secundario);
@@ -967,7 +1009,7 @@ a.li_breadcrumbs:hover{
     background: #DB4437;
 }
 .inicioCaja .redes .cajaGoogle{
-    margin-left: 1%;
+    margin-left: 2%;
 }
 .redes .cajaFacebook img, .redes .cajaGoogle img{
     width: 29.769px;
@@ -1019,7 +1061,7 @@ a.li_breadcrumbs:hover{
     margin-right: 15%;
     margin-top: 0px;
     letter-spacing: 0.12px;
-    color: var(--color-primario-sombra2);
+    color: var(--simil-blanco);
 }
 .cajaRegistro form{
     display: block;
@@ -1061,17 +1103,17 @@ a.li_breadcrumbs:hover{
     margin-left: 17%;
 }
 .infoRegistro .button-container{
-    margin-left: 22px;
+    margin-left: 0%;
 }
 .cajaRegistro .redes p{
-    margin-left: 55%;
+    margin-left: 52%;
     margin-top: -5%;
     margin-bottom: 1%;
 }
 .cajaRegistro .redesSociales{
 display: flex;
 position: absolute;
-left: 41%;
+left: 40%;
 
 }
 .cajaRegistro .redes .cajaFacebook{
@@ -1084,7 +1126,7 @@ left: 41%;
 } 
 .cajaRegistro .button-container{
     margin-top: -20px;
-    left: 50%;
+    left: 48%;
 }
 img.x{
     height: 20px;
