@@ -1065,11 +1065,13 @@ body.bodyinicio{
 
 .logoInicio{
     position:absolute;
-    display: block;
+    display:block;
     top: 40px;
-    
+    left: 667px;
 }
-
+.logoInicio h1{
+margin-left: 9%;
+}
 form{
     margin-top: 20%;
 }
