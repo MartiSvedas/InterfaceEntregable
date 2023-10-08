@@ -235,6 +235,7 @@ font-weight: 600;
     z-index: 10;
     color: var(--simil-blanco);
     grid-area: misJuegos;
+    justify-content: end;
 }
 .seccionmisjuegos:hover{
     animation: latidos 0.5s infinite;
@@ -434,8 +435,8 @@ li.carruselLi{
  }
  .cajaCard{
      display: grid;
-     grid-template-columns: 15% 25% auto 10%;
-     grid-template-rows: 55% 45%;
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(2, 1fr);
      width: 412px;
      height: 272px;    
      position: relative;
