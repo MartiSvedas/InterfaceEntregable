@@ -640,6 +640,7 @@ a .logo .logoname{
 .buscador{
     position: initial;
     height: 35px;
+    width: 400px;
 }
 .btnbusqueda img{
     height: auto;
