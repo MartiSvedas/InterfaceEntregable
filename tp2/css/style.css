@@ -91,6 +91,16 @@ header, footer{
 header{
     height: 100px;
     justify-content: space-between;
+    display: grid;
+    grid-template-columns: 15% 15% 55% 15%;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas: 
+        "navJuegos logo misJuegos navUsuario"
+        ". buscador buscador navUsuario";
+}
+
+.nav__container{
+    grid-area: navJuegos;
 }
 
 .nav__container, .nav_usuario{
@@ -157,6 +167,7 @@ a:hover{
     color: var(--color-secundario);
 }
 
+
 .logodib{
     width: 50px;
     height: 50px;
@@ -170,8 +181,7 @@ a .logo .logoname{
     display: flex;
     z-index: 10;
     margin-right: 10%;
-    position: relative;
-    top: -20%;
+    grid-area: logo;
 }
 
 .logo, .buscador, .seccionmisjuegos{
@@ -189,9 +199,7 @@ a .logo .logoname{
     height: 25px;
     justify-content: space-between;
     opacity: 0.5;
-    position: relative;
-    top: 25%;
-    left: -24%;
+    grid-area: buscador;
 }
 
 .inputbuscador{
@@ -210,6 +218,8 @@ font-weight: 600;
 
 .btnbusqueda{
     border: 0px;
+    margin-left: -4%;
+    z-index: 1;
 }
 
 .btnbusqueda:hover{
@@ -222,11 +232,9 @@ font-weight: 600;
 }
 
 .seccionmisjuegos{
-    position: relative;
-    top: -20%;
-    right: 60%;
     z-index: 10;
     color: var(--simil-blanco);
+    grid-area: misJuegos;
 }
 .seccionmisjuegos:hover{
     animation: latidos 0.5s infinite;
@@ -253,22 +261,14 @@ font-weight: 600;
 }
 
 .nav_usuario{
-    position: relative;
-    right: 75%;
-    top: 23%;
-}
-
-.nav_labelUsuarios{
-    position: relative;
-    top: -25%;
-    left: 120%;
+    grid-area: navUsuario;
 }
 
 .nav_menuUsuario{
     display: block;
     position: relative;
-    right: 440%;
-    top: 6%;
+    right: 580%;
+    top: 36%;
     z-index: 100;
     width: 317px;
     height: 448px;
@@ -434,8 +434,8 @@ li.carruselLi{
  }
  .cajaCard{
      display: grid;
-     grid-template-columns: repeat(2, 1fr);
-     grid-template-rows: repeat(2, 1fr);
+     grid-template-columns: 15% 25% auto 10%;
+     grid-template-rows: 55% 45%;
      width: 412px;
      height: 272px;    
      position: relative;
@@ -595,6 +595,7 @@ footer img, .footertxtNoMobile p, .footertxtNoMobile .footerul{
 
 @media only screen and (min-width:1050px){  
 header{
+    display: flex;
     height: 76px;
 }
 
