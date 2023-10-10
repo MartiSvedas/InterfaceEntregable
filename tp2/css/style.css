@@ -342,7 +342,7 @@ section img.btnright,section img.btnleft{
 }
 
 section img.btnright{
-    right: 8px;
+    right: 41px;
 
 }
 section img.btnleft{
@@ -380,7 +380,8 @@ ul.carruselUl{
     margin-top: 0.5%;
     margin-bottom: -2%;
     scroll-behavior: smooth;
-    margin-left: 24px;
+    margin-left: 0px;
+
 }
 #carrusel{
     margin-bottom: -3%;
