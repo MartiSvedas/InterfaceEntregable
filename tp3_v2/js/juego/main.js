@@ -27,8 +27,9 @@ function drawFicha(){
 function createFicha(x, y) {
     let posX = x;
     let posY = y;
+    let size = 35;
     let color = randomRGBA();
-    let ficha = new Ficha(posX, posY, 35, color, context);
+    let ficha = new Ficha(posX, posY, size, color, context);
     fichas.push(ficha);
 
 }
