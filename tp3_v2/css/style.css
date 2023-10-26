@@ -720,29 +720,12 @@ footer img{
     margin-left: 3%;
 }
 
-.espaciojuego{
-    margin-top: -2%;
-    height: 650px;
-}
-
-.fondojuego{
-    background-color: var(--simil-negro);
-    opacity: 0.6;
-    width: 808px;
-    height: 650px;
-    border-radius: 10px;
-}
-
-.espaciojuego img{
-    position: relative;
-    bottom: 100%;
-    left: 1.5%;
-    align-self: center;
-    display: flex;
+.canvas{
+    margin-right: 0.5%;
 }
 
 .seccionJuegoInstrucciones{
-    margin: 3%;
+    margin: 1%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -753,8 +736,6 @@ footer img{
     border-radius: 2%;
     height: 650px;
     width: 450px;
-    position: relative;
-    bottom: 4%;
 }
 
 .instrucciones .fondo{
