@@ -1,19 +1,22 @@
+
 let canvas = document.getElementById('canvas')
 let context = canvas.getContext('2d')
 let canvasWidth = canvas.width
 let canvasHeight = canvas.height
 
+let tab = new Tablero(context, 6, 7, randomRGBA(), 35);
 let fichas = [];
 let posicion=50;
 
 addFichas();
+tab.draw();
 
-function addFichas() {
+function addFichas() {    
     createFicha(90, posicion);
     createFicha(900, posicion);
     posicion= posicion+25;
-        if (fichas.length < 42) {
-            addFichas();
+    if (fichas.length < 42) {
+        addFichas();
     }
     drawFicha();
 }
