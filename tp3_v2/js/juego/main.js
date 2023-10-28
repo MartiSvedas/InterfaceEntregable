@@ -12,6 +12,8 @@ let posicionY=50;
 let posicionXJug1= 90;
 let posicionXJug2= 900;
 
+let isMouseDown = false;
+let lastClickedFicha;
 
 addFichas();
 tab.draw();
@@ -26,10 +28,8 @@ function addFichas() {
     drawFicha();
 }
 
-
-
-
 function drawFicha(){
+    clearCanvas();
     for(let i=0; i<fichas.length; i++){
         fichas[i].draw();    
     }
@@ -53,14 +53,30 @@ function randomRGBA() {
     return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
+function clearCanvas(){
+    context.fillRect(0, 0, canvasWidth, canvasHeight);
+    tab.draw();
+}
+
 function onMouseDown(e){
-    let isMouseDown = true;
+    isMouseDown = true;
     let clickFicha = findClickedFicha(e.layerX, e.layerY-(219));
     console.log(e.layerY);
     if(clickFicha!=null){
-        clickFicha.setFill('rgba(0, 0, 0, 255)');
+        lastClickedFicha = clickFicha;
     }
     drawFicha();
+}
+
+function onMouseUp(e){
+    isMouseDown = false;
+}
+
+function onMouseMove(e){
+    if(isMouseDown && lastClickedFicha!=null){
+        lastClickedFicha.setPosition(e.layerX, e.layerY-219);
+        drawFicha();
+    }
 }
 
 function findClickedFicha(x, y){
@@ -74,3 +90,5 @@ function findClickedFicha(x, y){
 }
 
 canvas.addEventListener('mousedown', onMouseDown, false);
+canvas.addEventListener('mouseup', onMouseUp, false);
+canvas.addEventListener('mousemove', onMouseMove, false);
