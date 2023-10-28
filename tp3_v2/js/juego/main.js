@@ -1,30 +1,38 @@
 
-let canvas = document.getElementById('canvas')
-let context = canvas.getContext('2d')
-let canvasWidth = canvas.width
-let canvasHeight = canvas.height
+let canvas = document.getElementById('canvas');
+let context = canvas.getContext('2d');
+let canvasWidth = canvas.width;
+let canvasHeight = canvas.height;
 
 let tab = new Tablero(context, 6, 7, randomRGBA(), 35);
 let fichas = [];
-let posicion=50;
+let fichasJug1 = [];
+let fichasJug2 = [];
+let posicionY=50;
+let posicionXJug1= 90;
+let posicionXJug2= 900;
+
 
 addFichas();
 tab.draw();
 
-function addFichas() {    
-    createFicha(90, posicion);
-    createFicha(900, posicion);
-    posicion= posicion+25;
+function addFichas() {
+    createFicha(posicionXJug1,  posicionY);
+    createFicha(posicionXJug2, posicionY);
+    posicionY=posicionY+36;
     if (fichas.length < 42) {
         addFichas();
     }
     drawFicha();
 }
 
+
+
+
 function drawFicha(){
     for(let i=0; i<fichas.length; i++){
         fichas[i].draw();    
-  }
+    }
 }
 
 function createFicha(x, y) {
@@ -45,9 +53,24 @@ function randomRGBA() {
     return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
+function onMouseDown(e){
+    let isMouseDown = true;
+    let clickFicha = findClickedFicha(e.layerX, e.layerY-(219));
+    console.log(e.layerY);
+    if(clickFicha!=null){
+        clickFicha.setFill('rgba(0, 0, 0, 255)');
+    }
+    drawFicha();
+}
 
+function findClickedFicha(x, y){
+    for(let i=0; i<fichas.length; i++){
+        const fichaSelec = fichas[i];
+        if(fichas[i].isPointInside(x, y)){
+            return fichas[i];
+        }
+        console.log(i);
+    }
+}
 
-
-
-
-
+canvas.addEventListener('mousedown', onMouseDown, false);

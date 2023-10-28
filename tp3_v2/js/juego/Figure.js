@@ -30,4 +30,9 @@ class Figure {
     draw() {
         this.context.fillStyle = this.fill;
     }
+    isPointInside(x, y){
+        let _x = this.getPosX() - x;
+        let _y = this.getPosY() - y;
+        return Math.sqrt(_x * _x + _y * _y)< this.getRadius();
+    }
 }

@@ -16,4 +16,6 @@ class Ficha extends Figure {
     getRadius() {
         return this.radius;
     }
+
+    
 }

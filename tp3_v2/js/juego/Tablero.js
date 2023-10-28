@@ -11,12 +11,11 @@ class Tablero{
 
     draw(){
         let a = 0;
-        let b = 0;
+        let b = 50;
         for(let x=0; x<this.filas; x++){
-            this.drawCasilla(a=235, b=b+85);
+            this.drawCasilla(a=235, b=b+90);
             for(let y=0; y<this.columnas-1; y++){
                 this.drawCasilla(a=a+90, b);
-                console.log(a);
             }
         }
     }
@@ -33,7 +32,7 @@ class Tablero{
 
     drawRect(a, b){
         this.context.fillStyle = this.fondo;
-        this.context.fillRect(a-40, b-40, 90, 90);
+        this.context.fillRect(a-45, b-45, 90, 90);
     }
 
 }
