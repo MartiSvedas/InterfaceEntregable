@@ -60,8 +60,12 @@ function clearCanvas(){
 
 function onMouseDown(e){
     isMouseDown = true;
+    if(lastClickedFicha!=null){
+        lastClickedFicha = null;
+    }
+
     let clickFicha = findClickedFicha(e.layerX, e.layerY-(219));
-    console.log(e.layerY);
+    console.log(e.layerY-219)
     if(clickFicha!=null){
         lastClickedFicha = clickFicha;
     }
