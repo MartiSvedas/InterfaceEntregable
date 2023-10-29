@@ -17,5 +17,14 @@ class Ficha extends Figure {
         return this.radius;
     }
 
-    
+    isPointInside(x, y){
+        const nx = x - this.getPosX();
+        const ny = y - this.getPosY();
+        return Math.sqrt(nx * nx + ny * ny) < this.getRadius();
+    }
+
+    setPosition(x, y){
+        this.posX = x;
+        this.posY = y;
+    }
 }

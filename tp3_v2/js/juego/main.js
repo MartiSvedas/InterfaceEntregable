@@ -64,8 +64,8 @@ function onMouseDown(e){
         lastClickedFicha = null;
     }
 
-    let clickFicha = findClickedFicha(e.layerX, e.layerY-(219));
-    console.log(e.layerY-219)
+    let clickFicha = findClickedFicha(e.layerX, e.layerY-(190));
+    console.log(e.layerY-200)
     if(clickFicha!=null){
         lastClickedFicha = clickFicha;
     }
@@ -78,7 +78,7 @@ function onMouseUp(e){
 
 function onMouseMove(e){
     if(isMouseDown && lastClickedFicha!=null){
-        lastClickedFicha.setPosition(e.layerX, e.layerY-219);
+        lastClickedFicha.setPosition(e.layerX, e.layerY-190);
         drawFicha();
     }
 }
