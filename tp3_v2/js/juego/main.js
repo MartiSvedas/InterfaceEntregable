@@ -6,11 +6,13 @@ let canvasHeight = canvas.height;
 
 let tab = new Tablero(context, 6, 7, randomRGBA(), 35);
 let fichas = [];
-let fichasJug1 = [];
+
+let fichasJug1 = []; // Array for player 1's tokens
 let fichasJug2 = [];
 let posicionY=50;
 let posicionXJug1= 90;
 let posicionXJug2= 900;
+let turnoJug1 = true;
 
 let isMouseDown = false;
 let lastClickedFicha;
@@ -19,13 +21,25 @@ addFichas();
 tab.draw();
 
 function addFichas() {
-    createFicha(posicionXJug1,  posicionY);
-    createFicha(posicionXJug2, posicionY);
-    posicionY=posicionY+36;
-    if (fichas.length < 42) {
+    createFicha(posicionXJug1, posicionY, fichasJug1);
+    createFicha(posicionXJug2, posicionY, fichasJug2);
+    posicionY = posicionY + 36;
+
+    if (fichasJug1.length < 21 && fichasJug2.length < 21) {
         addFichas();
     }
-    drawFicha();
+
+    drawFichasJugador();
+}
+
+function drawFichasJugador() {
+    clearCanvas();
+    for (let i = 0; i < fichasJug1.length; i++) {
+        fichasJug1[i].draw();
+    }
+    for (let i = 0; i < fichasJug2.length; i++) {
+        fichasJug2[i].draw();
+    }
 }
 
 function drawFicha(){
@@ -35,14 +49,13 @@ function drawFicha(){
     }
 }
 
-function createFicha(x, y) {
+function createFicha(x, y, playerList) {
     let posX = x;
     let posY = y;
     let size = 35;
     let color = randomRGBA();
     let ficha = new Ficha(posX, posY, size, color, context);
-    fichas.push(ficha);
-
+    playerList.push(ficha);
 }
 
 function randomRGBA() {
@@ -58,38 +71,61 @@ function clearCanvas(){
     tab.draw();
 }
 
-function onMouseDown(e){
+function onMouseDown(e) {
+    if (!turnoJug1 && fichasJug2.length === 0) {
+        return;
+    }
+
     isMouseDown = true;
-    if(lastClickedFicha!=null){
-        lastClickedFicha = null;
-    }
 
-    let clickFicha = findClickedFicha(e.layerX, e.layerY-(190));
-    console.log(e.layerY-200)
-    if(clickFicha!=null){
-        lastClickedFicha = clickFicha;
+    let clickedFicha = findClickedFicha(e.layerX, e.layerY - 190);
+
+    if (clickedFicha != null) {
+        lastClickedFicha = clickedFicha;
     }
-    drawFicha();
+    drawFichasJugador();
 }
 
-function onMouseUp(e){
+
+function onMouseUp(e) {
     isMouseDown = false;
-}
 
-function onMouseMove(e){
-    if(isMouseDown && lastClickedFicha!=null){
-        lastClickedFicha.setPosition(e.layerX, e.layerY-190);
-        drawFicha();
+    if (lastClickedFicha != null) {
+        lastClickedFicha.setPosition(e.layerX, e.layerY - 190);
+
+        if (turnoJug1) {
+            drawFichasJugador(fichasJug1);
+        } else {
+            drawFichasJugador(fichasJug2);
+        }
+
+        turnoJug1 = !turnoJug1;
     }
 }
 
-function findClickedFicha(x, y){
-    for(let i=0; i<fichas.length; i++){
-        const fichaSelec = fichas[i];
-        if(fichas[i].isPointInside(x, y)){
-            return fichas[i];
+function onMouseMove(e) {
+    if (isMouseDown && lastClickedFicha != null && turnoJug1) {
+        lastClickedFicha.setPosition(e.layerX, e.layerY - 190);
+        drawFichasJugador(fichasJug1);
+    } else if (isMouseDown && lastClickedFicha != null && !turnoJug1) {
+        return;
+    }
+}
+
+function findClickedFicha(x, y) {
+    let fichasJugador;
+
+    if (turnoJug1) {
+        fichasJugador = fichasJug1;
+    } else {
+        fichasJugador = fichasJug2;
+    }
+
+    for (let i = 0; i < fichasJugador.length; i++) {
+        const fichaSelec = fichasJugador[i];
+        if (fichaSelec.isPointInside(x, y)) {
+            return fichasJugador[i];
         }
-        console.log(i);
     }
 }
 
