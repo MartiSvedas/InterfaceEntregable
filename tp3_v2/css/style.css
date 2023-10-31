@@ -720,6 +720,13 @@ footer img{
     margin-left: 3%;
 }
 
+.opcionesJuego{
+    background-color: var(--color-primario-luz1);
+    width: 1000px;
+    height: 650px;
+    border-radius: 2%;
+}
+
 .btn_fichas, .img_ficha{
     border-radius: 100%;
     width: 100px;
@@ -728,6 +735,7 @@ footer img{
 
 .canvas{
     margin-right: 0.5%;
+    border-radius: 2%;
 }
 
 .seccionJuegoInstrucciones{
