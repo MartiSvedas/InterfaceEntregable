@@ -108,7 +108,8 @@ function onMouseMove(e) {
         lastClickedFicha.setPosition(e.layerX, e.layerY - 190);
         drawFichasJugador(fichasJug1);
     } else if (isMouseDown && lastClickedFicha != null && !turnoJug1) {
-        return;
+        lastClickedFicha.setPosition(e.layerX, e.layerY - 190);
+        drawFichasJugador(fichasJug2);
     }
 }
 
