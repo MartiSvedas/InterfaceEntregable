@@ -720,6 +720,12 @@ footer img{
     margin-left: 3%;
 }
 
+.btn_fichas, .img_ficha{
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
 .canvas{
     margin-right: 0.5%;
 }
