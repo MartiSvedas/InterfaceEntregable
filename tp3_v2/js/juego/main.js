@@ -17,12 +17,16 @@ let turnoJug1 = true;
 let isMouseDown = false;
 let lastClickedFicha;
 
+let imgJugador1 = document.getElementById('imagenfichagato1');
+let imgJugador2 = document.getElementById('imagenfichaperro1');
+
+
 addFichas();
 tab.draw();
 
 function addFichas() {
-    createFicha(posicionXJug1, posicionY, fichasJug1);
-    createFicha(posicionXJug2, posicionY, fichasJug2);
+    createFicha(posicionXJug1, posicionY, fichasJug1, imgJugador1);
+    createFicha(posicionXJug2, posicionY, fichasJug2, imgJugador2);
     posicionY = posicionY + 36;
 
     if (fichasJug1.length < 21 && fichasJug2.length < 21) {
@@ -49,12 +53,12 @@ function drawFicha(){
     }
 }
 
-function createFicha(x, y, playerList) {
+function createFicha(x, y, playerList,imgFicha) {
     let posX = x;
     let posY = y;
     let size = 35;
     let color = randomRGBA();
-    let ficha = new Ficha(posX, posY, size, color, context);
+    let ficha = new Ficha(posX, posY, size, color, context, imgFicha);
     playerList.push(ficha);
 }
 
