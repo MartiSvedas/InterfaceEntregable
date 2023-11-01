@@ -5,6 +5,7 @@ class Tablero{
         this.columnas = columnas;
         this.fondo = fondo;
         this.tamFicha = tamFicha;
+        let matriz = [filas][columnas];
     }
 
 
@@ -12,9 +13,11 @@ class Tablero{
     draw(){
         let a = 0;
         let b = 50;
-        for(let x=0; x<this.filas; x++){
+        let fila = 0;
+        let columna = 0;
+        for(fila; x<this.filas; fila++){
             this.drawCasilla(a=235, b=b+90);
-            for(let y=0; y<this.columnas-1; y++){
+            for(columna; y<this.columnas-1; columna++){
                 this.drawCasilla(a=a+90, b);
             }
         }
