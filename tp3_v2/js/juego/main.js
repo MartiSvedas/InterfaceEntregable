@@ -4,10 +4,10 @@ let context = canvas.getContext('2d');
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
-let tab = new Tablero(context, 6, 7, randomRGBA(), 35);
+let tab = new Tablero(context, 6, 7, 'rgba(100, 0, 100, 255)', 35);
 let fichas = [];
 
-let fichasJug1 = []; // Array for player 1's tokens
+let fichasJug1 = [];  
 let fichasJug2 = [];
 let posicionY=50;
 let posicionXJug1= 90;

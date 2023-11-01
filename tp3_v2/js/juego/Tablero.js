@@ -13,15 +13,18 @@ class Tablero{
         let a = 0;
         let b = 50;
         for(let x=0; x<this.filas; x++){
-            this.drawCasilla(a=235, b=b+90);
+            this.drawCasilla(a=235, b=b+90, this.fondo);
+            this.drawCasilla(a, 50, 'rgba(20, 20, 20, 0)');
             for(let y=0; y<this.columnas-1; y++){
-                this.drawCasilla(a=a+90, b);
+                
+                this.drawCasilla(a=a+90, b, this.fondo);
+                this.drawCasilla(a, 50, 'rgba(20, 20, 20, 0)');
             }
         }
     }
 
-    drawCasilla(a, b){
-        this.drawRect(a, b);
+    drawCasilla(a, b, colorRect){
+        this.drawRect(a, b, colorRect);
         
         this.context.fillStyle = 'rgba(0, 0, 0, 255)';
         this.context.beginPath();
@@ -30,8 +33,9 @@ class Tablero{
         this.context.closePath();
     }
 
-    drawRect(a, b){
-        this.context.fillStyle = this.fondo;
+    drawRect(a, b, colorRect){
+        this.context.fillStyle = colorRect;
+
         this.context.fillRect(a-45, b-45, 90, 90);
     }
 
