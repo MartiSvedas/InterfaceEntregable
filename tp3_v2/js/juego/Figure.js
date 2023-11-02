@@ -1,14 +1,11 @@
 class Figure {
-    constructor(posX, posY, fill, context) {
+    constructor(posX, posY, context) {
         this.posX = posX;
         this.posY = posY;
-        this.fill = fill;
         this.context = context;
     }
 
-    setFill(fill) {
-        this.fill = fill;
-    }
+
 
     getPosition() {
         return {
@@ -22,9 +19,6 @@ class Figure {
     }
     getPosY() {
         return this.posY;
-    }
-    getFill() {
-        return this.fill;
     }
 
     draw() {

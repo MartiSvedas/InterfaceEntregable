@@ -1,6 +1,6 @@
 class Ficha extends Figure {
-    constructor(posX, posY, radius, fill, context, image) {
-        super(posX, posY, fill, context);
+    constructor(posX, posY, radius, context, image) {
+        super(posX, posY, context);
 
         this.radius = radius;
         this.image=image;

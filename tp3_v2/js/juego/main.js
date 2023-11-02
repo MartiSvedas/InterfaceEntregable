@@ -22,7 +22,6 @@ let imgJugador2 = document.getElementById('imagenfichaperro1');
 
 
 addFichas();
-tab.draw();
 
 function addFichas() {
     createFicha(posicionXJug1, posicionY, fichasJug1, imgJugador1);
@@ -57,18 +56,10 @@ function createFicha(x, y, playerList,imgFicha) {
     let posX = x;
     let posY = y;
     let size = 35;
-    let color = randomRGBA();
-    let ficha = new Ficha(posX, posY, size, color, context, imgFicha);
+    let ficha = new Ficha(posX, posY, size, context, imgFicha);
     playerList.push(ficha);
 }
 
-function randomRGBA() {
-    let r = Math.round(Math.random() * 255);
-    let g = Math.round(Math.random() * 255);
-    let b = Math.round(Math.random() * 255);
-    let a = 255;
-    return `rgba(${r}, ${g}, ${b}, ${a})`;
-}
 
 function clearCanvas(){
     context.fillRect(0, 0, canvasWidth, canvasHeight);

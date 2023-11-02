@@ -5,37 +5,39 @@ class Tablero{
         this.columnas = columnas;
         this.fondo = fondo;
         this.tamFicha = tamFicha;
-        let matriz = [filas][columnas];
+        this.matriz = [];
+        this.iniciarCasilleros();
+        this.draw();
     }
 
-
-
+    
     draw(){
-        let a = 0;
-        let b = 50;
-        let fila = 0;
-        let columna = 0;
-        for(fila; x<this.filas; fila++){
-            this.drawCasilla(a=235, b=b+90);
-            for(columna; y<this.columnas-1; columna++){
-                this.drawCasilla(a=a+90, b);
+        for(let x=0; x<this.filas; x++){
+            for(let y=0; y<this.columnas-1; y++){
+                this.matriz[x][y].draw();
             }
         }
     }
+    
+    crearCasilla(a,b){   
+       let cas = new Casilla(a,b,this.tamFicha,this.fondo,this.context);
+       return cas;
+}
 
-    drawCasilla(a, b){
-        this.drawRect(a, b);
-        
-        this.context.fillStyle = 'rgba(0, 0, 0, 255)';
-        this.context.beginPath();
-        this.context.arc(a, b, 35, 0, 2 * Math.PI);
-        this.context.fill();
-        this.context.closePath();
+iniciarCasilleros(){
+    let a = 0;
+    let b = 50;
+    for(let x=0; x<this.filas; x++){
+        this.matriz[x] = [] ;
+        b += 90;
+        a = 90;
+        for(let y=0; y<this.columnas-1; y++){
+            a+= 90;
+            this.matriz[x][y] = this.crearCasilla(a, b);
+        }
     }
+}
 
-    drawRect(a, b){
-        this.context.fillStyle = this.fondo;
-        this.context.fillRect(a-45, b-45, 90, 90);
-    }
+
 
 }
