@@ -30,7 +30,7 @@ iniciarCasilleros(){
     for(let x=0; x<this.filas; x++){
         this.matriz[x] = [] ;
         b += 90;
-        a = 90;
+        a = 130;
         for(let y=0; y<this.columnas-1; y++){
             a+= 90;
             this.matriz[x][y] = this.crearCasilla(a, b);
