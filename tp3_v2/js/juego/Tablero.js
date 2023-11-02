@@ -13,7 +13,7 @@ class Tablero{
     
     draw(){
         for(let x=0; x<this.filas; x++){
-            for(let y=0; y<this.columnas-1; y++){
+            for(let y=0; y<this.columnas; y++){
                 this.matriz[x][y].draw();
             }
         }
@@ -26,12 +26,12 @@ class Tablero{
 
 iniciarCasilleros(){
     let a = 0;
-    let b = 50;
+    let b = 40;
     for(let x=0; x<this.filas; x++){
         this.matriz[x] = [] ;
         b += 90;
-        a = 130;
-        for(let y=0; y<this.columnas-1; y++){
+        a = 138;
+        for(let y=0; y<this.columnas; y++){
             a+= 90;
             this.matriz[x][y] = this.crearCasilla(a, b);
         }

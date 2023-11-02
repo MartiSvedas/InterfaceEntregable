@@ -4,7 +4,7 @@ let context = canvas.getContext('2d');
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
-let tab = new Tablero(context, 6, 8, 'rgba(100, 0, 100, 255)', 35);
+let tab = new Tablero(context, 6, 7, 'rgba(100, 0, 100, 255)', 35);
 let fichas = [];
 
 let fichasJug1 = [];  
@@ -26,7 +26,7 @@ addFichas();
 function addFichas() {
     createFicha(posicionXJug1, posicionY, fichasJug1, imgJugador1);
     createFicha(posicionXJug2, posicionY, fichasJug2, imgJugador2);
-    posicionY = posicionY + 36;
+    posicionY = posicionY + 28;
 
     if (fichasJug1.length < 21 && fichasJug2.length < 21) {
         addFichas();
@@ -60,6 +60,13 @@ function createFicha(x, y, playerList,imgFicha) {
     playerList.push(ficha);
 }
 
+function randomRGBA() {
+    let r = Math.round(Math.random() * 255);
+    let g = Math.round(Math.random() * 255);
+    let b = Math.round(Math.random() * 255);
+    let a = 255;
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
 
 function clearCanvas(){
     context.fillRect(0, 0, canvasWidth, canvasHeight);
