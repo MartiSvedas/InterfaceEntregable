@@ -4,7 +4,7 @@ let context = canvas.getContext('2d');
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
-let tab = new Tablero(context, 6, 7, 'rgba(100, 0, 100, 255)', 35);
+let tab = new Tablero(context, 6, 8, 'rgba(100, 0, 100, 255)', 35);
 let fichas = [];
 
 let fichasJug1 = [];  
