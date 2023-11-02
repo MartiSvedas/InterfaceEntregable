@@ -3,7 +3,8 @@ let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
-
+let offsetX = 11;
+let offsetY = 190;
 let tab = new Tablero(context, 6, 7, 'rgba(100, 0, 100, 255)', 35);
 let fichas = [];
 
@@ -80,7 +81,7 @@ function onMouseDown(e) {
 
     isMouseDown = true;
 
-    let clickedFicha = findClickedFicha(e.layerX, e.layerY - 190);
+    let clickedFicha = findClickedFicha(e.layerX - offsetX, e.layerY - offsetY);
 
     if (clickedFicha != null) {
         lastClickedFicha = clickedFicha;
@@ -93,7 +94,7 @@ function onMouseUp(e) {
     isMouseDown = false;
 
     if (lastClickedFicha != null) {
-        lastClickedFicha.setPosition(e.layerX, e.layerY - 190);
+        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
 
         if (turnoJug1) {
             drawFichasJugador(fichasJug1);
@@ -107,10 +108,10 @@ function onMouseUp(e) {
 
 function onMouseMove(e) {
     if (isMouseDown && lastClickedFicha != null && turnoJug1) {
-        lastClickedFicha.setPosition(e.layerX, e.layerY - 190);
+        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
         drawFichasJugador(fichasJug1);
     } else if (isMouseDown && lastClickedFicha != null && !turnoJug1) {
-        lastClickedFicha.setPosition(e.layerX, e.layerY - 190);
+        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
         drawFichasJugador(fichasJug2);
     }
 }
