@@ -130,22 +130,33 @@
     <section class="seccionJuegoInstrucciones">
         <div  class="espacioJuego">
             
+            <h3 id="textoEmpezarJuego"></h3>
             <canvas class="canvas" id="canvas" width="1000" height="650" style="border:1px solid"></canvas>
             <div class="opcionesJuego">
                 <h2>4 en Linea "Perros vs Gatos"</h2>
                 <h2>Elegir fichas</h2>
-                <p>Jugador 1</p>
+                <h3>Jugador 1</h3>
                     <button class="btn_fichas"><img class="img_ficha" id="imagenfichagato1" src="img/juego/Fichas/catOp1.png"></button>
-                    <button class="btn_fichas"><img class="img_ficha" src="img/juego/Fichas/catOp4.png"></button>
-                    <button class="btn_fichas"><img class="img_ficha" src="img/juego/Fichas/dogOp5.jpg"></button>
-                    <button class="btn_fichas"><img class="img_ficha" src="img/juego/Fichas/dogOp3.jpg"></button>
-                <p>Jugador 2</p>
-                    <button class="btn_fichas"><img class="img_ficha"  src="img/juego/Fichas/catOp1.png"></button>
-                    <button class="btn_fichas"><img class="img_ficha" src="img/juego/Fichas/catOp4.png"></button>
-                    <button class="btn_fichas"><img class="img_ficha" id="imagenfichaperro1" src="img/juego/Fichas/dogOp5.jpg"></button>
-                    <button class="btn_fichas"><img class="img_ficha" src="img/juego/Fichas/dogOp3.jpg"></button>
-                <button>Continuar</button>
-            </div>
+                    <button class="btn_fichas"><img class="img_ficha" id="imagenfichagato2" src="img/juego/Fichas/catOp2.png"></button>
+                    <button class="btn_fichas"><img class="img_ficha" id="imagenfichagato3" src="img/juego/Fichas/catOp3.png"></button>
+                    <button class="btn_fichas"><img class="img_ficha" id="imagenfichagato4" src="img/juego/Fichas/catOp4.png"></button>
+                    <button class="btn_fichas"><img class="img_ficha" id="imagenfichagato5" src="img/juego/Fichas/catOp5.jpg"></button>
+                <h3>Jugador 2</h3>
+                    <button class="btn_fichas0"><img class="img_ficha" id= "imagenfichaperro1" src="img/juego/Fichas/dogOp1.jpg"></button>
+                    <button class="btn_fichas0"><img class="img_ficha" id= "imagenfichaperro2" src="img/juego/Fichas/dogOp2.jpg"></button>
+                    <button class="btn_fichas0"><img class="img_ficha" id= "imagenfichaperro3" src="img/juego/Fichas/dogOp3.jpg"></button>
+                    <button class="btn_fichas0"><img class="img_ficha" id= "imagenfichaperro4" src="img/juego/Fichas/dogOp4.png"></button>
+                    <button class="btn_fichas0"><img class="img_ficha" id= "imagenfichaperro5" src="img/juego/Fichas/dogOp5.jpg"></button>
+                    <h3 id="primeroElijaJugador1"></h3>
+
+                    <h3>Dimension del tablero:</h3>
+                    <select id="dimColFil">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
         </div>
         
         <article class="instrucciones">
@@ -285,6 +296,7 @@
         </div>
     </footer>
     <script src="./js/juego/Figure.js"></script>
+    <script src="./js/juego/verificarGanador.js"></script>
     <script src="./js/juego/Casilla.js"></script>
     <script src="./js/juego/Ficha.js"></script>
     <script src="./js/juego/Tablero.js"></script>

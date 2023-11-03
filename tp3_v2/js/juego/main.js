@@ -6,29 +6,80 @@ let canvasHeight = canvas.height;
 let offsetX = 11;
 let offsetY = 190;
 let tab = new Tablero(context, 6, 7, 'rgba(100, 0, 100, 255)', 35);
-let fichas = [];
-
+let fichas=[];
 let fichasJug1 = [];  
 let fichasJug2 = [];
 let posicionY=50;
 let posicionXJug1= 90;
 let posicionXJug2= 900;
 let turnoJug1 = true;
-
+let juegoIniciado=false;
 let isMouseDown = false;
 let lastClickedFicha;
 
+let textoEmpezar = document.getElementById("textoEmpezarJuego");
+textoEmpezar.innerHTML="Elija debajo las fichas de cada jugador";
+let textoNoEmpezar=document.getElementById("primeroElijaJugador1");
+
+const botonesJ1 = document.querySelectorAll('.btn_fichas');
+const botonesJ2 = document.querySelectorAll('.btn_fichas0');
+
+let imgJugador1=null;
 const imageJug1 = new Image();
-imageJug1.src = 'img/juego/Fichas/catOp1.png';
+let imgJugador2=null;
 const imageJug2 = new Image();
-imageJug2.src = 'img/juego/Fichas/dogOp5.jpg';
 
+let imgSeleccionadaJugador1=null;
 
+botonesJ1.forEach(function (boton) {
+    boton.addEventListener('click', function() {
+        const img = boton.querySelector("img");
+        const imgSrc = img.getAttribute("src");
 
+        if (imgSeleccionadaJugador1) {
+     
+            imgSeleccionadaJugador1.parentNode.style.border = 'initial';
+        }
+        if(juegoIniciado==false){
+        imgSeleccionadaJugador1 = img;
+
+        imgJugador1 = imgSrc;
+
+        boton.style.border = '4px solid red';
+
+        imageJug1.src = imgJugador1;
+        }else{
+            textoNoEmpezar.innerHTML="Ya tiene seleccionada su ficha"
+        }
+    });
+});
+
+botonesJ2.forEach(function (boton) {
+    boton.addEventListener('click', function() {
+        const img = boton.querySelector("img");
+        const imgSrc = img.getAttribute("src");
+    if(imgJugador1!=null ){
+        if(juegoIniciado==false){
+         imgJugador2 = imgSrc;
+         textoNoEmpezar.innerHTML="";
+         boton.style.border = '4px solid red'; 
+
+         imageJug2.src = imgJugador2;
+
+        }else{
+            textoNoEmpezar.innerHTML="Ya tiene seleccionada su ficha"
+        }           
+    }else{
+    textoNoEmpezar.innerHTML="Primero debe elejir el Jugador 1"
+}  
+    });
+});
 
 Promise.all([cargarImagen(imageJug1), cargarImagen(imageJug2)]).then(() => {
     addFichas();
     drawFichasJugador();
+    textoEmpezar.innerHTML="";
+    juegoIniciado==true;
 });
 
 function cargarImagen(image) {
@@ -38,6 +89,7 @@ function cargarImagen(image) {
 }
 
 function addFichas() {
+    juegoIniciado=true;
     createFicha(posicionXJug1, posicionY, fichasJug1, imageJug1, null, null);
     createFicha(posicionXJug2, posicionY, fichasJug2, imageJug2, null, null);
     posicionY += 28;
@@ -54,13 +106,6 @@ function drawFichasJugador() {
     }
     for (let i = 0; i < fichasJug2.length; i++) {
         fichasJug2[i].draw();
-    }
-}
-
-function drawFicha(){
-    clearCanvas();
-    for(let i=0; i<fichas.length; i++){
-        fichas[i].draw();    
     }
 }
 
@@ -92,8 +137,12 @@ function onMouseDown(e) {
        lastClickedFicha = null; 
     }
     drawFichasJugador();
-}
 
+    // verificar(fichasJug1);
+    // verificar(fichasJug2);
+
+    
+}
 
 function onMouseUp(e) {
     if (lastClickedFicha != null) {
@@ -118,6 +167,7 @@ function onMouseUp(e) {
                     image = imageJug2;
                     listaJug = fichasJug2;
                     idFicha = 2;
+
                 }
                 const result = tab.dropFicha(columaSeleccionada, image, idFicha);
                 
@@ -152,6 +202,12 @@ function onMouseMove(e) {
     }
 }
 
+// function verificar(fichas){
+// let jug= new verificarGanador(fichas, tab);
+
+// jug.verificarSiEsGanador();
+// }
+
 function findClickedFicha(x, y) {
     let fichasJugador;
 
@@ -159,6 +215,7 @@ function findClickedFicha(x, y) {
         fichasJugador = fichasJug1;
     } else {
         fichasJugador = fichasJug2;
+
     }
 
     for (let i = 0; i < fichasJugador.length; i++) {
@@ -168,6 +225,7 @@ function findClickedFicha(x, y) {
         }
     }
 }
+
 
 canvas.addEventListener('mousedown', onMouseDown, false);
 canvas.addEventListener('mouseup', onMouseUp, false);

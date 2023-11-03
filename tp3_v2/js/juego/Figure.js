@@ -1,3 +1,4 @@
+
 class Figure {
     constructor(posX, posY, context) {
         this.posX = posX;

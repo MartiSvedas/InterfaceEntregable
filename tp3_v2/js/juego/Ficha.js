@@ -4,7 +4,7 @@ class Ficha extends Figure {
 
         this.radius = radius;
         this.image=image;
-        this.idFicha = this.idFicha;
+        this.idFicha = null;
         this.originalX = posX;
         this.originalY = posY;
         this.usada = false;
@@ -25,7 +25,6 @@ class Ficha extends Figure {
         const x = this.posX - this.radius;
         const y = this.posY - this.radius;
         this.context.drawImage(this.image, x, y, diameter, diameter);
-
         this.context.restore(); 
 
     }

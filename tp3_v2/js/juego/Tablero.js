@@ -1,3 +1,4 @@
+
 class Tablero{
     constructor(context, filas, columnas, fondo, tamFicha){
         this.context = context;
@@ -61,10 +62,12 @@ class Tablero{
         if (!this.isColumnFull(columna)) {
             for (let fila = this.filas - 1; fila >= 0; fila--) {
                 if (!this.matriz[fila][columna].isFilled()) {
-                    console.log(fila, columna);
+                    // console.log(fila, columna);
                     this.matriz[fila][columna].dropFicha(jugador, idFicha);
                     this.a = 138 + columna * this.columnasWidth;
                     this.b = 40 + fila * this.filasHeight;
+                    // console.log(idFicha)     
+                    this.verificar(idFicha);
                     return {
                         fila,
                         columna
@@ -72,8 +75,16 @@ class Tablero{
                 }
             }
         }
+        
         return null; 
+
     }
+
+     verificar(id){
+        let jug= new verificarGanador(id, this);
+        console.log(id);
+        jug.verificarSiEsGanador();
+        }
 
     isColumnFull(columna) {
         for (let fila = 0; fila < this.filas; fila++) {
