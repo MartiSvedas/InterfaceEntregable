@@ -4,9 +4,10 @@ class Ficha extends Figure {
 
         this.radius = radius;
         this.image=image;
-        this.originalX = posX; // Store the original X position
-        this.originalY = posY; // Store the original Y position
-        this.fila = null;    // Initialize row and column as null
+        this.idFicha = this.idFicha;
+        this.originalX = posX;
+        this.originalY = posY;
+        this.fila = null;    
         this.columna = null;
     }
 

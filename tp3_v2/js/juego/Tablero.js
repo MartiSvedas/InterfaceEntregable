@@ -57,13 +57,12 @@ class Tablero{
         }
     }
 
-    dropFicha(columna, player) {
+    dropFicha(columna, jugador, idFicha) {
         if (!this.isColumnFull(columna)) {
             for (let fila = this.filas - 1; fila >= 0; fila--) {
                 if (!this.matriz[fila][columna].isFilled()) {
                     console.log(fila, columna);
-                    this.matriz[fila][columna].dropFicha(player);
-                     // Update the cell in the matrix
+                    this.matriz[fila][columna].dropFicha(jugador, idFicha);
                     return {
                         fila,
                         columna

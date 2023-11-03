@@ -69,6 +69,7 @@ function createFicha(x, y, playerList, imgFicha, fila, columna) {
     ficha.setFila(fila);
     ficha.setColumna(columna);
     playerList.push(ficha);
+    fichas.push(ficha);
 }
 
 function clearCanvas(){
@@ -94,48 +95,47 @@ function onMouseDown(e) {
 
 function onMouseUp(e) {
     if (lastClickedFicha != null) {
+        const mouseX = e.layerX;
+        let columaSeleccionada = null;
         isMouseDown = false;
-
-        if (lastClickedFicha != null) {
-            const mouseX = e.layerX;
-            let selectedColumn = null;
-
-            for (let i = 0; i < tab.arrDeColumnas.length; i++) {
-                const indicatorX = 200 + i * tab.columnasWidth;
-                const indicatorWidth = tab.columnasWidth;
-                if (mouseX >= indicatorX && mouseX < indicatorX + indicatorWidth) {
-                    selectedColumn = i;
-                    break;
-                }
+        for (let i = 0; i < tab.arrDeColumnas.length; i++) {
+            const indicatorX = 200 + i * tab.columnasWidth;
+            const indicatorWidth = tab.columnasWidth;
+            if (mouseX >= indicatorX && mouseX < indicatorX + indicatorWidth) {
+                columaSeleccionada = i;
+                break;
             }
-
-            if (selectedColumn !== null) {
-                if (tab.isColumnFull(selectedColumn)) {
-                    lastClickedFicha.resetPosition();
-                } else {
-                    let image;
-                    let listaJug = [];
-                    if(turnoJug1){
-                        image = imageJug1;
-                        listaJug = fichasJug1;
-                    }else{
-                        image = imageJug2;
-                        listaJug = fichasJug2;
-                    }
-                    const result = tab.dropFicha(selectedColumn, image);
-
-                    if (result) {
-                        const fila = result.fila;
-                        const columna = result.columna;
-                        const x = tab.a + result.column * tab.columnasWidth + tab.columnasWidth / 2;
-                        const y = tab.b + result.row * tab.filasHeight + tab.filasHeight / 2;
-                        createFicha(x, y, listaJug, image, fila, columna);
-                        drawFichasJugador();
-                        turnoJug1 = !turnoJug1;
-                    }
+        }
+        if (columaSeleccionada !== null) {
+            if (tab.isColumnFull(columaSeleccionada)) {
+                lastClickedFicha.resetPosition();
+            } else {
+                let image = imageJug1;
+                let listaJug = fichasJug1;
+                let idFicha = 1;
+                if(!turnoJug1){
+                    image = imageJug2;
+                    listaJug = fichasJug2;
+                    idFicha = 2;
+                }
+                const result = tab.dropFicha(columaSeleccionada, image, idFicha);
+                
+                if (result) {
+                    const fila = result.fila;
+                    const columna = result.columna;
+                    const x = tab.a + result.column * tab.columnasWidth + tab.columnasWidth / 2;
+                    const y = tab.b + result.row * tab.filasHeight + tab.filasHeight / 2;
+                    lastClickedFicha.setPosition(tab.matriz[result.fila][result.columna].getPosX(), tab.matriz[result.fila][result.columna].getPosY())
+                    createFicha(x, y, listaJug, image, fila, columna);
+                    drawFichasJugador();
+                    turnoJug1 = !turnoJug1;
                 }
             }
         }
+        else{
+            lastClickedFicha.resetPosition();
+        }
+        lastClickedFicha = null;
     }
 }
 
