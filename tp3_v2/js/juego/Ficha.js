@@ -4,6 +4,10 @@ class Ficha extends Figure {
 
         this.radius = radius;
         this.image=image;
+        this.originalX = posX; // Store the original X position
+        this.originalY = posY; // Store the original Y position
+        this.fila = null;    // Initialize row and column as null
+        this.columna = null;
     }
 
     draw() {
@@ -37,5 +41,17 @@ class Ficha extends Figure {
     setPosition(x, y){
         this.posX = x;
         this.posY = y;
+    }
+
+    setFila(fila){
+        this.fila=fila;
+    }
+
+    setColumna(columna){
+        this.columna=columna;
+    }
+
+    resetPosition(){
+        this.setPosition(this.originalX, this.originalY);
     }
 }

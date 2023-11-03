@@ -3,7 +3,7 @@ class Casilla extends Figure{
         super(posX, posY, radius, fill, context);
         this.context=context;
         this.fill=fill;
-        // this.drawCasilla(posX,posY);
+        this.player = null;
     }
 
     draw(){
@@ -18,6 +18,15 @@ class Casilla extends Figure{
     drawRect(a, b){
         this.context.fillStyle = this.fill;
         this.context.fillRect(a-45, b-45, 90, 90);
+    }
+
+    isFilled() {
+        return this.player !== null;
+    }
+
+    
+    dropFicha(player) {
+        this.player = player;
     }
 
 }

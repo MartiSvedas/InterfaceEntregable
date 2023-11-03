@@ -5,7 +5,10 @@ class Tablero{
         this.columnas = columnas;
         this.fondo = fondo;
         this.tamFicha = tamFicha;
-        this.columnWidth = 90;
+
+        this.filasHeigth = 90;
+        this.columnasWidth = 90;
+        this.tabWidth = columnas * this.columnasWidth;
         this.a = 0;
         this.b = 40;
         this.matriz = [];
@@ -31,7 +34,7 @@ class Tablero{
         }
         for (let i = 0; i < this.arrDeColumnas.length; i++) {
             const indicator = this.arrDeColumnas[i];
-            const indicatorX = 200 + i * this.columnWidth;
+            const indicatorX = 200 + i * this.columnasWidth;
             const indicatorY = 20;
             this.context.drawImage(indicator, indicatorX, indicatorY);
         }
@@ -41,7 +44,7 @@ class Tablero{
        let cas = new Casilla(a,b,this.tamFicha,this.fondo,this.context);
        return cas;
     }
-    
+
     iniciarCasilleros(){
         for(let x=0; x<this.filas; x++){
             this.matriz[x] = [] ;
@@ -54,6 +57,31 @@ class Tablero{
         }
     }
 
+    dropFicha(columna, player) {
+        if (!this.isColumnFull(columna)) {
+            for (let fila = this.filas - 1; fila >= 0; fila--) {
+                if (!this.matriz[fila][columna].isFilled()) {
+                    console.log(fila, columna);
+                    this.matriz[fila][columna].dropFicha(player);
+                     // Update the cell in the matrix
+                    return {
+                        fila,
+                        columna
+                    };
+                }
+            }
+        }
+        return null; // Column is full
+    }
+
+    isColumnFull(columna) {
+        for (let fila = 0; fila < this.filas; fila++) {
+            if (!this.matriz[fila][columna].isFilled()) {
+                return false; // If any cell in the column is not filled, the column is not full
+            }
+        }
+        return true; // If all cells in the column are filled, the column is full
+    }
 
 
 }

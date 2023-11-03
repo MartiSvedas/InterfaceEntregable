@@ -18,22 +18,33 @@ let turnoJug1 = true;
 let isMouseDown = false;
 let lastClickedFicha;
 
-let imgJugador1 = document.getElementById('imagenfichagato1');
-let imgJugador2 = document.getElementById('imagenfichaperro1');
+const imageJug1 = new Image();
+imageJug1.src = 'img/juego/Fichas/catOp1.png';
+const imageJug2 = new Image();
+imageJug2.src = 'img/juego/Fichas/dogOp5.jpg';
 
 
-addFichas();
+
+
+Promise.all([cargarImagen(imageJug1), cargarImagen(imageJug2)]).then(() => {
+    addFichas();
+    drawFichasJugador();
+});
+
+function cargarImagen(image) {
+    return new Promise((resolve) => {
+        image.onload = resolve;
+    });
+}
 
 function addFichas() {
-    createFicha(posicionXJug1, posicionY, fichasJug1, imgJugador1);
-    createFicha(posicionXJug2, posicionY, fichasJug2, imgJugador2);
-    posicionY = posicionY + 28;
-
+    createFicha(posicionXJug1, posicionY, fichasJug1, imageJug1, null, null);
+    createFicha(posicionXJug2, posicionY, fichasJug2, imageJug2, null, null);
+    posicionY += 28;
+    
     if (fichasJug1.length < 21 && fichasJug2.length < 21) {
         addFichas();
     }
-
-    drawFichasJugador();
 }
 
 function drawFichasJugador() {
@@ -53,20 +64,11 @@ function drawFicha(){
     }
 }
 
-function createFicha(x, y, playerList,imgFicha) {
-    let posX = x;
-    let posY = y;
-    let size = 35;
-    let ficha = new Ficha(posX, posY, size, context, imgFicha);
+function createFicha(x, y, playerList, imgFicha, fila, columna) {
+    let ficha = new Ficha(x, y, 35, context, imgFicha);
+    ficha.setFila(fila);
+    ficha.setColumna(columna);
     playerList.push(ficha);
-}
-
-function randomRGBA() {
-    let r = Math.round(Math.random() * 255);
-    let g = Math.round(Math.random() * 255);
-    let b = Math.round(Math.random() * 255);
-    let a = 255;
-    return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
 function clearCanvas(){
@@ -91,18 +93,49 @@ function onMouseDown(e) {
 
 
 function onMouseUp(e) {
-    isMouseDown = false;
-
     if (lastClickedFicha != null) {
-        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
+        isMouseDown = false;
 
-        if (turnoJug1) {
-            drawFichasJugador(fichasJug1);
-        } else {
-            drawFichasJugador(fichasJug2);
+        if (lastClickedFicha != null) {
+            const mouseX = e.layerX;
+            let selectedColumn = null;
+
+            for (let i = 0; i < tab.arrDeColumnas.length; i++) {
+                const indicatorX = 200 + i * tab.columnasWidth;
+                const indicatorWidth = tab.columnasWidth;
+                if (mouseX >= indicatorX && mouseX < indicatorX + indicatorWidth) {
+                    selectedColumn = i;
+                    break;
+                }
+            }
+
+            if (selectedColumn !== null) {
+                if (tab.isColumnFull(selectedColumn)) {
+                    lastClickedFicha.resetPosition();
+                } else {
+                    let image;
+                    let listaJug = [];
+                    if(turnoJug1){
+                        image = imageJug1;
+                        listaJug = fichasJug1;
+                    }else{
+                        image = imageJug2;
+                        listaJug = fichasJug2;
+                    }
+                    const result = tab.dropFicha(selectedColumn, image);
+
+                    if (result) {
+                        const fila = result.fila;
+                        const columna = result.columna;
+                        const x = tab.a + result.column * tab.columnasWidth + tab.columnasWidth / 2;
+                        const y = tab.b + result.row * tab.filasHeight + tab.filasHeight / 2;
+                        createFicha(x, y, listaJug, image, fila, columna);
+                        drawFichasJugador();
+                        turnoJug1 = !turnoJug1;
+                    }
+                }
+            }
         }
-
-        turnoJug1 = !turnoJug1;
     }
 }
 
