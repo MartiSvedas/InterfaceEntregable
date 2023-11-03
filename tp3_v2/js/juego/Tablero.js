@@ -20,8 +20,8 @@ class Tablero{
 
     iniciarArrGuia(){
         for (let i = 0; i < this.columnas; i++) {
-            const indicator = new Image(); // Create an image element
-            indicator.src = 'img/juego/flecha.png'; // Set the image source
+            const indicator = new Image(); 
+            indicator.src = 'img/juego/flecha.png'; 
             this.arrDeColumnas.push(indicator);
         }
     }
@@ -70,16 +70,16 @@ class Tablero{
                 }
             }
         }
-        return null; // Column is full
+        return null; 
     }
 
     isColumnFull(columna) {
         for (let fila = 0; fila < this.filas; fila++) {
             if (!this.matriz[fila][columna].isFilled()) {
-                return false; // If any cell in the column is not filled, the column is not full
+                return false; 
             }
         }
-        return true; // If all cells in the column are filled, the column is full
+        return true;
     }
 
 
