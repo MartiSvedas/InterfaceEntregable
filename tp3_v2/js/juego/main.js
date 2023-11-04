@@ -97,13 +97,12 @@ function onMouseDown(e) {
 
 function onMouseUp(e) {
     if (lastClickedFicha != null) {
-        const mouseX = e.layerX;
         let columaSeleccionada = null;
         isMouseDown = false;
         for (let i = 0; i < tab.arrDeColumnas.length; i++) {
             const indicatorX = 200 + i * tab.columnasWidth;
             const indicatorWidth = tab.columnasWidth;
-            if (mouseX >= indicatorX && mouseX < indicatorX + indicatorWidth) {
+            if (e.layerX >= indicatorX && e.layerX < indicatorX + indicatorWidth) {
                 columaSeleccionada = i;
                 break;
             }
