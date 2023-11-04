@@ -30,7 +30,7 @@ class Casilla extends Figure{
         this.jugador = jugador;
         this.idFicha = idFicha;
         console.log(idFicha);
-        this.draw();
+        //this.draw();
     }
 
 }

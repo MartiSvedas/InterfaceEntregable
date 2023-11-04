@@ -6,10 +6,10 @@ class Tablero{
         this.fondo = fondo;
         this.tamFicha = tamFicha;
 
-        this.filasHeigth = 90;
+        this.filasHeight = 90;
         this.columnasWidth = 90;
         this.tabWidth = columnas * this.columnasWidth;
-        this.a = 0;
+        this.a = 138;
         this.b = 40;
         this.matriz = [];
         this.arrDeColumnas = [];
@@ -63,6 +63,8 @@ class Tablero{
                 if (!this.matriz[fila][columna].isFilled()) {
                     console.log(fila, columna);
                     this.matriz[fila][columna].dropFicha(jugador, idFicha);
+                    this.a = 138 + columna * this.columnasWidth;
+                    this.b = 40 + fila * this.filasHeight;
                     return {
                         fila,
                         columna

@@ -7,6 +7,7 @@ class Ficha extends Figure {
         this.idFicha = this.idFicha;
         this.originalX = posX;
         this.originalY = posY;
+        this.usada = false;
         this.fila = null;    
         this.columna = null;
     }
@@ -52,7 +53,16 @@ class Ficha extends Figure {
         this.columna=columna;
     }
 
+    setUsada(usada){
+        this.usada=usada;
+    }
+
+    getUsada(){
+        return this.usada;
+    }
+
     resetPosition(){
         this.setPosition(this.originalX, this.originalY);
     }
+   
 }
