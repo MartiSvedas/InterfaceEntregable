@@ -133,14 +133,8 @@ function onMouseDown(e) {
     if (clickedFicha != null) {
         lastClickedFicha = clickedFicha;
     }
-    if(clickedFicha.getUsada()){
-       lastClickedFicha = null; 
-    }
+
     drawFichasJugador();
-
-    // verificar(fichasJug1);
-    // verificar(fichasJug2);
-
     
 }
 
@@ -174,7 +168,6 @@ function onMouseUp(e) {
                     const x = tab.a + result.column * tab.columnasWidth + tab.columnasWidth / 2;
                     const y = tab.b + result.row * tab.filasHeight + tab.filasHeight / 2;
                     lastClickedFicha.setPosition(tab.matriz[result.fila][result.columna].getPosX(), tab.matriz[result.fila][result.columna].getPosY());
-                    lastClickedFicha.setUsada(true);
                     createFicha(x, y, listaJug, image, fila, columna);
                     drawFichasJugador();
                     turnoJug1 = !turnoJug1;
@@ -199,11 +192,6 @@ function onMouseMove(e) {
     }
 }
 
-// function verificar(fichas){
-// let jug= new verificarGanador(fichas, tab);
-
-// jug.verificarSiEsGanador();
-// }
 
 function findClickedFicha(x, y) {
     let fichasJugador;

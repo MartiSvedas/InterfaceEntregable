@@ -80,7 +80,6 @@ class Tablero{
 
      verificar(id){
         let jug= new verificarGanador(id, this);
-        console.log(id);
         jug.verificarSiEsGanador();
         }
 
