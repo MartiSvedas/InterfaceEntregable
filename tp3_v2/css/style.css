@@ -74,6 +74,10 @@ h3{
     color: var(--color-denegado);
 
 }
+
+.espacioJuego .imagenGanadores{
+    visibility: hidden;
+}
 #empezar{
     height: 10%;
     width: 20%;

@@ -64,6 +64,8 @@ class Tablero{
                 if (!this.matriz[fila][columna].isFilled()) {
                     // console.log(fila, columna);
                     this.matriz[fila][columna].dropFicha(jugador, idFicha);
+                    this.a = 138 + columna * this.columnasWidth;
+                    this.b = 40 + fila * this.filasHeight;
                     // console.log(idFicha)     
                     this.verificar(idFicha);
                     return {
@@ -79,7 +81,7 @@ class Tablero{
     }
 
      verificar(id){
-        let jug= new verificarGanador(id, this);
+        let jug= new verificarGanador(id, this, this.context);
         jug.verificarSiEsGanador();
         }
 
