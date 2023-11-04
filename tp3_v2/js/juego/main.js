@@ -170,7 +170,7 @@ function onMouseUp(e) {
                     const x = tab.a + result.column * tab.columnasWidth + tab.columnasWidth / 2;
                     const y = tab.b + result.row * tab.filasHeight + tab.filasHeight / 2;
                     lastClickedFicha.setPosition(tab.matriz[result.fila][result.columna].getPosX(), tab.matriz[result.fila][result.columna].getPosY());
-                    lastClickedFicha.setUsada(true);
+                    // lastClickedFicha.setUsada(true);
                     createFicha(x, y, listaJug, image, fila, columna);
                     drawFichasJugador();
                     turnoJug1 = !turnoJug1;
