@@ -149,9 +149,8 @@ function onMouseUp(e) {
         let columaSeleccionada = null;
         isMouseDown = false;
         for (let i = 0; i < tab.arrDeColumnas.length; i++) {
-            const indicatorX = 200 + i * tab.columnasWidth;
-            const indicatorWidth = tab.columnasWidth;
-            if (e.layerX >= indicatorX && e.layerX < indicatorX + indicatorWidth) {
+            const indicatorX = 190 + i * tab.columnasWidth;
+            if (e.layerX >= indicatorX && e.layerX < indicatorX + tab.columnasWidth) {
                 columaSeleccionada = i;
                 break;
             }
@@ -167,10 +166,8 @@ function onMouseUp(e) {
                     image = imageJug2;
                     listaJug = fichasJug2;
                     idFicha = 2;
-
                 }
                 const result = tab.dropFicha(columaSeleccionada, image, idFicha);
-                
                 if (result) {
                     const fila = result.fila;
                     const columna = result.columna;
