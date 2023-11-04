@@ -136,6 +136,7 @@ function onMouseUp(e) {
         }
         else{
             lastClickedFicha.resetPosition();
+            drawFichasJugador();
         }
         lastClickedFicha = null;
     }
