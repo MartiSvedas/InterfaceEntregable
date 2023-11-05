@@ -165,6 +165,18 @@ class verificarGanador {
           return true;
         }
 
+        setEmpate(){
+            let imageEmpate=new Image();
+             imageEmpate.src="img/juego/Empate.png";
+             imageEmpate.onload=function(){
+                var centerX = canvas.width / 2;
+                var centerY = canvas.height / 2;
+                var newWidth = 500; 
+                var newHeight = 500; 
     
+                context.drawImage(imageEmpate, centerX - newWidth / 2, centerY - newHeight / 2, newWidth, newHeight);
+                }
+        }
+
 
     }
