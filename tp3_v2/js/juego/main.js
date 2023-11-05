@@ -133,9 +133,7 @@ function onMouseDown(e) {
     if (clickedFicha != null) {
         lastClickedFicha = clickedFicha;
     }
-    if(clickedFicha.getUsada()){
-        lastClickedFicha = null; 
-    }
+
     drawFichasJugador();
     
 }
@@ -145,13 +143,14 @@ function onMouseUp(e) {
         let columaSeleccionada = null;
         isMouseDown = false;
         for (let i = 0; i < tab.arrDeColumnas.length; i++) {
-            const indicatorX = 190 + i * tab.columnasWidth;
-            if (e.layerX >= indicatorX && e.layerX < indicatorX + tab.columnasWidth) {
+            const indicatorX = 200 + i * tab.columnasWidth;
+            const indicatorWidth = tab.columnasWidth;
+            if (e.layerX >= indicatorX && e.layerX < indicatorX + indicatorWidth) {
                 columaSeleccionada = i;
                 break;
             }
         }
-        if (columaSeleccionada !== null && e.layerY<90+offsetY) {  
+        if (columaSeleccionada !== null) {
             if (tab.isColumnFull(columaSeleccionada)) {
                 lastClickedFicha.resetPosition();
             } else {
@@ -162,15 +161,16 @@ function onMouseUp(e) {
                     image = imageJug2;
                     listaJug = fichasJug2;
                     idFicha = 2;
+
                 }
                 const result = tab.dropFicha(columaSeleccionada, image, idFicha);
+                
                 if (result) {
                     const fila = result.fila;
                     const columna = result.columna;
                     const x = tab.a + result.column * tab.columnasWidth + tab.columnasWidth / 2;
                     const y = tab.b + result.row * tab.filasHeight + tab.filasHeight / 2;
                     lastClickedFicha.setPosition(tab.matriz[result.fila][result.columna].getPosX(), tab.matriz[result.fila][result.columna].getPosY());
-                    lastClickedFicha.setUsada(true);
                     createFicha(x, y, listaJug, image, fila, columna);
                     drawFichasJugador();
                     turnoJug1 = !turnoJug1;

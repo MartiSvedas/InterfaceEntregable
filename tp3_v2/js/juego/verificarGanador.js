@@ -1,11 +1,11 @@
 "use strict"
 
 class verificarGanador {
-    constructor( idficha,tablero){
+    constructor( idficha,tablero, context){
         // this.fichasJug2=fichasJug2;
         this.idficha=idficha;
         this.tablero=tablero;
-        this.fichasGanadoras = [];
+        this.context=context;
     }
     
     verificarSiEsGanador() {
@@ -36,7 +36,7 @@ class verificarGanador {
                         }
                         if (count === 4) {
                                 console.log("Ganador jugador  " + this.idficha);
-                                finalizarJuego(idficha);
+                                this.finalizarJuego(this.idficha);
                                 return true;
                         }
                         } else {
@@ -63,7 +63,7 @@ class verificarGanador {
                             }
                             if (count === 4) {
                                     console.log("Ganador jugador  " + this.idficha);
-                                    finalizarJuego(idficha);
+                                    this.finalizarJuego(this.idficha);
                                     return true;
                             }
                             } else {
@@ -100,8 +100,8 @@ class verificarGanador {
           
                     if (count === 4) {
                       console.log("Ganador jugador " + this.idficha + " en diagonal hacia la derecha y arriba. ");
-                                // finalizarJuego(idficha);
-                                return true;
+                      this.finalizarJuego(this.idficha);
+                      return true;
                             }
                   }
                 }
@@ -127,8 +127,8 @@ class verificarGanador {
           
                     if (count === 4) {
                       console.log("Ganador jugador " + this.idficha + " en diagonal hacia la derecha y abajo.");
-                                // finalizarJuego(idficha);
-                                return true;
+                      this.finalizarJuego(this.idficha);
+                      return true;
                             }
                   }
                 }
@@ -139,7 +139,32 @@ class verificarGanador {
           
         
           finalizarJuego(idFicha){
+            console.log("entre")
+            let imageGatito=new Image();
+            let imagePerrito=new Image();
+            imageGatito.src="img/juego/GatitoGanador.png";
+            imagePerrito.src="img/juego/PerritoGanador.png";
+            if(idFicha==1){
+                imageGatito.onload = function() {
+                var centerX = canvas.width / 2;
+                var centerY = canvas.height / 2;
+                var newWidth = 500; 
+                var newHeight = 500; 
+    
+                context.drawImage(imageGatito, centerX - newWidth / 2, centerY - newHeight / 2, newWidth, newHeight);
+                }
+          }else if(idFicha==2){
+            imagePerrito.onload = function() {
+                var centerX = canvas.width / 2;
+                var centerY = canvas.height / 2;
+                var newWidth = 500; 
+                var newHeight = 500; 
+    
+                context.drawImage(imagePerrito, centerX - newWidth / 2, centerY - newHeight / 2, newWidth, newHeight);
+                }
           }
+          return true;
+        }
 
     
 
