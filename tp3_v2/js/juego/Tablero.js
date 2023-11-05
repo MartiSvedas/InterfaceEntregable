@@ -7,6 +7,8 @@ class Tablero{
         this.fondo = fondo;
         this.tamFicha = tamFicha;
 
+        this.jug = new verificarGanador(this, this.context);
+
         this.filasHeight = 90;
         this.columnasWidth = 90;
         this.tabWidth = columnas * this.columnasWidth;
@@ -14,6 +16,7 @@ class Tablero{
         this.b = 40;
         this.matriz = [];
         this.arrDeColumnas = [];
+
         this.iniciarCasilleros();
         this.draw();
         this.iniciarArrGuia();
@@ -64,8 +67,9 @@ class Tablero{
                 if (!this.matriz[fila][columna].isFilled()) {
                     // console.log(fila, columna);
                     this.matriz[fila][columna].dropFicha(jugador, idFicha);
-                    // console.log(idFicha)     
+                        
                     this.verificar(idFicha);
+                    console.log(this.verificar(idFicha)); 
                     return {
                         fila,
                         columna
@@ -78,10 +82,9 @@ class Tablero{
 
     }
 
-     verificar(id){
-        let jug= new verificarGanador(id, this, this.context);
-        jug.verificarSiEsGanador();
-        }
+    verificar(id){
+       return this.jug.verificarSiEsGanador(id);
+    }
 
     isColumnFull(columna) {
         for (let fila = 0; fila < this.filas; fila++) {

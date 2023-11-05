@@ -1,52 +1,51 @@
 "use strict"
 
 class verificarGanador {
-    constructor( idficha,tablero, context){
-        // this.fichasJug2=fichasJug2;
-        this.idficha=idficha;
-        this.tablero=tablero;
-        this.context=context;
-    }
+  constructor(tablero, context){
+      // this.fichasJug2=fichasJug2;
+      this.idficha=null;
+      this.tablero=tablero;
+      this.context=context;
+  }
     
-    verificarSiEsGanador() {
-
-            this.checkHorizontal();
-            this.checkVertical() ;
-            this.checkDiagonal();
+    verificarSiEsGanador(id) {
+        this.idficha = id;
+        this.checkHorizontal();
+        this.checkVertical() ;
+        this.checkDiagonal();
             
-            if(!this.checkDiagonal&&!this.checkHorizontal&&!this.checkVertical){
-                this.setEmpate();
-            }
-            
-        
+        if(!this.checkDiagonal&&!this.checkHorizontal&&!this.checkVertical){
+            this.setEmpate();
         }
+      return (this.checkHorizontal()||this.checkVertical()||this.checkDiagonal());
+    }
             
     checkVertical() {
         for (let col = 0; col < this.tablero.columnas; col++) {
             let count = 0;
             let idFichaAnterior = null;
-                for (let fil = 0; fil < this.tablero.filas; fil++) {
+            for (let fil = 0; fil < this.tablero.filas; fil++) {
                 const casilla = this.tablero.matriz[fil][col];
-                    if (casilla.idFicha === this.idficha) {
-                        if (casilla.idFicha === idFichaAnterior) {
-                                count++;                            
-                        } else {
-                                count = 1; 
-                                idFichaAnterior = casilla.idFicha;
-                        }
-                        if (count === 4) {
-                                console.log("Ganador jugador  " + this.idficha);
-                                this.finalizarJuego(this.idficha);
-                                return true;
-                        }
-                        } else {
-                            count = 0; 
-                            idFichaAnterior = null;
-                        }
+                if (casilla.idFicha === this.idficha) {
+                    if (casilla.idFicha === idFichaAnterior) {
+                          count++;                            
+                    } else {
+                          count = 1; 
+                          idFichaAnterior = casilla.idFicha;
                     }
+                    if (count === 4) {
+                          console.log("Ganador jugador  " + this.idficha);
+                          this.finalizarJuego(this.idficha);
+                          return true;
+                    }
+                } else {
+                    count = 0; 
+                    idFichaAnterior = null;
                 }
-                return false;
+            }
         }
+        return false;
+    }
 
         checkHorizontal(){
             for (let fil = 0; fil < this.tablero.filas; fil++) {

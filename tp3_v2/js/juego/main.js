@@ -12,10 +12,12 @@ let fichasJug2 = [];
 let posicionY=50;
 let posicionXJug1= 90;
 let posicionXJug2= 900;
+
 let turnoJug1 = true;
 let juegoIniciado=false;
 let isMouseDown = false;
 let lastClickedFicha;
+let gameOver = false;
 
 let textoEmpezar = document.getElementById("textoEmpezarJuego");
 textoEmpezar.innerHTML="Elija debajo las fichas de cada jugador";
@@ -122,7 +124,7 @@ function clearCanvas(){
 }
 
 function onMouseDown(e) {
-    if (!turnoJug1 && fichasJug2.length === 0) {
+    if ((!turnoJug1 && fichasJug2.length === 0)||gameOver) {
         return;
     }
     isMouseDown = true;
@@ -140,6 +142,9 @@ function onMouseDown(e) {
 }
 
 function onMouseUp(e) {
+    if(gameOver){
+        return;
+    }
     if (lastClickedFicha != null) {
         let columaSeleccionada = null;
         isMouseDown = false;
@@ -175,6 +180,9 @@ function onMouseUp(e) {
                     createFicha(x, y, listaJug, image, fila, columna);
                     drawFichasJugador();
                     turnoJug1 = !turnoJug1;
+                }
+                if (tab.jug.verificarSiEsGanador(idFicha)) {
+                    gameOver = true;
                 }
             }
         }
