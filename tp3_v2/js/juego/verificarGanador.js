@@ -112,7 +112,6 @@ class verificarGanador {
           
                   for (let i = 0; i < 4; i++) {
                     const casilla = this.tablero.matriz[fil + i][col + i];
-          
                     if (casilla.idFicha === this.idficha) {
                       if (casilla.idFicha === idFichaAnterior) {
                         count++;
