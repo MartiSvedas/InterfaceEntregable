@@ -138,7 +138,7 @@ class verificarGanador {
           }
           
         
-          finalizarJuego(idFicha){
+        finalizarJuego(idFicha){
             console.log("entre")
             let imageGatito=new Image();
             let imagePerrito=new Image();
