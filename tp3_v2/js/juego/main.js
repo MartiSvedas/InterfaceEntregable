@@ -23,6 +23,7 @@ let textoEmpezar = document.getElementById("textoEmpezarJuego");
 textoEmpezar.innerHTML="Elija debajo las fichas de cada jugador";
 let textoNoEmpezar=document.getElementById("primeroElijaJugador1");
 
+const btnJugar = document.getElementById("btnJugar");
 const botonesJ1 = document.querySelectorAll('.btn_fichas');
 const botonesJ2 = document.querySelectorAll('.btn_fichas0');
 
@@ -77,24 +78,33 @@ botonesJ2.forEach(function (boton) {
     });
 });
 
-Promise.all([cargarImagen(imageJug1), cargarImagen(imageJug2)]).then(() => {
-    addFichas();
-    drawFichasJugador();
-    textoEmpezar.innerHTML="";
-    juegoIniciado==true;
+btnJugar.addEventListener('click', function () {
+    // Check if both players have selected their tokens
+    if (imgJugador1 && imgJugador2) {
+       // Promise.all([cargarImagen(imageJug1), cargarImagen(imageJug2)]).then(() => {
+            addFichas();
+            drawFichasJugador();
+            textoEmpezar.innerHTML = "";
+            juegoIniciado = true;
+
+        //});
+    } else {
+        // Display a message to inform the players to select their tokens first
+        textoNoEmpezar.innerHTML = "Ambos jugadores deben seleccionar una ficha antes de empezar.";
+    }
 });
 
-function cargarImagen(image) {
+
+/*function cargarImagen(image) {
     return new Promise((resolve) => {
         image.onload = resolve;
     });
-}
+}*/
 
 function addFichas() {
     createFicha(posicionXJug1, posicionY, fichasJug1, imageJug1, null, null);
     createFicha(posicionXJug2, posicionY, fichasJug2, imageJug2, null, null);
     posicionY += 28;
-    
     if (fichasJug1.length < 21 && fichasJug2.length < 21) {
         addFichas();
     }
