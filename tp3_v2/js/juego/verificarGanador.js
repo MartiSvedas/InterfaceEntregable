@@ -15,7 +15,7 @@ class verificarGanador {
             this.checkDiagonal();
             
             if(!this.checkDiagonal&&!this.checkHorizontal&&!this.checkVertical){
-                setEmpate();
+                this.setEmpate();
             }
             
         

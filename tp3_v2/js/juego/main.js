@@ -89,7 +89,6 @@ function cargarImagen(image) {
 }
 
 function addFichas() {
-    juegoIniciado=true;
     createFicha(posicionXJug1, posicionY, fichasJug1, imageJug1, null, null);
     createFicha(posicionXJug2, posicionY, fichasJug2, imageJug2, null, null);
     posicionY += 28;
