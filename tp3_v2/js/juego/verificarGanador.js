@@ -63,7 +63,7 @@ class verificarGanador {
                             }
                             if (count === 4) {
                                     console.log("Ganador jugador  " + this.idficha);
-                                    this.finalizarJuego(idficha);
+                                    this.finalizarJuego(this.idficha);
                                     return true;
                             }
                             } else {
@@ -100,8 +100,8 @@ class verificarGanador {
           
                     if (count === 4) {
                       console.log("Ganador jugador " + this.idficha + " en diagonal hacia la derecha y arriba. ");
-                                finalizarJuego(idficha);
-                                return true;
+                      this.finalizarJuego(this.idficha);
+                      return true;
                             }
                   }
                 }
@@ -127,8 +127,8 @@ class verificarGanador {
           
                     if (count === 4) {
                       console.log("Ganador jugador " + this.idficha + " en diagonal hacia la derecha y abajo.");
-                                finalizarJuego(idficha);
-                                return true;
+                      this.finalizarJuego(this.idficha);
+                      return true;
                             }
                   }
                 }
@@ -163,6 +163,7 @@ class verificarGanador {
                 context.drawImage(imagePerrito, centerX - newWidth / 2, centerY - newHeight / 2, newWidth, newHeight);
                 }
           }
+          return true;
         }
 
     
