@@ -112,7 +112,7 @@ class verificarGanador {
           
                   for (let i = 0; i < 4; i++) {
                     const casilla = this.tablero.matriz[fil + i][col + i];
-                    if (casilla.idFicha === this.idficha) {
+                              if (casilla.idFicha === this.idficha) {
                       if (casilla.idFicha === idFichaAnterior) {
                         count++;
                       } else {
@@ -137,7 +137,7 @@ class verificarGanador {
           }
           
         
-        finalizarJuego(idFicha){
+          finalizarJuego(idFicha){
             console.log("entre")
             let imageGatito=new Image();
             let imagePerrito=new Image();
@@ -165,18 +165,6 @@ class verificarGanador {
           return true;
         }
 
-        setEmpate(){
-            let imageEmpate=new Image();
-             imageEmpate.src="img/juego/Empate.png";
-             imageEmpate.onload=function(){
-                var centerX = canvas.width / 2;
-                var centerY = canvas.height / 2;
-                var newWidth = 500; 
-                var newHeight = 500; 
     
-                context.drawImage(imageEmpate, centerX - newWidth / 2, centerY - newHeight / 2, newWidth, newHeight);
-                }
-        }
-
 
     }
