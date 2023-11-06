@@ -5,7 +5,7 @@ let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let offsetX = 11;
 let offsetY = 190;
-let tab = new Tablero(context, 6, 7, 'rgba(100, 0, 100, 255)', 35);
+let tab = null;
 let fichas=[];
 let fichasJug1 = [];  
 let fichasJug2 = [];
@@ -86,10 +86,10 @@ btnJugar.addEventListener('click', function () {
     if (imgJugador1 && imgJugador2) {
             addFichas();
             drawFichasJugador();
+            tab = new Tablero(context, 6, 7, 'rgba(100, 0, 100, 255)', 35);
             textoEmpezar.innerHTML = "";
             juegoIniciado = true;
             timer = setInterval(iniciarTemporizador, 1000);
-
     } else {
         textoNoEmpezar.innerHTML = "Ambos jugadores deben seleccionar una ficha antes de empezar.";
     }
