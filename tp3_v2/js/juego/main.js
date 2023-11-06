@@ -118,8 +118,8 @@ function drawTemporizador(){
     let tiempoRestante = String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
     context.beginPath();
     context.stroke();
-    context.font = "30px, sans-serif";
-    context.fillStyle = 'black';
+    context.font = "70px, sans-serif";
+    context.fillStyle = 'purple';
     context.textAlign = "center";
     context.fillText(tiempoRestante, (20+(20/2)), (40+60/1.4));
 }
@@ -134,7 +134,7 @@ function addFichas() {
 }
 
 function drawFichasJugador() {
-    clearCanvas();
+    //clearCanvas();
     for (let i = 0; i < fichasJug1.length; i++) {
         fichasJug1[i].draw();
     }
@@ -152,10 +152,11 @@ function createFicha(x, y, playerList, imgFicha, fila, columna) {
 }
 
 function clearCanvas(){
-    let fill = "rgba(0, 10, 22,255)";
+    let fill = "rgba(0, 10, 22, 255)";
     context.fillStyle = fill;
     context.fillRect(0, 0, canvasWidth, canvasHeight);
     tab.draw();
+    drawFichasJugador();
     drawTemporizador();
 }
 
@@ -213,6 +214,7 @@ function onMouseUp(e) {
                     lastClickedFicha.setPosition(tab.matriz[result.fila][result.columna].getPosX(), tab.matriz[result.fila][result.columna].getPosY());
                     lastClickedFicha.setUsada(true);
                     createFicha(x, y, listaJug, image, fila, columna);
+                    clearCanvas();
                     drawFichasJugador();
                     turnoJug1 = !turnoJug1;
                 }
@@ -223,6 +225,7 @@ function onMouseUp(e) {
         }
         else{
             lastClickedFicha.resetPosition();
+            clearCanvas();
             drawFichasJugador();
         }
         lastClickedFicha = null;
@@ -232,9 +235,11 @@ function onMouseUp(e) {
 function onMouseMove(e) {
     if (isMouseDown && lastClickedFicha != null && turnoJug1) {
         lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
+        clearCanvas();
         drawFichasJugador(fichasJug1);
     } else if (isMouseDown && lastClickedFicha != null && !turnoJug1) {
         lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
+        clearCanvas();
         drawFichasJugador(fichasJug2);
     }
 }
