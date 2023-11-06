@@ -96,9 +96,7 @@ class Tablero{
                 if (!this.matriz[fila][columna].isFilled()) {
                     // console.log(fila, columna);
                     this.matriz[fila][columna].dropFicha(jugador, idFicha);
-                        
                     this.verificar(idFicha);
-                    console.log(this.verificar(idFicha)); 
                     return {
                         fila,
                         columna
@@ -108,12 +106,12 @@ class Tablero{
         }
         
         return null; 
-
+        
     }
-
+    
     verificar(id){
-       return this.jug.verificarSiEsGanador(id);
-    }
+        return  this.jug.verificarSiEsGanador(id);
+        }
 
     isColumnFull(columna) {
         for (let fila = 0; fila < this.filas; fila++) {

@@ -6,6 +6,8 @@ let canvasHeight = canvas.height;
 let offsetX = 11;
 let offsetY = 190;
 let tab = null;
+let tabFilas=6;
+let tabColumnas=7;
 let fichas=[];
 let fichasJug1 = [];  
 let fichasJug2 = [];
@@ -23,6 +25,14 @@ let isMouseDown = false;
 let lastClickedFicha;
 let gameOver = false;
 
+let boton = {
+    x: 5,
+    y: 5,
+    ancho: 50,
+    alto: 20,
+    texto: "Reiniciar",
+};
+
 let textoEmpezar = document.getElementById("textoEmpezarJuego");
 textoEmpezar.innerHTML="Elija debajo las fichas de cada jugador";
 let textoNoEmpezar=document.getElementById("primeroElijaJugador1");
@@ -30,7 +40,6 @@ let textoNoEmpezar=document.getElementById("primeroElijaJugador1");
 const btnJugar = document.getElementById("btnJugar");
 const botonesJ1 = document.querySelectorAll('.btn_fichas');
 const botonesJ2 = document.querySelectorAll('.btn_fichas0');
-const cantEnLinea = document.getElementById("cantEnLinea");
 
 let imgJugador1=null;
 const imageJug1 = new Image();
@@ -39,12 +48,13 @@ const imageJug2 = new Image();
 
 let imgSeleccionadaJugador1=null;
 
-
 botonesJ1.forEach(function (boton) {
     boton.addEventListener('click', function() {
         const img = boton.querySelector("img");
         const imgSrc = img.getAttribute("src");
-        if (imgSeleccionadaJugador1) {
+
+        if ( imgSeleccionadaJugador1) {
+     
             imgSeleccionadaJugador1.parentNode.style.border = 'initial';
         }
         if(juegoIniciado==false){
@@ -53,7 +63,7 @@ botonesJ1.forEach(function (boton) {
         boton.style.border = '4px solid red';
         imageJug1.src = imgJugador1;
         }else{
-            textoNoEmpezar.innerHTML="Ya tiene seleccionada su ficha"
+            textoNoEmpezar.innerHTML="El juego ya inicio"
         }
     });
 });
@@ -62,6 +72,9 @@ botonesJ2.forEach(function (boton) {
     boton.addEventListener('click', function() {
         const img = boton.querySelector("img");
         const imgSrc = img.getAttribute("src");
+        if(imgJugador2){
+            imgJugador2.parentNode.style.border = 'initial';
+        }
     if(imgJugador1!=null ){
         if(juegoIniciado==false){
          imgJugador2 = imgSrc;
@@ -69,22 +82,20 @@ botonesJ2.forEach(function (boton) {
          boton.style.border = '4px solid red'; 
          imageJug2.src = imgJugador2;
         }else{
-            textoNoEmpezar.innerHTML="Ya tiene seleccionada su ficha"
+            textoNoEmpezar.innerHTML="El juego ya inicio"
         }           
     }else{
     textoNoEmpezar.innerHTML="Primero debe elejir el Jugador 1"
 }  
     });
 });
-
-//agrega eventListener al btnJugar
+//agregar eventListener al btnJugar
 btnJugar.addEventListener('click', function () {
     //si los dos jugadores eligieron sus fichas, se llama a..
-    if ((imgJugador1 && imgJugador2)&& !juegoIniciado) {
-        const nroTablero = parseInt(cantEnLinea.value);
-        tab = new Tablero(context, nroTablero, 'rgba(100, 0, 100, 255)'); //se crea el tablero
+    if (imgJugador1 && imgJugador2) {
         addFichas(); //funcion para agregar fichas
         drawFichasJugador(); //funcion para dibujar fichas
+        tab = new Tablero(context, tabFilas, tabColumnas, 'rgba(100, 0, 100, 255)', 35); //se crea el tablero
         textoEmpezar.innerHTML = "";
         juegoIniciado = true; //se "inicia" el juego, seteando la variable a true
         timer = setInterval(iniciarTemporizador, 1000); //se declara timer y llama a la funcion que lo inicia
@@ -110,9 +121,47 @@ function iniciarTemporizador(){
         }
     }
 }
+//dibujo el boton de reinicio
+function dibujarBoton() {
+    context.fillStyle = 'rgb(89, 33, 0)'; // Color del botón
+    context.font = "10px Arial"
+    context.fillRect(boton.x, boton.y, boton.ancho, boton.alto);
+    context.fillStyle = 'white'; // Color del texto
+    context.fillText(boton.texto, boton.x + 25, boton.y + 13);
+
+    
+}
+canvas.addEventListener('click', handleClick, false);
+
+function handleClick(event) {
+    let rect = canvas.getBoundingClientRect();
+    let mouseX = event.clientX - rect.left;
+    let mouseY = event.clientY - rect.top;
+
+    if (mouseX >= boton.x && mouseX <= boton.x + boton.ancho && mouseY >= boton.y && mouseY <= boton.y + boton.alto) {
+        //reinicio todo el juego
+        tab=null;
+        fichas=[];
+            fichasJug1=[];
+            fichasJug2=[];
+            posicionY=50;
+            posicionXJug1=90;
+            posicionXJug2=900;
+            imgJugador1=null;
+            imgJugador2=null;
+            turnoJug1=true;
+            juegoIniciado=false;
+            isMouseDown=false;
+            gameOver=false;
+            timer=null;
+            textoEmpezar.innerHTML="Elija debajo las fichas de cada jugador";
+            clearCanvas();
+    }
+}
 
 //dibujo el temporizador
 function drawTemporizador(){
+    dibujarBoton();
     //creo variable de texto con los min y seg
     let tiempoDeJuego = String(mins) + ':' + String(secs).padStart(2,'0');
     context.font = "40px Arial"; //seteo tamaño y fuente
@@ -124,16 +173,16 @@ function drawTemporizador(){
 function addFichas() {
     createFicha(posicionXJug1, posicionY, fichasJug1, imageJug1, null, null); //crear fichas con var jug1
     createFicha(posicionXJug2, posicionY, fichasJug2, imageJug2, null, null); //crear fichas con var jug2
-    posicionY += tab.tamFicha-7; //aumento la posicion en Y
+    posicionY += 28; //aumento la posicion en Y
     //si las fichas de c/jug son menos a la cantidad de casilleros dividido 2
-    if (fichasJug1.length < tab.columnas*tab.filas/2 && fichasJug2.length < tab.columnas*tab.filas/2) {
+    if (fichasJug1.length < tabColumnas*tabFilas/2 && fichasJug2.length < tabColumnas*tabFilas/2) {
         addFichas(); //llamo a addFichas otra vez para seguir creando nuevas fichas
     }
 }
 
 //creo ficha, paso posX, posY, lista a la q pertenece, img, fila y columna
 function createFicha(x, y, listaJug, imgFicha, fila, columna) {
-    let ficha = new Ficha(x, y, tab.tamFicha, context, imgFicha); //creo variable y nueva instancia de clase ficha
+    let ficha = new Ficha(x, y, 35, context, imgFicha); //creo variable y nueva instancia de clase ficha
     ficha.setFila(fila); //seteo la fila
     ficha.setColumna(columna); //seteo la columna
     listaJug.push(ficha); //la agrego a la lista del jug q corresponda
@@ -168,10 +217,13 @@ function onMouseDown(e) {
     isMouseDown = true; //seteo isMouseDown a true
     //creo variable clickedFicha y llamo a la funcion que la encuentra pasando el click en x e y (restando parte del html q no es canvas)
     let clickedFicha = findClickedFicha(e.layerX - offsetX, e.layerY - offsetY);
-    if (clickedFicha != null && !clickedFicha.getUsada()) { //si el rtdo es distinto de null y la ficha no fue usada
-        lastClickedFicha = clickedFicha; //se setea lastClickedFicha con la ficha nueva
+    if (clickedFicha != null) { //si el rtdo es distinto de null
+        lastClickedFicha = clickedFicha;
     }
-    drawFichasJugador(); //se llama a la funcion dibujar fichas
+    if(clickedFicha.getUsada()){ //si el resultado devuelve q la ficha ya fue usada
+        lastClickedFicha = null; //seteo a null
+    }
+    drawFichasJugador();
 }
 //cuando se suelta el mouse
 function onMouseUp(e) {
@@ -205,59 +257,67 @@ function onMouseUp(e) {
                 }
                 //creo variable result,, llamo a dropFicha del tablero con la columna, imagen e idFicha
                 const result = tab.dropFicha(columaSeleccionada, image, idFicha);
-                if (result) {//si hay un rtd... creo constantes
-                    const fila = result.fila; 
+
+                if (result) {//si hay un rtd
+                    const fila = result.fila;
                     const columna = result.columna;
                     const x = tab.a + result.column * tab.columnasWidth + tab.columnasWidth / 2;
                     const y = tab.b + result.row * tab.filasHeight + tab.filasHeight / 2;
-                    //cambio la ficha de lugar con setPosition busco las pos X e Y de la casilla a la q corresponderia
                     lastClickedFicha.setPosition(tab.matriz[result.fila][result.columna].getPosX(), tab.matriz[result.fila][result.columna].getPosY());
-                    lastClickedFicha.setUsada(true); //marco la ficha como usada
-                    createFicha(x, y, listaJug, image, fila, columna); //creo la ficha con las nuevas pos x e y, imagen y seteando la dila y col
-                    clearCanvas(); //redibujo canvas
-                    turnoJug1 = !turnoJug1; //cambio de turno
+                    lastClickedFicha.setUsada(true);
+                    createFicha(x, y, listaJug, image, fila, columna);
+                    clearCanvas();
+                    drawFichasJugador();
+                    turnoJug1 = !turnoJug1;
                 }
-                if (tab.jug.verificarSiEsGanador(idFicha)) { //si se encuentran x cant de fichas alineadas con ese id
-                    gameOver = true; //seteo gameOver para cortar juego
-                    clearInterval(timer); //corto timer
+                let gano= tab.jug.verificarSiEsGanador(idFicha);
+                if (gano) {
+                    gameOver = true;
+                    clearInterval(timer);
                 }
             }
         }
-        else{ //si no se encuentra pos valida para tirar la ficha
-            lastClickedFicha.resetPosition(); //la ficha clickeada vuelve a su lugar original
-            clearCanvas(); //redibujo canvas
+        else{
+            lastClickedFicha.resetPosition();
+            clearCanvas();
+            drawFichasJugador();
         }
-        lastClickedFicha = null; //seteo lastClickedFicha nuevamente a null
+        lastClickedFicha = null;
     }
 }
 
-function onMouseMove(e) { //cuando muevo el mouse
-    if (isMouseDown && lastClickedFicha != null && turnoJug1) { //si estoy apretando el mouse, seleccionando una ficha y es turno jug1
-        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY); //seteo la pos de la ficha al click del evento
-        clearCanvas(); //redibujo canvas
-    } else if (isMouseDown && lastClickedFicha != null && !turnoJug1) { //si estoy apretando el mouse, seleccionando una ficha y es turno jug2
-        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY); //seteo la pos de la ficha al click del evento
-        clearCanvas(); //redibujo canvas
+function onMouseMove(e) {
+    if (isMouseDown && lastClickedFicha != null && turnoJug1) {
+        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
+        clearCanvas();
+        drawFichasJugador(fichasJug1);
+    } else if (isMouseDown && lastClickedFicha != null && !turnoJug1) {
+        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
+        clearCanvas();
+        drawFichasJugador(fichasJug2);
     }
 }
 
-//busco ficha clickeada con parametros x e y
+
 function findClickedFicha(x, y) {
-    let fichasJugador; //creo variable fichasJug
-    if (turnoJug1) { //si es el turno del jug1
-        fichasJugador = fichasJug1; //seteo variable al array del jug1
-    } else { //si no
-        fichasJugador = fichasJug2; //seteo a array del jug2
+    let fichasJugador;
+
+    if (turnoJug1) {
+        fichasJugador = fichasJug1;
+    } else {
+        fichasJugador = fichasJug2;
+
     }
-    for (let i = 0; i < fichasJugador.length; i++) { //itero la lista de las fichas
-        const fichaSelec = fichasJugador[i]; //constante igual a la ficha del array actual
-        if (fichaSelec.isPointInside(x, y)) { //llamo a la funcion isPointInside de ficha para verificar si la ficha esta siendo clickeada
-            return fichasJugador[i]; //devuelvo la ficha clickeada
+
+    for (let i = 0; i < fichasJugador.length; i++) {
+        const fichaSelec = fichasJugador[i];
+        if (fichaSelec.isPointInside(x, y)) {
+            return fichasJugador[i];
         }
     }
 }
 
-//agrego eventListeners a las acciones del mouse
+
 canvas.addEventListener('mousedown', onMouseDown, false);
 canvas.addEventListener('mouseup', onMouseUp, false);
 canvas.addEventListener('mousemove', onMouseMove, false);
