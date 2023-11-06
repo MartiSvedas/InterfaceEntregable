@@ -83,9 +83,7 @@ botonesJ2.forEach(function (boton) {
 });
 
 btnJugar.addEventListener('click', function () {
-    // Check if both players have selected their tokens
     if (imgJugador1 && imgJugador2) {
-       // Promise.all([cargarImagen(imageJug1), cargarImagen(imageJug2)]).then(() => {
             addFichas();
             drawFichasJugador();
             textoEmpezar.innerHTML = "";
@@ -93,9 +91,7 @@ btnJugar.addEventListener('click', function () {
             //drawTemporizador();
             timer = setInterval(iniciarTemporizador, 1000);
 
-        //});
     } else {
-        // Display a message to inform the players to select their tokens first
         textoNoEmpezar.innerHTML = "Ambos jugadores deben seleccionar una ficha antes de empezar.";
     }
 });
@@ -120,21 +116,13 @@ function iniciarTemporizador(){
 
 function drawTemporizador(){
     let tiempoRestante = String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
-    context.fillStyle = "rgba(242,75,235,1)";
-    context.fillRect(20, 40, 20, 60);
     context.beginPath();
     context.stroke();
-    context.font = "30px 'M PLUS Rounded 1c', sans-serif";
-    context.fillStyle = 'white';
+    context.font = "30px, sans-serif";
+    context.fillStyle = 'black';
     context.textAlign = "center";
     context.fillText(tiempoRestante, (20+(20/2)), (40+60/1.4));
 }
-
-/*function cargarImagen(image) {
-    return new Promise((resolve) => {
-        image.onload = resolve;
-    });
-}*/
 
 function addFichas() {
     createFicha(posicionXJug1, posicionY, fichasJug1, imageJug1, null, null);
@@ -164,7 +152,7 @@ function createFicha(x, y, playerList, imgFicha, fila, columna) {
 }
 
 function clearCanvas(){
-    let fill = "rgba(2,48,82,255)";
+    let fill = "rgba(0, 10, 22,255)";
     context.fillStyle = fill;
     context.fillRect(0, 0, canvasWidth, canvasHeight);
     tab.draw();
