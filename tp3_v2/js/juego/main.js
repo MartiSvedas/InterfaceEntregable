@@ -13,8 +13,8 @@ let posicionY=50;
 let posicionXJug1= 90;
 let posicionXJug2= 900;
 
-let mins = 5;
-let secs = 0;
+let mins = 0;
+let secs = 15;
 let timer = null;
 
 let turnoJug1 = true;
@@ -100,11 +100,12 @@ btnJugar.addEventListener('click', function () {
 });
 
 function iniciarTemporizador(){
-    //drawTemporizador();
+    drawTemporizador();
     console.log(mins, secs);
     if(mins==0 && secs==0){
         clearInterval(timer);
         gameOver = true;
+        tab.jug.setEmpate();
     }else{
         if(secs==0){
             mins--;
@@ -113,6 +114,10 @@ function iniciarTemporizador(){
             secs--;
         }
     }
+}
+
+function drawTemporizador(){
+    
 }
 
 /*function cargarImagen(image) {
@@ -168,7 +173,6 @@ function onMouseDown(e) {
         lastClickedFicha = null; 
     }
     drawFichasJugador();
-    
 }
 
 function onMouseUp(e) {
