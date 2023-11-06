@@ -13,7 +13,7 @@ class Tablero{
         this.columnasWidth = 90;
         this.tabWidth = columnas * this.columnasWidth;
         this.a = 138;
-        this.b = 40;
+        this.b = 50;
         this.matriz = [];
         this.arrDeColumnas = [];
 
@@ -39,7 +39,7 @@ class Tablero{
         for (let i = 0; i < this.arrDeColumnas.length; i++) {
             const indicator = this.arrDeColumnas[i];
             const indicatorX = 200 + i * this.columnasWidth;
-            const indicatorY = 20;
+            const indicatorY = 35;
             this.context.drawImage(indicator, indicatorX, indicatorY);
         }
     }

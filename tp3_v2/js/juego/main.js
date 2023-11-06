@@ -88,7 +88,6 @@ btnJugar.addEventListener('click', function () {
             drawFichasJugador();
             textoEmpezar.innerHTML = "";
             juegoIniciado = true;
-            //drawTemporizador();
             timer = setInterval(iniciarTemporizador, 1000);
 
     } else {
@@ -98,7 +97,6 @@ btnJugar.addEventListener('click', function () {
 
 function iniciarTemporizador(){
     drawTemporizador();
-    console.log(mins, secs);
     if(mins==0 && secs==0){
         clearInterval(timer);
         gameOver = true;
@@ -115,13 +113,11 @@ function iniciarTemporizador(){
 }
 
 function drawTemporizador(){
-    let tiempoRestante = String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
-    context.beginPath();
-    context.stroke();
-    context.font = "70px, sans-serif";
+    let tiempoDeJuego = String(mins).padStart(1,'0') + ':' + String(secs).padStart(2,'0');
+    context.font = "40px Arial";
     context.fillStyle = 'purple';
     context.textAlign = "center";
-    context.fillText(tiempoRestante, (20+(20/2)), (40+60/1.4));
+    context.fillText(tiempoDeJuego, (canvasWidth/2), 32);
 }
 
 function addFichas() {
@@ -134,7 +130,6 @@ function addFichas() {
 }
 
 function drawFichasJugador() {
-    //clearCanvas();
     for (let i = 0; i < fichasJug1.length; i++) {
         fichasJug1[i].draw();
     }
