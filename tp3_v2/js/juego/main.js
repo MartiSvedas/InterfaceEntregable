@@ -13,6 +13,10 @@ let posicionY=50;
 let posicionXJug1= 90;
 let posicionXJug2= 900;
 
+let mins = 5;
+let secs = 0;
+let timer = null;
+
 let turnoJug1 = true;
 let juegoIniciado=false;
 let isMouseDown = false;
@@ -86,6 +90,7 @@ btnJugar.addEventListener('click', function () {
             drawFichasJugador();
             textoEmpezar.innerHTML = "";
             juegoIniciado = true;
+            timer = setInterval(iniciarTemporizador, 1000);
 
         //});
     } else {
@@ -94,6 +99,21 @@ btnJugar.addEventListener('click', function () {
     }
 });
 
+function iniciarTemporizador(){
+    //drawTemporizador();
+    console.log(mins, secs);
+    if(mins==0 && secs==0){
+        clearInterval(timer);
+        gameOver = true;
+    }else{
+        if(secs==0){
+            mins--;
+            secs=59;
+        } else{
+            secs--;
+        }
+    }
+}
 
 /*function cargarImagen(image) {
     return new Promise((resolve) => {
