@@ -13,8 +13,8 @@ let posicionY=50;
 let posicionXJug1= 90;
 let posicionXJug2= 900;
 
-let mins = 0;
-let secs = 15;
+let mins = 4;
+let secs = 0;
 let timer = null;
 
 let turnoJug1 = true;
@@ -90,6 +90,7 @@ btnJugar.addEventListener('click', function () {
             drawFichasJugador();
             textoEmpezar.innerHTML = "";
             juegoIniciado = true;
+            //drawTemporizador();
             timer = setInterval(iniciarTemporizador, 1000);
 
         //});
@@ -107,6 +108,7 @@ function iniciarTemporizador(){
         gameOver = true;
         tab.jug.setEmpate();
     }else{
+        clearCanvas();
         if(secs==0){
             mins--;
             secs=59;
@@ -117,7 +119,15 @@ function iniciarTemporizador(){
 }
 
 function drawTemporizador(){
-    
+    let tiempoRestante = String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
+    context.fillStyle = "rgba(242,75,235,1)";
+    context.fillRect(20, 40, 20, 60);
+    context.beginPath();
+    context.stroke();
+    context.font = "30px 'M PLUS Rounded 1c', sans-serif";
+    context.fillStyle = 'white';
+    context.textAlign = "center";
+    context.fillText(tiempoRestante, (20+(20/2)), (40+60/1.4));
 }
 
 /*function cargarImagen(image) {
@@ -154,8 +164,11 @@ function createFicha(x, y, playerList, imgFicha, fila, columna) {
 }
 
 function clearCanvas(){
+    let fill = "rgba(2,48,82,255)";
+    context.fillStyle = fill;
     context.fillRect(0, 0, canvasWidth, canvasHeight);
     tab.draw();
+    drawTemporizador();
 }
 
 function onMouseDown(e) {
