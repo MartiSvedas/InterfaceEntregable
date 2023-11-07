@@ -89,7 +89,8 @@ botonesJ2.forEach(function (boton) {
 }  
     });
 });
-//agregar eventListener al btnJugar
+
+
 btnJugar.addEventListener('click', function () {
     //si los dos jugadores eligieron sus fichas, se llama a..
     if (imgJugador1 && imgJugador2) {

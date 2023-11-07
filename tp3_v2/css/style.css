@@ -370,6 +370,8 @@ section img.btnright,section img.btnleft{
     width: 30px;
 }
 
+
+
 section img.btnright{
     right: 3px;
 
@@ -585,7 +587,19 @@ a.linkajuego {
     color: var(--simil-blanco);
     margin: 1%;
 }
-
+#btnJugar{
+border: 0px;
+border-radius: 7px;
+background-color: var(--color-secundario);
+cursor: pointer;
+width: 150px;
+height: 43px;
+font-family: 'Nunito';
+font-size: 20px;
+}
+#btnJugar:hover{
+    background-color: var(--color-secundario-luz2);
+}
 footer{
     height: 290px;
     align-items: center;
@@ -829,7 +843,10 @@ footer img{
     flex-direction: row;
     justify-content: space-around;
 }
-
+.imgsDetallesJuego .imgGanador{
+    width: 217px;
+    height: 118px;
+}
 video{
     height: 119px;
     width: 200px;
@@ -923,7 +940,6 @@ article .comentarioTxt h3{
 
     position:absolute;
     left: 52%;
-    top: 20%;
 }
 .button-container label img:hover{
     width: 30px;
