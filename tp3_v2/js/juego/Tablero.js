@@ -1,17 +1,18 @@
 
 class Tablero{
-    constructor(context, cantEnLinea, fondo, tamFicha){
+    constructor(context, cantEnLinea, fondo){
         this.context = context;
         this.cantEnLinea=cantEnLinea;
         this.fondo = fondo;
-        this.tamFicha = tamFicha;
         this.filas = cantEnLinea+2;
         this.columnas = cantEnLinea+3;
-
-        this.jug = new verificarGanador(this, this.context, this.cantEnLinea);
-
         this.filasHeight;
         this.columnasWidth;
+        this.tamFicha;
+        
+        this.jug = new verificarGanador(this, this.context, this.cantEnLinea);
+
+        
         this.tabWidth = this.columnas * this.columnasWidth;
         this.a = 138;
         this.b = 50;
@@ -26,12 +27,12 @@ class Tablero{
     }
 
     setFilasHeightColWidth(){
-        this.filasHeight=70;
-        this.columnasWidth=70;
+        this.filasHeight=60;
+        this.columnasWidth=60;
     }
 
     setTamFicha(){
-        this.tamFicha = this.filasHeight / 3;
+        this.tamFicha = (this.filasHeight/3)+5;
     }
 
     iniciarArrGuia(){

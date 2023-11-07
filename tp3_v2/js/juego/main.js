@@ -84,7 +84,7 @@ btnJugar.addEventListener('click', function () {
     //si los dos jugadores eligieron sus fichas, se llama a..
     if ((imgJugador1 && imgJugador2)&& !juegoIniciado) {
         const nroTablero = parseInt(cantEnLinea.value);
-        tab = new Tablero(context, nroTablero, 'rgba(100, 0, 100, 255)', 35); //se crea el tablero
+        tab = new Tablero(context, nroTablero, 'rgba(100, 0, 100, 255)'); //se crea el tablero
         addFichas(); //funcion para agregar fichas
         drawFichasJugador(); //funcion para dibujar fichas
         textoEmpezar.innerHTML = "";
@@ -135,7 +135,7 @@ function addFichas() {
 
 //creo ficha, paso posX, posY, lista a la q pertenece, img, fila y columna
 function createFicha(x, y, listaJug, imgFicha, fila, columna) {
-    let ficha = new Ficha(x, y, 35, context, imgFicha); //creo variable y nueva instancia de clase ficha
+    let ficha = new Ficha(x, y, tab.tamFicha, context, imgFicha); //creo variable y nueva instancia de clase ficha
     ficha.setFila(fila); //seteo la fila
     ficha.setColumna(columna); //seteo la columna
     listaJug.push(ficha); //la agrego a la lista del jug q corresponda
