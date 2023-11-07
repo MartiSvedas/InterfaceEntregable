@@ -6,8 +6,6 @@ let canvasHeight = canvas.height;
 let offsetX = 11;
 let offsetY = 190;
 let tab = null;
-let tabFilas=6;
-let tabColumnas=7;
 let fichas=[];
 let fichasJug1 = [];  
 let fichasJug2 = [];
@@ -126,9 +124,9 @@ function drawTemporizador(){
 function addFichas() {
     createFicha(posicionXJug1, posicionY, fichasJug1, imageJug1, null, null); //crear fichas con var jug1
     createFicha(posicionXJug2, posicionY, fichasJug2, imageJug2, null, null); //crear fichas con var jug2
-    posicionY += 28; //aumento la posicion en Y
+    posicionY += tab.tamFicha-7; //aumento la posicion en Y
     //si las fichas de c/jug son menos a la cantidad de casilleros dividido 2
-    if (fichasJug1.length < tabColumnas*tabFilas/2 && fichasJug2.length < tabColumnas*tabFilas/2) {
+    if (fichasJug1.length < tab.columnas*tab.filas/2 && fichasJug2.length < tab.columnas*tab.filas/2) {
         addFichas(); //llamo a addFichas otra vez para seguir creando nuevas fichas
     }
 }

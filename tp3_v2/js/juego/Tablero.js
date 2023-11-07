@@ -1,15 +1,14 @@
 
 class Tablero{
-    constructor(context, cantEnLinea, fondo){
+    constructor(context, cantEnLinea){
         this.context = context;
         this.cantEnLinea=cantEnLinea;
-        this.fondo = fondo;
         this.filas = cantEnLinea+2;
         this.columnas = cantEnLinea+3;
         this.filasHeight;
         this.columnasWidth;
         this.tamFicha;
-        
+
         this.jug = new verificarGanador(this, this.context, this.cantEnLinea);
 
         
@@ -27,8 +26,25 @@ class Tablero{
     }
 
     setFilasHeightColWidth(){
-        this.filasHeight=60;
-        this.columnasWidth=60;
+        switch(this.cantEnLinea){
+            case 4:
+                this.filasHeight=90;
+                this.columnasWidth=90;
+                break;
+            case 5:
+                this.filasHeight=80;
+                this.columnasWidth=80;
+                break;
+            case 6:
+                this.filasHeight=70;
+                this.columnasWidth=70;
+                break;
+            case 7:
+                this.filasHeight=70;
+                this.columnasWidth=70;
+                break;
+        }
+        
     }
 
     setTamFicha(){
@@ -58,7 +74,7 @@ class Tablero{
     }
     
     crearCasilla(a, b){   
-       let cas = new Casilla(a, b, this.tamFicha,this.fondo,this.context);
+       let cas = new Casilla(a, b, this.tamFicha, this.context, this.filasHeight, this.columnasWidth);
        return cas;
     }
 

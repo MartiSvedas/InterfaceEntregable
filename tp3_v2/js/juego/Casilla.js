@@ -1,10 +1,12 @@
 
 class Casilla extends Figure{
-    constructor(posX, posY, radius, fill, context){
+    constructor(posX, posY, radius, context, filasHeight, columnasWidth){
         super(posX, posY, context);
         this.radius = radius;
         this.context=context;
-        this.fill=fill;
+        this.fill='rgba(200, 0, 250, 255)';
+        this.filasHeight=filasHeight;
+        this.columnasWidth=columnasWidth;
         this.jugador = null;
         this.idFicha = 0;
     }
@@ -20,7 +22,7 @@ class Casilla extends Figure{
 
     drawRect(a, b){
         this.context.fillStyle = this.fill;
-        this.context.fillRect(a-(this.radius+10), b-(this.radius+10), 90, 90);
+        this.context.fillRect(a-(this.filasHeight/2), b-(this.columnasWidth/2), this.filasHeight, this.columnasWidth);
     }
 
     isFilled() {
