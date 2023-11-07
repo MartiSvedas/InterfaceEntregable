@@ -168,11 +168,8 @@ function onMouseDown(e) {
     isMouseDown = true; //seteo isMouseDown a true
     //creo variable clickedFicha y llamo a la funcion que la encuentra pasando el click en x e y (restando parte del html q no es canvas)
     let clickedFicha = findClickedFicha(e.layerX - offsetX, e.layerY - offsetY);
-    if (clickedFicha != null) { //si el rtdo es distinto de null
+    if (clickedFicha != null && !clickedFicha.getUsada()) { //si el rtdo es distinto de null
         lastClickedFicha = clickedFicha;
-    }
-    if(clickedFicha.getUsada()){ //si el resultado devuelve q la ficha ya fue usada
-        lastClickedFicha = null; //seteo a null
     }
     drawFichasJugador();
 }
@@ -209,7 +206,7 @@ function onMouseUp(e) {
                 //creo variable result,, llamo a dropFicha del tablero con la columna, imagen e idFicha
                 const result = tab.dropFicha(columaSeleccionada, image, idFicha);
                 if (result) {//si hay un rtd
-                    const fila = result.fila;
+                    const fila = result.fila; 
                     const columna = result.columna;
                     const x = tab.a + result.column * tab.columnasWidth + tab.columnasWidth / 2;
                     const y = tab.b + result.row * tab.filasHeight + tab.filasHeight / 2;
@@ -222,6 +219,7 @@ function onMouseUp(e) {
                 }
                 if (tab.jug.verificarSiEsGanador(idFicha)) {
                     gameOver = true;
+                    clearInterval(timer);
                 }
             }
         }
