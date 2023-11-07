@@ -46,8 +46,11 @@ h2{
     font-size: 19px;
     line-height: 36px; 
     letter-spacing: -0.095px;
+    margin-left: 5%;
 }
-
+.opcionesJuego button{
+    margin-left: 5%;
+}
 h3{
     font-size: 16px;
     font-weight: 600;
@@ -765,7 +768,7 @@ footer img{
 
 .opcionesJuego{
     background-color: var(--color-primario-luz1);
-    width: 600px;
+    width: 750px;
     height: 490px;
     border-radius: 2%;
 }
@@ -835,7 +838,9 @@ footer img{
     text-align: justify;
     margin-bottom: 3%;
 }
-
+.detallesJuego h3{
+    margin-top: 0.5%;
+}
 .imgsDetallesJuego{
     margin: 2%;
     margin-top: 4%;
