@@ -168,10 +168,10 @@ function onMouseDown(e) {
     isMouseDown = true; //seteo isMouseDown a true
     //creo variable clickedFicha y llamo a la funcion que la encuentra pasando el click en x e y (restando parte del html q no es canvas)
     let clickedFicha = findClickedFicha(e.layerX - offsetX, e.layerY - offsetY);
-    if (clickedFicha != null && !clickedFicha.getUsada()) { //si el rtdo es distinto de null
-        lastClickedFicha = clickedFicha;
+    if (clickedFicha != null && !clickedFicha.getUsada()) { //si el rtdo es distinto de null y la ficha no fue usada
+        lastClickedFicha = clickedFicha; //se setea lastClickedFicha con la ficha nueva
     }
-    drawFichasJugador();
+    drawFichasJugador(); //se llama a la funcion dibujar fichas
 }
 //cuando se suelta el mouse
 function onMouseUp(e) {
@@ -205,65 +205,59 @@ function onMouseUp(e) {
                 }
                 //creo variable result,, llamo a dropFicha del tablero con la columna, imagen e idFicha
                 const result = tab.dropFicha(columaSeleccionada, image, idFicha);
-                if (result) {//si hay un rtd
+                if (result) {//si hay un rtd... creo constantes
                     const fila = result.fila; 
                     const columna = result.columna;
                     const x = tab.a + result.column * tab.columnasWidth + tab.columnasWidth / 2;
                     const y = tab.b + result.row * tab.filasHeight + tab.filasHeight / 2;
+                    //cambio la ficha de lugar con setPosition busco las pos X e Y de la casilla a la q corresponderia
                     lastClickedFicha.setPosition(tab.matriz[result.fila][result.columna].getPosX(), tab.matriz[result.fila][result.columna].getPosY());
-                    lastClickedFicha.setUsada(true);
-                    createFicha(x, y, listaJug, image, fila, columna);
-                    clearCanvas();
-                    drawFichasJugador();
-                    turnoJug1 = !turnoJug1;
+                    lastClickedFicha.setUsada(true); //marco la ficha como usada
+                    createFicha(x, y, listaJug, image, fila, columna); //creo la ficha con las nuevas pos x e y, imagen y seteando la dila y col
+                    clearCanvas(); //redibujo canvas
+                    turnoJug1 = !turnoJug1; //cambio de turno
                 }
-                if (tab.jug.verificarSiEsGanador(idFicha)) {
-                    gameOver = true;
-                    clearInterval(timer);
+                if (tab.jug.verificarSiEsGanador(idFicha)) { //si se encuentran x cant de fichas alineadas con ese id
+                    gameOver = true; //seteo gameOver para cortar juego
+                    clearInterval(timer); //corto timer
                 }
             }
         }
-        else{
-            lastClickedFicha.resetPosition();
-            clearCanvas();
-            drawFichasJugador();
+        else{ //si no se encuentra pos valida para tirar la ficha
+            lastClickedFicha.resetPosition(); //la ficha clickeada vuelve a su lugar original
+            clearCanvas(); //redibujo canvas
         }
-        lastClickedFicha = null;
+        lastClickedFicha = null; //seteo lastClickedFicha nuevamente a null
     }
 }
 
-function onMouseMove(e) {
-    if (isMouseDown && lastClickedFicha != null && turnoJug1) {
-        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
-        clearCanvas();
-        drawFichasJugador(fichasJug1);
-    } else if (isMouseDown && lastClickedFicha != null && !turnoJug1) {
-        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY);
-        clearCanvas();
-        drawFichasJugador(fichasJug2);
+function onMouseMove(e) { //cuando muevo el mouse
+    if (isMouseDown && lastClickedFicha != null && turnoJug1) { //si estoy apretando el mouse, seleccionando una ficha y es turno jug1
+        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY); //seteo la pos de la ficha al click del evento
+        clearCanvas(); //redibujo canvas
+    } else if (isMouseDown && lastClickedFicha != null && !turnoJug1) { //si estoy apretando el mouse, seleccionando una ficha y es turno jug2
+        lastClickedFicha.setPosition(e.layerX - offsetX, e.layerY - offsetY); //seteo la pos de la ficha al click del evento
+        clearCanvas(); //redibujo canvas
     }
 }
 
-
+//busco ficha clickeada con parametros x e y
 function findClickedFicha(x, y) {
-    let fichasJugador;
-
-    if (turnoJug1) {
-        fichasJugador = fichasJug1;
-    } else {
-        fichasJugador = fichasJug2;
-
+    let fichasJugador; //creo variable fichasJug
+    if (turnoJug1) { //si es el turno del jug1
+        fichasJugador = fichasJug1; //seteo variable al array del jug1
+    } else { //si no
+        fichasJugador = fichasJug2; //seteo a array del jug2
     }
-
-    for (let i = 0; i < fichasJugador.length; i++) {
-        const fichaSelec = fichasJugador[i];
-        if (fichaSelec.isPointInside(x, y)) {
-            return fichasJugador[i];
+    for (let i = 0; i < fichasJugador.length; i++) { //itero la lista de las fichas
+        const fichaSelec = fichasJugador[i]; //constante igual a la ficha del array actual
+        if (fichaSelec.isPointInside(x, y)) { //llamo a la funcion isPointInside de ficha para verificar si la ficha esta siendo clickeada
+            return fichasJugador[i]; //devuelvo la ficha clickeada
         }
     }
 }
 
-
+//agrego eventListeners a las acciones del mouse
 canvas.addEventListener('mousedown', onMouseDown, false);
 canvas.addEventListener('mouseup', onMouseUp, false);
 canvas.addEventListener('mousemove', onMouseMove, false);
