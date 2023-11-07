@@ -72,8 +72,9 @@ botonesJ2.forEach(function (boton) {
     boton.addEventListener('click', function() {
         const img = boton.querySelector("img");
         const imgSrc = img.getAttribute("src");
-        if(imgJugador2){
-            imgJugador2.parentNode.style.border = 'initial';
+
+        if(img){
+            img.parentNode.style.border = 'initial';
         }
     if(imgJugador1!=null ){
         if(juegoIniciado==false){
@@ -128,10 +129,10 @@ function dibujarBoton() {
     context.font = "10px Arial"
     context.fillRect(boton.x, boton.y, boton.ancho, boton.alto);
     context.fillStyle = 'white'; // Color del texto
-    context.fillText(boton.texto, boton.x + 25, boton.y + 13);
-
-    
+    context.fillText(boton.texto, boton.x + 25, boton.y + 13);  
 }
+
+//llamo a boton de reinicio
 canvas.addEventListener('click', handleClick, false);
 
 function handleClick(event) {
@@ -141,8 +142,8 @@ function handleClick(event) {
 
     if (mouseX >= boton.x && mouseX <= boton.x + boton.ancho && mouseY >= boton.y && mouseY <= boton.y + boton.alto) {
         //reinicio todo el juego
-        tab=null;
-        fichas=[];
+            tab=null;
+            fichas=[];
             fichasJug1=[];
             fichasJug2=[];
             posicionY=50;
