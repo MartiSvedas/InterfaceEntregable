@@ -32,6 +32,7 @@ let textoNoEmpezar=document.getElementById("primeroElijaJugador1");
 const btnJugar = document.getElementById("btnJugar");
 const botonesJ1 = document.querySelectorAll('.btn_fichas');
 const botonesJ2 = document.querySelectorAll('.btn_fichas0');
+const cantEnLinea = document.getElementById("cantEnLinea");
 
 let imgJugador1=null;
 const imageJug1 = new Image();
@@ -81,10 +82,11 @@ botonesJ2.forEach(function (boton) {
 //agrega eventListener al btnJugar
 btnJugar.addEventListener('click', function () {
     //si los dos jugadores eligieron sus fichas, se llama a..
-    if (imgJugador1 && imgJugador2) {
+    if ((imgJugador1 && imgJugador2)&& !juegoIniciado) {
         addFichas(); //funcion para agregar fichas
         drawFichasJugador(); //funcion para dibujar fichas
-        tab = new Tablero(context, tabFilas, tabColumnas, 'rgba(100, 0, 100, 255)', 35); //se crea el tablero
+        const nroTablero = parseInt(cantEnLinea.value);
+        tab = new Tablero(context, nroTablero+2, nroTablero+3, 'rgba(100, 0, 100, 255)', 35); //se crea el tablero
         textoEmpezar.innerHTML = "";
         juegoIniciado = true; //se "inicia" el juego, seteando la variable a true
         timer = setInterval(iniciarTemporizador, 1000); //se declara timer y llama a la funcion que lo inicia
