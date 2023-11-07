@@ -577,8 +577,10 @@ a.linkajuego {
 .btnJugar{
     padding-left: 3%;
     padding-right: 3%;
+    
 }
 .btnJugar, .linkajuego{
+    cursor: pointer;
     position: inherit;
     top: 40%;
     right: 2%;
@@ -600,6 +602,7 @@ height: 43px;
 font-family: 'Nunito';
 font-size: 20px;
 }
+
 #btnJugar:hover{
     background-color: var(--color-secundario-luz2);
 }

@@ -28,8 +28,8 @@ let gameOver = false;
 let boton = {
     x: 5,
     y: 5,
-    ancho: 50,
-    alto: 20,
+    ancho: 60,
+    alto: 25,
     texto: "Reiniciar",
 };
 
@@ -126,10 +126,10 @@ function iniciarTemporizador(){
 //dibujo el boton de reinicio
 function dibujarBoton() {
     context.fillStyle = 'rgb(89, 33, 0)'; // Color del botón
-    context.font = "10px Arial"
+    context.font = "15px Arial"
     context.fillRect(boton.x, boton.y, boton.ancho, boton.alto);
     context.fillStyle = 'white'; // Color del texto
-    context.fillText(boton.texto, boton.x + 25, boton.y + 13);  
+    context.fillText(boton.texto, boton.x + 30, boton.y + 13);  
 }
 
 //llamo a boton de reinicio
