@@ -1,11 +1,12 @@
 "use strict"
 
 class verificarGanador {
-  constructor(tablero, context){
+  constructor(tablero, context, cantEnLinea){
       // this.fichasJug2=fichasJug2;
       this.idficha=null;
       this.tablero=tablero;
       this.context=context;
+      this.cantEnLinea = cantEnLinea;
   }
     
     verificarSiEsGanador(id) {
@@ -33,7 +34,7 @@ class verificarGanador {
                           count = 1; 
                           idFichaAnterior = casilla.idFicha;
                     }
-                    if (count === 4) {
+                    if (count === this.cantEnLinea) {
                           console.log("Ganador jugador  " + this.idficha);
                           this.finalizarJuego(this.idficha);
                           return true;
@@ -60,7 +61,7 @@ class verificarGanador {
                                     count = 1; 
                                     idFichaAnterior = casilla.idFicha;
                             }
-                            if (count === 4) {
+                            if (count === this.cantEnLinea) {
                                     console.log("Ganador jugador  " + this.idficha);
                                     this.finalizarJuego(this.idficha);
                                     return true;
@@ -78,11 +79,11 @@ class verificarGanador {
         checkDiagonal() {
             for (let fil = 0; fil < this.tablero.filas; fil++) {
               for (let col = 0; col < this.tablero.columnas; col++) {
-                if (col + 3 < this.tablero.columnas && fil - 3 >= 0) {
+                if (col + (this.cantEnLinea-1) < this.tablero.columnas && fil - (this.cantEnLinea-1) >= 0) {
                   let count = 0;
                   let idFichaAnterior = null;
           
-                  for (let i = 0; i < 4; i++) {
+                  for (let i = 0; i < this.cantEnLinea; i++) {
                     const casilla = this.tablero.matriz[fil - i][col + i];
           
                     if (casilla.idFicha === this.idficha) {
@@ -97,7 +98,7 @@ class verificarGanador {
                       idFichaAnterior = null;
                     }
           
-                    if (count === 4) {
+                    if (count === this.cantEnLinea) {
                       console.log("Ganador jugador " + this.idficha + " en diagonal hacia la derecha y arriba. ");
                       this.finalizarJuego(this.idficha);
                       return true;
@@ -105,11 +106,11 @@ class verificarGanador {
                   }
                 }
           
-               if (col + 3 < this.tablero.columnas && fil + 3 < this.tablero.filas) {
+               if (col + (this.cantEnLinea-1) < this.tablero.columnas && fil + (this.cantEnLinea-1) < this.tablero.filas) {
                   let count = 0;
                   let idFichaAnterior = null;
           
-                  for (let i = 0; i < 4; i++) {
+                  for (let i = 0; i < this.cantEnLinea; i++) {
                     const casilla = this.tablero.matriz[fil + i][col + i];
                               if (casilla.idFicha === this.idficha) {
                       if (casilla.idFicha === idFichaAnterior) {
@@ -123,7 +124,7 @@ class verificarGanador {
                       idFichaAnterior = null;
                     }
           
-                    if (count === 4) {
+                    if (count === this.cantEnLinea) {
                       console.log("Ganador jugador " + this.idficha + " en diagonal hacia la derecha y abajo.");
                       this.finalizarJuego(this.idficha);
                       return true;

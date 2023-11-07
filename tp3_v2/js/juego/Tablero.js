@@ -1,25 +1,37 @@
 
 class Tablero{
-    constructor(context, filas, columnas, fondo, tamFicha){
+    constructor(context, cantEnLinea, fondo, tamFicha){
         this.context = context;
-        this.filas = filas;
-        this.columnas = columnas;
+        this.cantEnLinea=cantEnLinea;
         this.fondo = fondo;
         this.tamFicha = tamFicha;
+        this.filas = cantEnLinea+2;
+        this.columnas = cantEnLinea+3;
 
-        this.jug = new verificarGanador(this, this.context);
+        this.jug = new verificarGanador(this, this.context, this.cantEnLinea);
 
-        this.filasHeight = 90;
-        this.columnasWidth = 90;
-        this.tabWidth = columnas * this.columnasWidth;
+        this.filasHeight;
+        this.columnasWidth;
+        this.tabWidth = this.columnas * this.columnasWidth;
         this.a = 138;
         this.b = 50;
         this.matriz = [];
         this.arrDeColumnas = [];
-
+        this.setFilasHeightColWidth();
+        this.setTamFicha();
         this.iniciarCasilleros();
         this.draw();
         this.iniciarArrGuia();
+        
+    }
+
+    setFilasHeightColWidth(){
+        this.filasHeight=70;
+        this.columnasWidth=70;
+    }
+
+    setTamFicha(){
+        this.tamFicha = this.filasHeight / 3;
     }
 
     iniciarArrGuia(){
@@ -45,17 +57,17 @@ class Tablero{
     }
     
     crearCasilla(a, b){   
-       let cas = new Casilla(a,b,this.tamFicha,this.fondo,this.context);
+       let cas = new Casilla(a, b, this.tamFicha,this.fondo,this.context);
        return cas;
     }
 
     iniciarCasilleros(){
         for(let x=0; x<this.filas; x++){
             this.matriz[x] = [] ;
-            this.b += 90;
+            this.b += this.filasHeight;
             this.a = 138;
             for(let y=0; y<this.columnas; y++){
-                this.a+= 90;
+                this.a+= this.columnasWidth;
                 this.matriz[x][y] = this.crearCasilla(this.a, this.b);
             }
         }

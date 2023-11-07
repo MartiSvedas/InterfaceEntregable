@@ -83,10 +83,10 @@ botonesJ2.forEach(function (boton) {
 btnJugar.addEventListener('click', function () {
     //si los dos jugadores eligieron sus fichas, se llama a..
     if ((imgJugador1 && imgJugador2)&& !juegoIniciado) {
+        const nroTablero = parseInt(cantEnLinea.value);
+        tab = new Tablero(context, nroTablero, 'rgba(100, 0, 100, 255)', 35); //se crea el tablero
         addFichas(); //funcion para agregar fichas
         drawFichasJugador(); //funcion para dibujar fichas
-        const nroTablero = parseInt(cantEnLinea.value);
-        tab = new Tablero(context, nroTablero+2, nroTablero+3, 'rgba(100, 0, 100, 255)', 35); //se crea el tablero
         textoEmpezar.innerHTML = "";
         juegoIniciado = true; //se "inicia" el juego, seteando la variable a true
         timer = setInterval(iniciarTemporizador, 1000); //se declara timer y llama a la funcion que lo inicia
