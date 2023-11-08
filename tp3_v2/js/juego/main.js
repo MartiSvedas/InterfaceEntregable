@@ -142,6 +142,8 @@ function handleClick(event) {
 
     if (mouseX >= boton.x && mouseX <= boton.x + boton.ancho && mouseY >= boton.y && mouseY <= boton.y + boton.alto) {
         //reinicio todo el juego
+        clearInterval(timer);
+
             tab=null;
             fichas=[];
             fichasJug1=[];
@@ -155,7 +157,10 @@ function handleClick(event) {
             juegoIniciado=false;
             isMouseDown=false;
             gameOver=false;
-            timer=null;
+            mins = 4;
+            secs = 0;
+            timer = setInterval(iniciarTemporizador, 1000);
+            textoNoEmpezar.innerHTML = "";        
             textoEmpezar.innerHTML="Elija debajo las fichas de cada jugador";
             clearCanvas();
 

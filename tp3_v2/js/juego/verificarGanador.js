@@ -170,7 +170,7 @@ class verificarGanador {
   
               context.drawImage(imageEmpate, centerX - newWidth / 2, centerY - newHeight / 2, newWidth, newHeight);
               }
-              
+              return true
       }
 
     }
