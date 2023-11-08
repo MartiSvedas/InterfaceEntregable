@@ -158,6 +158,7 @@ function handleClick(event) {
             timer=null;
             textoEmpezar.innerHTML="Elija debajo las fichas de cada jugador";
             clearCanvas();
+
     }
 }
 
