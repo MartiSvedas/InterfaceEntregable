@@ -36,17 +36,17 @@ class Tablero{
             case 5:
                 this.filasHeight=80;
                 this.columnasWidth=80;
-                this.bordeIzq=135;
+                this.bordeIzq=155;
                 break;
             case 6:
                 this.filasHeight=70;
                 this.columnasWidth=70;
-                this.bordeIzq=150;
+                this.bordeIzq=165;
                 break;
             case 7:
                 this.filasHeight=60;
                 this.columnasWidth=60;
-                this.bordeIzq=163;
+                this.bordeIzq=193;
                 break;
         }
         

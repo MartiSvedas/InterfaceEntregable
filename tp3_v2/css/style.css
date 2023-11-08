@@ -780,9 +780,17 @@ footer img{
 
 .opcionesJuego{
     background-color: var(--color-primario-luz1);
-    width: 750px;
-    height: 490px;
+    width: 1000px;
+    height: 661px;
     border-radius: 2%;
+    position: relative;
+    top: -50%;
+    left: 0%;
+    visibility: show;
+}
+
+.divOpcionesOcultar{
+    display: none;
 }
 
 .btn_fichas, .img_ficha,.btn_fichas0{

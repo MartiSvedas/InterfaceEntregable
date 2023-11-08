@@ -9,7 +9,7 @@ let tab = null;
 let fichas=[];
 let fichasJug1 = [];  
 let fichasJug2 = [];
-let posicionY=57;
+let posicionY=50;
 let posicionXJug1= 90;
 let posicionXJug2= 900;
 
@@ -35,6 +35,7 @@ let textoEmpezar = document.getElementById("textoEmpezarJuego");
 textoEmpezar.innerHTML="Elija debajo las fichas de cada jugador";
 let textoNoEmpezar=document.getElementById("primeroElijaJugador1");
 
+const divOpciones = document.querySelector('.opcionesJuego');
 const btnJugar = document.getElementById("btnJugar");
 const botonesJ1 = document.querySelectorAll('.btn_fichas');
 const botonesJ2 = document.querySelectorAll('.btn_fichas0');
@@ -70,7 +71,6 @@ botonesJ2.forEach(function (boton) {
     boton.addEventListener('click', function() {
         const img = boton.querySelector("img");
         const imgSrc = img.getAttribute("src");
-
         if(img){
             img.parentNode.style.border = 'initial';
         }
@@ -101,6 +101,7 @@ btnJugar.addEventListener('click', function () {
         textoEmpezar.innerHTML = "";
         juegoIniciado = true; //se "inicia" el juego, seteando la variable a true
         timer = setInterval(iniciarTemporizador, 1000); //se declara timer y llama a la funcion que lo inicia
+        divOpciones.classList.add("divOpcionesOcultar");
     } else { //si no se muestra texto 
         textoNoEmpezar.innerHTML = "Ambos jugadores deben seleccionar una ficha antes de empezar.";
     }
@@ -142,6 +143,8 @@ function handleClick(event) {
 
     if (mouseX >= boton.x && mouseX <= boton.x + boton.ancho && mouseY >= boton.y && mouseY <= boton.y + boton.alto) {
         //reinicio todo el juego
+        divOpciones.classList.remove("divOpcionesOcultar");
+
         clearInterval(timer);
 
             tab=null;
@@ -180,8 +183,7 @@ function drawTemporizador(){
 
 function addFichas() {
     
-    if(fichasJug1.length>21&&fichasJug1.length>(tab.columnas*tab.filas/2)/2 && 
-        fichasJug2.length>21 && fichasJug2.length>(tab.columnas*tab.filas/2)/2){
+    if(fichasJug1.length>21&&fichasJug2.length>21){
         posicionXJug1=150;
         posicionXJug2=960;
         posicionY -= tab.tamFicha*1.5;

@@ -1,10 +1,11 @@
 "use strict"
 
 class verificarGanador {
-  constructor(tablero, context){
+  constructor(tablero, context, cantEnLinea){
       this.idficha=null;
       this.tablero=tablero;
       this.context=context;
+      this.cantEnLinea=cantEnLinea;
   }
     
     verificarSiEsGanador(id) {
@@ -31,7 +32,7 @@ class verificarGanador {
                           count = 1; 
                           idFichaAnterior = casilla.idFicha;
                     }
-                    if (count === 4) {
+                    if (count === this.cantEnLinea) {
                         console.log("Ganador jugador  " + this.idficha);
                         return this.finalizarJuego(this.idficha);
                        
@@ -58,7 +59,7 @@ class verificarGanador {
                                     count = 1; //cuento mi ficha actual
                                     idFichaAnterior = casilla.idFicha; //seteo fichaAnterior con mi ficha actual
                             }
-                            if (count === 4) { //si conte 4 casillas con idFicha igual gano
+                            if (count === this.cantEnLinea) { //si conte 4 casillas con idFicha igual gano
                                     console.log("Ganador jugador  " + this.idficha);
                                     return this.finalizarJuego(this.idficha);
                             }
@@ -76,11 +77,11 @@ class verificarGanador {
           //checkeo diagonal hacia la derecha y arriba
             for (let fil = 0; fil < this.tablero.filas; fil++) {//recorro filas
               for (let col = 0; col < this.tablero.columnas; col++) {//recorro columnas 
-                if (col + 3 < this.tablero.columnas && fil - 3 >= 0) {//recorre 3 columnas hacia la derecha y arriba (que no sale del tablero)
+                if (col + this.cantEnLinea-1 < this.tablero.columnas && fil - this.cantEnLinea-1 >= 0) {//recorre 3 columnas hacia la derecha y arriba (que no sale del tablero)
                   let count = 0;// instancia el contador
                   let idFichaAnterior = null;//setea en null in idFicha para ir guardando y luego verificar que hay 4 fichas seguidas con el mismo id
           
-                  for (let i = 0; i < 4; i++) { //recorre 4 veces en la diagonal hacia la derecha y arriba 
+                  for (let i = 0; i < this.cantEnLinea; i++) { //recorre 4 veces en la diagonal hacia la derecha y arriba 
                     const casilla = this.tablero.matriz[fil - i][col + i];  //toma la casilla inmediata hacia la izquierda y abajo
           
                     if (casilla.idFicha === this.idficha) {//Si el id de la casilla es igual al id que paso por parametro
@@ -95,18 +96,18 @@ class verificarGanador {
                       idFichaAnterior = null;
                     }
           
-                    if (count === 4) {//si hay 4 fichas seguidas en diagonal hacia la derecha y arriba
+                    if (count === this.cantEnLinea) {//si hay 4 fichas seguidas en diagonal hacia la derecha y arriba
                       console.log("Ganador jugador " + this.idficha + " en diagonal hacia la derecha y arriba. ");
                       return this.finalizarJuego(this.idficha);
                             }
                   }
                 }
                 //checkeo diagonal hacia la derecha y abajo
-               if (col + 3 < this.tablero.columnas && fil + 3 < this.tablero.filas) {//recorre 3 columnas hacia la derecha y abajo
+               if (col + this.cantEnLinea-1 < this.tablero.columnas && fil + this.cantEnLinea-1 < this.tablero.filas) {//recorre 3 columnas hacia la derecha y abajo
                   let count = 0;
                   let idFichaAnterior = null;
           
-                  for (let i = 0; i < 4; i++) {
+                  for (let i = 0; i < this.cantEnLinea; i++) {
                     const casilla = this.tablero.matriz[fil + i][col + i];//toma la casilla inmediata hacia abajo a la derecha 
                               if (casilla.idFicha === this.idficha) {
                       if (casilla.idFicha === idFichaAnterior) {
@@ -120,7 +121,7 @@ class verificarGanador {
                       idFichaAnterior = null;
                     }
           
-                    if (count === 4) {
+                    if (count === this.cantEnLinea) {
                       console.log("Ganador jugador " + this.idficha + " en diagonal hacia la derecha y abajo.");
                       return this.finalizarJuego(this.idficha);
                             }
