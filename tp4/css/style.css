@@ -1,5 +1,27 @@
 body {
     margin: 0 auto; 
-    max-width: 1080px; 
-  }
-  
+    max-width: 1080px;
+}
+
+.btnsHeader{
+  position: absolute;
+  top: 0%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn_comprar{
+  color: #02187e;
+  background-color: #ffe901;
+  font-weight: 900;
+  font-size: 95%;
+  border-radius: 30px;
+  border: 8px solid #2982ff;
+  width: 200px;
+  height: 50px;
+}
+
+.btn_comprar p{
+  margin: 0%;
+}
