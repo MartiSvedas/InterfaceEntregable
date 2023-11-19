@@ -7,9 +7,17 @@ body {
 }
 
 .btnsHeader{
+  top: 0%;
+  width: 100%;
+  position: absolute;
+}
+.header{
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
+  margin-left: 7%;
+  position: absolute;
+  top: 0;
 }
 
 .btn_comprar{
