@@ -20,6 +20,7 @@ body {
   border: 8px solid #2982ff;
   width: 200px;
   height: 50px;
+  box-shadow: 4px 4px #02187e;
 }
 
 .btn_comprar p{
