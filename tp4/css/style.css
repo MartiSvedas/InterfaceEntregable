@@ -1,21 +1,32 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+
 body {
     margin: 0% auto;
     max-width: 1080px;
 }
 
 .btnsHeader{
-  position: absolute;
   top: 0%;
+  width: 100%;
+  position: absolute;
+}
+.header{
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
+  margin-left: 100px;
+  margin-right: 100px;
+  position: absolute;
+  top: 12px;
 }
 
 .btn_comprar{
   color: #02187e;
   background-color: #ffe901;
+  font-family:'Lato';
   font-weight: 900;
-  font-size: 95%;
+  font-size: 20px;
   border-radius: 30px;
   border: 8px solid #2982ff;
   width: 200px;
