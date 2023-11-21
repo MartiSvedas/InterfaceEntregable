@@ -148,6 +148,7 @@ header{
 
 }
 
+
 #parallax1Layer6 img{
   margin-top: 388px;
   margin-left: 982.83px;
@@ -223,8 +224,8 @@ height: 844.5px;
   position: absolute;
   width: 553px;
   height: 921px;
-  margin-top: -59px;
-  margin-left: 713px;
+  margin-top: -144px;
+  margin-left: 722px;
 
 }
 
@@ -233,6 +234,13 @@ img.juegoDuende{
   z-index: 5;
 top: 352.72px;
 left: 109.28px;
+}
+
+.juegoSpiderman{
+  display: flex;
+
+margin-top: 500px;
+margin-left: 100px;
 
 
 }
