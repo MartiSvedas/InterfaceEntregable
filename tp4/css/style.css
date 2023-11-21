@@ -74,6 +74,7 @@ header{
 /* presentacion */
 .parallax1{
   position: relative;
+  margin-top: -8%;
   }
 
 .parallaxLayer{
@@ -179,7 +180,9 @@ header{
 }
 
 /* Conoce a Spidey */
-
+.duendeVerde{
+  
+}
 .duendeVerde h1{
   font-family: 'Lato';
   font-weight: 600;
