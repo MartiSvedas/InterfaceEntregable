@@ -164,7 +164,8 @@ header{
 #parallax1Layer5,
 #parallax1Layer3,
 #parallax1Layer6,
-#parallax1Layerduende
+#parallax1Layerduende,
+#parallax1Layer4
 {
   z-index: 10;
 }
@@ -190,8 +191,8 @@ header{
   position: absolute;
   width: 646px;
   height: 114px;
-  top: 794px;
-  left: 234.35px;
+  top: 888px;
+    left: 235.35px;
   z-index: 10;
 }
 
@@ -204,8 +205,8 @@ header{
   line-height: 24px;
   text-align: left;
   z-index: 10;
-  top: 938px;
-  left: 234.35px;
+  top: 1031px;
+  left:235.35px;
   Width:586px;
   Height:154px
 }
@@ -213,7 +214,7 @@ header{
 .duendeVerde .rectangulo{
   width: 1280px;
 height: 844.5px;
-  top: 700px;
+  top: 761px;
   z-index: 0;
   position: absolute;
 }
@@ -223,16 +224,16 @@ height: 844.5px;
   position: absolute;
   width: 553px;
   height: 921px;
-  margin-top: -116px;
-  margin-left: 742px;
+  margin-top: -166px;
+  margin-left: 713px;
 
 }
 
 img.juegoDuende{
   position: relative;
   z-index: 5;
-top: 297.72px;
-left: 90.28px;
+top: 281.72px;
+left: 109.28px;
 
 
 }
