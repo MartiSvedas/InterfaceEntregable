@@ -21,14 +21,16 @@ header{
   display: flex;
   justify-content: space-between;
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 0.5;
 }
 
 .btnsHeader{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  top: 0%;
+  margin-top: 1%;
   width: 115%;
   position: absolute;
 }
@@ -40,19 +42,19 @@ header{
 }
 
 .btn_comprar{
-  position: absolute;
+  position: fixed;
   z-index: 1;
   color: #02187e;
   background-color: #ffe901;
   font-family:'Lato';
-  font-weight: 900;
+  font-weight: bolder;
   font-size: 20px;
   border-radius: 30px;
   border: 8px solid #2982ff;
   width: 200px;
-  height: 50px;
+  height: 60px;
   box-shadow: 4px 4px #02187e;
-  transition: background-color 2s, color 2s;
+  transition: background-color 1s, color 1s;
   right: 0;
 }
 
