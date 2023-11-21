@@ -5,28 +5,37 @@ body {
     margin: 0% auto;
     max-width: 1080px;
 }
-.header img{
+header img{
   top: 0%;
   /* width: 100%; */
   position: absolute;
 }
 
 .inicio{
+  margin-top: 10%;
   height: 800px;
   width: 1280px;
 background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
 }
-/* .header{
+header{
   display: flex;
   justify-content: space-between;
-  width: 85%;
-  margin-left: 100px;
-  margin-right: 100px;
-  position: absolute;
-  top: 12px;
+  width: 100%;
+}
+
+.btnsHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn_menu{
+  z-index: 1;
 }
 
 .btn_comprar{
+  position: absolute;
+  z-index: 1;
   color: #02187e;
   background-color: #ffe901;
   font-family:'Lato';
@@ -37,11 +46,20 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
   width: 200px;
   height: 50px;
   box-shadow: 4px 4px #02187e;
-} */
+  transition: background-color 2s, color 2s;
+}
+
+.btn_comprar:hover{
+  color: #ffe901;
+  background-color: #02187e; 
+  cursor: pointer;
+}
 
 .btn_comprar p{
   margin: 0%;
 }
+
+
 
 /* presentacion */
 .parallax1{
