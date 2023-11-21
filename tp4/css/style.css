@@ -21,16 +21,22 @@ header{
   display: flex;
   justify-content: space-between;
   width: 100%;
+  position: relative;
 }
 
 .btnsHeader{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  top: 0%;
+  width: 115%;
+  position: absolute;
 }
 
 .btn_menu{
   z-index: 1;
+  position: absolute;
+  left: 0;
 }
 
 .btn_comprar{
@@ -47,6 +53,7 @@ header{
   height: 50px;
   box-shadow: 4px 4px #02187e;
   transition: background-color 2s, color 2s;
+  right: 0;
 }
 
 .btn_comprar:hover{
