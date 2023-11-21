@@ -20,6 +20,7 @@ header .fondo{
 background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
 }
 header{
+  margin-left: -66px;
   display: flex;
   justify-content: space-between;
   width: 100%;
