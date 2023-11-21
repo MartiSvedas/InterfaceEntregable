@@ -1,13 +1,12 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
-
+  @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 body {
     margin: 0% auto;
     max-width: 1080px;
 }
 header img{
   top: 0%;
-  /* width: 100%; */
   position: absolute;
 }
 
@@ -73,7 +72,6 @@ header{
 /* presentacion */
 .parallax1{
   position: relative;
-  z-index: 10;
   }
 
 .parallaxLayer{
@@ -91,6 +89,7 @@ header{
   margin-left: 68%;
   transform: translateY(30px);
   transition: transform 0.5s ease;
+
 }
 
 #parallax1Layer2{ 
@@ -123,6 +122,7 @@ header{
 }
 
 #parallax1Layer5 img{
+  position: absolute;
   margin-top: 403px;
   margin-left: 404px;
   opacity: 0;
@@ -138,10 +138,10 @@ header{
 #parallax1Layer2.mostrar img,
 #parallax1Layer8.mostrar img,
 #parallax1Layer6.mostrar img,
-#parallax1Layer7.mostrar img
-{
+#parallax1Layer7.mostrar img{
   opacity:1;
   transform: translateY(0);
+
 }
 
 #parallax1Layer6 img{
@@ -153,13 +153,21 @@ header{
 }
 
 #parallax1Layer7 img{
+  position: absolute;
   margin-top: 375px;
   margin-left: 390,35px;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
-
+#parallax1Layer7,
+#parallax1Layer5,
+#parallax1Layer3,
+#parallax1Layer6,
+#parallax1Layerduende
+{
+  z-index: 10;
+}
 #parallax1Layer8 img{
   margin-top: 91px;
   margin-left: 330px;
@@ -168,22 +176,63 @@ header{
 }
 
 /* Conoce a Spidey */
+
 .duendeVerde h1{
   font-family: 'Lato';
   font-weight: 600;
   font-size: 60px;
   line-height: 56.7px;
+}
+
+
+.conoceASpidey h1{
   color: #FFFFFF;
+  position: absolute;
+  width: 646px;
+  height: 114px;
+  top: 794px;
+  left: 234.35px;
+  z-index: 10;
 }
+
+.conoceASpidey p{
+  position: absolute;
+  color: #FFFFFF;
+  font-family: 'Lato';
+  font-size: 20px;
+  font-weight: 400; 
+  line-height: 24px;
+  text-align: left;
+  z-index: 10;
+  top: 938px;
+  left: 234.35px;
+  Width:586px;
+  Height:154px
+}
+
 .duendeVerde .rectangulo{
-  position: absolute;
-  top: 619px;
+  width: 1280px;
+height: 844.5px;
+  top: 700px;
   z-index: 0;
-}
-
-.duendeVerde img{
   position: absolute;
-  top: 90%;
 }
 
+#parallax1Layerduende img{
+  z-index: 10;
+  position: absolute;
+  width: 553px;
+  height: 921px;
+  margin-top: -116px;
+  margin-left: 742px;
 
+}
+
+img.juegoDuende{
+  position: relative;
+  z-index: 5;
+top: 297.72px;
+left: 90.28px;
+
+
+}
