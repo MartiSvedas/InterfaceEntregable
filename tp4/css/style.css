@@ -4,23 +4,22 @@
 body {
     margin: 0% auto;
     max-width: 1080px;
-    margin-left: 0%;
 }
-
-.fondo{
-  width: 100%;
-}
-
-.btnsHeader{
+.header img{
   top: 0%;
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
 }
 
-.header{
+.inicio{
+  height: 800px;
+  width: 1280px;
+background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
+}
+/* .header{
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
   margin-left: 100px;
   margin-right: 100px;
   position: absolute;
@@ -38,21 +37,126 @@ body {
   width: 200px;
   height: 50px;
   box-shadow: 4px 4px #02187e;
-}
+} */
 
 .btn_comprar p{
   margin: 0%;
 }
 
-.logoimg{
+/* presentacion */
+.parallax1{
   position: relative;
-  margin-top: 5%;
-  left: 30%;
-  z-index: 1;
+  z-index: 10;
+  }
+
+.parallaxLayer{
+	position: absolute;
 }
 
-.cielo{
+#parallax1Layer0 img{
+  margin-top:7%;
+  opacity: 0;
+  transition: opacity 0.5s ease
+}
+
+#parallax1Layer1 img{
+  margin-top: 634px;
+  margin-left: 68%;
+  transform: translateY(30px);
+  transition: transform 0.5s ease;
+}
+
+#parallax1Layer2{ 
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 144px;
+  
+}
+#parallax1Layer2 img{
+  transform: translateY(30px);
+  transition: transform 0.5s ease;
+}
+
+#parallax1Layer3 img{
+  margin-top: 388px;
+  margin-left: 90px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+
+#parallax1Layer4 img{
+  margin-top: 335px;
+  margin-left: 695px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+#parallax1Layer5 img{
+  margin-top: 403px;
+  margin-left: 404px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+#parallax1Layer3.mostrar img,
+#parallax1Layer4.mostrar img,
+#parallax1Layer5.mostrar img,
+#parallax1Layer0.mostrar img,
+#parallax1Layer1.mostrar img,
+#parallax1Layer2.mostrar img,
+#parallax1Layer8.mostrar img,
+#parallax1Layer6.mostrar img,
+#parallax1Layer7.mostrar img
+{
+  opacity:1;
+  transform: translateY(0);
+}
+
+#parallax1Layer6 img{
+  margin-top: 388px;
+  margin-left: 982.83px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+#parallax1Layer7 img{
+  margin-top: 375px;
+  margin-left: 390,35px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+#parallax1Layer8 img{
+  margin-top: 91px;
+  margin-left: 330px;
+  opacity:0;
+  transition: opacity 1.5s ease
+}
+
+/* Conoce a Spidey */
+.duendeVerde h1{
+  font-family: 'Lato';
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 56.7px;
+  color: #FFFFFF;
+}
+.duendeVerde .rectangulo{
   position: absolute;
-  top: 13%;
+  top: 619px;
   z-index: 0;
 }
+
+.duendeVerde img{
+  position: absolute;
+  top: 90%;
+}
+
+
