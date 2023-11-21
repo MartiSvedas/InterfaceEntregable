@@ -4,6 +4,11 @@
 body {
     margin: 0% auto;
     max-width: 1080px;
+    margin-left: 0%;
+}
+
+.fondo{
+  width: 100%;
 }
 
 .btnsHeader{
@@ -11,6 +16,7 @@ body {
   width: 100%;
   position: absolute;
 }
+
 .header{
   display: flex;
   justify-content: space-between;
@@ -36,4 +42,17 @@ body {
 
 .btn_comprar p{
   margin: 0%;
+}
+
+.logoimg{
+  position: relative;
+  margin-top: 5%;
+  left: 30%;
+  z-index: 1;
+}
+
+.cielo{
+  position: absolute;
+  top: 13%;
+  z-index: 0;
 }
