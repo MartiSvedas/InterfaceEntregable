@@ -1,10 +1,15 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-body {
-    margin: 0% auto;
+  
+  .container {
     max-width: 1080px;
-}
+    /* padding: 0 ; */
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+
 header img{
   top: 0%;
   position: absolute;
@@ -14,36 +19,55 @@ header .fondo{
     width: 1280px;
 }
 
-
 header{
   margin-left: -66px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  position: fixed;
+   position: fixed;
   top: 0;
-  z-index: 0.5;
+  width: 100%;
+  z-index: 15;
+    transition: height 1s;
+}
+header img.fondo {
+  height: 126px;
+  max-width: 1280px;
+
+}
+
+#parallax1Layer8 .logo {/* cuando scrolleo */
+  transition: transform 1s ease; 
+}
+
+.oculto {
+  opacity: 0;
+  transition: opacity 0s ease;
+}
+
+.mostrard {
+  opacity: 1;
+  top: -16px;
 }
 
 .btnsHeader{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 1%;
-  width: 115%;
+  width: 78%;
   position: absolute;
   margin-left: 100px;
 }
 
 .btn_menu{
-  z-index: 1;
+  z-index: 15;
   position: absolute;
   left: 0;
+  transition:transform 1s ease; 
 }
 
 .btn_comprar{
   position: fixed;
-  z-index: 1;
+  z-index: 15;
   color: #02187e;
   background-color: #ffe901;
   font-family:'Lato';
@@ -56,8 +80,9 @@ header{
   box-shadow: 4px 4px #02187e;
   transition: background-color 1s, color 1s;
   right: 0;
+  transition:transform 1s ease; 
+  margin-right: 7%
 }
-
 
 .btn_comprar:hover{
   color: #ffe901;
@@ -247,7 +272,7 @@ position: absolute;
 
 .juegoSpiderman .milesMoralesJugando{
   position: absolute;
-  top: -16px;
+  top: 0px;
   left: 376px;
 }
 
@@ -263,7 +288,9 @@ height: 218px;
 
 }
 
-
+.juegoSpiderman p{
+  margin-top:14px ;
+}
 
 
 .sprite {
