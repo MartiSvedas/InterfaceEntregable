@@ -299,7 +299,7 @@ left: 109.28px;
 	transition: 2s all ease-in-out;
 	-moz-transition: 2s all ease-in-out;
 	-webkit-transition: 2s all ease-in-out;
-  transform: translateY(-30px);
+  transform: translateY(60px);
 }
 
 .cardsJuegoSM.active{
