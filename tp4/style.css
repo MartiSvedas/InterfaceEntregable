@@ -273,9 +273,18 @@ height: 218px;
   height: 160px;
   background-image: url(./imgs/spriteSM.png);
   background-size: cover;
-  animation: spriteAnimation1 5s steps(11) infinite;
+  animation: spriteAnimation 3.5s steps(11) infinite;
 }
-@keyframes spriteAnimation1 {
+
+.sprite:hover{
+  background-image: url(./imgs/spriteSMhover.png);
+  background-size: cover;
+  animation: spriteAnimation 3.5s steps(11) infinite;
+  cursor: pointer;
+}
+
+
+@keyframes spriteAnimation {
   0% {
     background-position: 0px;
   }
