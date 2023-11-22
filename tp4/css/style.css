@@ -19,6 +19,7 @@ header .fondo{
   width: 1280px;
 background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
 }
+
 header{
   margin-left: -66px;
   display: flex;
@@ -61,6 +62,7 @@ header{
   transition: background-color 1s, color 1s;
   right: 0;
 }
+
 
 .btn_comprar:hover{
   color: #ffe901;
@@ -147,7 +149,6 @@ header{
   transform: translateY(0);
 
 }
-
 
 #parallax1Layer6 img{
   margin-top: 388px;
@@ -238,9 +239,14 @@ left: 109.28px;
 
 .juegoSpiderman{
   display: flex;
+margin-top: 452px;
+justify-content: space-between;
+position: absolute;
+    left: 266px;
+    right: -325px}
 
-margin-top: 500px;
-margin-left: 100px;
-
-
+.juegoSpiderman .milesMoralesJugando{
+  position: absolute;
+  top: -4%;
+  left: 376px;
 }
