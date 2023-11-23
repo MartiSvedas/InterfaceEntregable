@@ -273,7 +273,7 @@ left: 109.28px;
   right: -6px;
 }
 
-.juegoSpiderman .milesMoralesJugando{
+.juegoSpiderman #milesMoralesJugando{
   position: absolute;
   top: 0px;
   left: 376px;
@@ -299,10 +299,10 @@ left: 109.28px;
 	transition: 2s all ease-in-out;
 	-moz-transition: 2s all ease-in-out;
 	-webkit-transition: 2s all ease-in-out;
-  transform: translateY(60px);
+  transform: translateY(90px);
 }
 
-.cardsJuegoSM.active{
+.active{
   opacity: 1;
   transform: translateY(0px);
 }
