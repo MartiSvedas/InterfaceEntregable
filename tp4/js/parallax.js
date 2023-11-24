@@ -4,7 +4,9 @@ function castParallax() {
 	window.addEventListener("scroll", function(event){
 
 		var top = this.pageYOffset; //obtiene la posición vertical de desplazamiento de la página en ese momento específico.
-
+		var gwen= document.getElementById('parallax1Layer3');
+		var morales=document.getElementById('parallax1Layer4');
+		var moralesTela=document.getElementById('parallax1Layer6');
 		var layers = document.getElementsByClassName("parallaxLayer");
 		var layer, speed, yPos;
 		for (var i = 0; i < layers.length; i++) { //recorro todas mis capas
@@ -12,8 +14,11 @@ function castParallax() {
 			speed = layer.getAttribute('data-speed'); //obtiene la velocidad de la capa desde el atributo data-speed
 			var yPos = -(top * speed / 100); //calcula la nueva posicion inicial (yPos) para la capa .Determina cuánto se desplaza la capa verticalmente en relación con el desplazamiento de la página
 			layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)'); //establece el estilo de de transformacion (translate3D) en la capa para aplicar el efecto parallax
-
 		}
+		gwen.setAttribute('style', 'transform: translate3d( ' +- yPos + 'px,0px, 0px)'); //establece el estilo de de transformacion (translate3D) en la capa para aplicar el efecto parallax
+		morales.setAttribute('style', 'transform: translate3d( ' + yPos + 'px,0px, 0px)');
+		moralesTela.setAttribute('style', 'transform: translate3d( ' + yPos + 'px,0px, 0px)')
+
 		document.querySelector('.btn_menu').classList.add('mostrar');
 		document.querySelector('.btn_comprar').classList.add('mostrar');
 		document.querySelector('.fondo').classList.add('mostrar');

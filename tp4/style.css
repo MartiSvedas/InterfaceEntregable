@@ -2,37 +2,31 @@
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
   
-  .container {
-    max-width: 1080px;
-    /* padding: 0 ; */
-    margin: 0 auto;
-    box-sizing: border-box;
+ body{
+  margin: 0;
   }
-
-
 header img{
   top: 0%;
   position: absolute;
 }
 header .fondo{
-     height: 126px;
-    width: 1280px;
+    height: 126px;
 }
 
 header{
-  margin-left: -66px;
+  /* margin-left: -66px; */
   display: flex;
   justify-content: space-between;
    position: fixed;
   top: 0;
   width: 100%;
   z-index: 15;
-    transition: height 1s;
+  transition: height 1s;
 }
+
 header img.fondo {
   height: 126px;
-  max-width: 1280px;
-
+  width: 100%;
 }
 
 #parallax1Layer8 .logo {/* cuando scrolleo */
@@ -95,24 +89,29 @@ header img.fondo {
 }
 .inicio{
   margin-top: 10%;
-  height: 800px;
-  width: 1280px;
+  height: 950px;
 background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
 }
 /* presentacion */
-.parallax1{
-  position: relative;
-  margin-top: -8%;
-  }
 
-.parallaxLayer{
+/* .spidermanInicio{
+  width: 1280px;
+} */
+/* .spidermanFondo{
+  margin: 0;
+} */
+.inicio{
+  margin-top: 0;
+}
+.inicio div{
 	position: absolute;
 }
 
 #parallax1Layer0 img{
+  margin-left: 50px;
   margin-top:7%;
   opacity: 0;
-  transition: opacity 0.5s ease
+  transition: opacity 0.5s ease;
 }
 
 #parallax1Layer1 img{
@@ -120,18 +119,25 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
   margin-left: 68%;
   transform: translateY(30px);
   transition: transform 0.5s ease;
-
 }
-
-#parallax1Layer2{ 
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+ #parallax1Layer2{ 
+  /* display: flex;
+  justify-content: space-around;
+  width: 100%; */
   margin-top: 144px;
   
 }
-#parallax1Layer2 img{
-  transform: translateY(30px);
+#parallax1Layer2 .edifDer{
+position: absolute;
+left: 972px
+}
+#parallax1Layer2 .ediIzq{
+position: absolute;
+
+}
+
+.inicio #parallax1Layer2 img{
+  transform: translateY(80px);
   transition: transform 0.5s ease;
 }
 
@@ -146,7 +152,7 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
 
 #parallax1Layer4 img{
   margin-top: 335px;
-  margin-left: 695px;
+  margin-left: 762px;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.9s ease, transform 0.9s ease;
@@ -177,7 +183,7 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
 
 #parallax1Layer6 img{
   margin-top: 388px;
-  margin-left: 982.83px;
+  margin-left: 1051.83px;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.9s ease, transform 0.9s ease;
@@ -199,6 +205,7 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
 #parallax1Layer4
 {
   z-index: 10;
+  position: absolute;
 }
 #parallax1Layer8 img{
   margin-top: 91px;
@@ -209,17 +216,21 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
 
 /* Conoce a Spidey */
 .duendeVerde h1{
+  width: 646px;
   font-family: 'Lato';
   font-weight: 600;
   font-size: 60px;
-  line-height: 56.7px;
   color: #FFFFFF;
   position: absolute;
-  width: 646px;
   height: 114px;
-  top: 832px;
-    left: 235.35px;
+  top: 815px;
+    left: 103.35px;
   z-index: 10;
+
+
+line-height: 57px;
+
+
 }
 
 .conoceASpidey p{
@@ -231,35 +242,31 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
   line-height: 24px;
   text-align: left;
   z-index: 10;
-  top: 976px;
-  left:235.35px;
+  top: 970px;
+  left:103.35px;
   Width:586px;
   Height:154px
 }
 
 .duendeVerde .rectangulo{
-  width: 1280px;
-height: 844.5px;
-  top: 679px;
+  top: 700px;
+  width: 100%;
   z-index: 0;
   position: absolute;
 }
 
 #parallax1Layerduende img{
-  z-index: 10;
-  position: absolute;
-  width: 553px;
-  height: 921px;
-  margin-top: -144px;
-  margin-left: 722px;
 
+  height: 921px;
+  margin-top: -260px;
+  margin-left: 724px;
 }
 
 img.juegoDuende{
-  position: relative;
-  z-index: 5;
-top: 352.72px;
-left: 109.28px;
+position: relative;
+z-index: 5;
+top:203.72px;
+left:94.35px;
 }
 
 /*Seccion cards SM*/
@@ -270,8 +277,8 @@ left: 109.28px;
   justify-content: space-between;
   justify-self: center;
   position: absolute;
-  left: 266px;
-  right: -6px;
+  left: 114px;
+right: 150px 
 }
 
 .juegoSpiderman .milesMoralesJugando{
@@ -290,7 +297,7 @@ left: 109.28px;
   width: 333px;
   height: 218px;
 }
-
+/* 
 .juegoSpiderman p{
   margin-top:14px;
 }
@@ -335,3 +342,26 @@ left: 109.28px;
     background-position: -1170px;
   }
 }
+
+.masAmigos{
+  position: absolute;
+  top:2351px;
+
+}
+.masAmigos h1{
+  position: absolute;
+  left: 104px;
+  /* width: 802px; */
+  color: #000;
+font-family: 'Lato';
+font-size: 60px;
+font-style: normal;
+font-weight: 600;
+line-height: 94.5%; /* 56.7px */
+}
+
+/* .masAmigos p{
+  position: absolute;
+  top: 2451px;
+
+} */
