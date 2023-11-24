@@ -273,12 +273,12 @@ left:94.35px;
 
 .juegoSpiderman{
   display: flex;
-  margin-top: 452px;
+  margin-top: 349px;
   justify-content: space-between;
   justify-self: center;
   position: absolute;
   left: 114px;
-right: 150px 
+  right: 150px 
 }
 
 .juegoSpiderman .milesMoralesJugando{
@@ -297,10 +297,7 @@ right: 150px
   width: 333px;
   height: 218px;
 }
-/* 
-.juegoSpiderman p{
-  margin-top:14px;
-}
+
 
 .cardsJuegoSM{
   opacity: 0.00;
