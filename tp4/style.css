@@ -268,12 +268,13 @@ left: 109.28px;
   display: flex;
   margin-top: 452px;
   justify-content: space-between;
+  justify-self: center;
   position: absolute;
   left: 266px;
   right: -6px;
 }
 
-.juegoSpiderman #milesMoralesJugando{
+.juegoSpiderman .milesMoralesJugando{
   position: absolute;
   top: 0px;
   left: 376px;
@@ -291,14 +292,14 @@ left: 109.28px;
 }
 
 .juegoSpiderman p{
-  margin-top:14px ;
+  margin-top:14px;
 }
 
 .cardsJuegoSM{
   opacity: 0.00;
-	transition: 2s all ease-in-out;
-	-moz-transition: 2s all ease-in-out;
-	-webkit-transition: 2s all ease-in-out;
+	transition: 1s all ease-in-out;
+	-moz-transition: 1s all ease-in-out;
+	-webkit-transition: 1s all ease-in-out;
   transform: translateY(90px);
 }
 
