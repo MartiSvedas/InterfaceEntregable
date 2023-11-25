@@ -278,7 +278,7 @@ left:94.35px;
   justify-self: center;
   position: absolute;
   left: 114px;
-  right: 150px 
+  right: 150px;
 }
 
 .juegoSpiderman .milesMoralesJugando{
@@ -310,6 +310,41 @@ left:94.35px;
 .active{
   opacity: 1;
   transform: translateY(0px);
+}
+
+/*Seccion Gwen Stacy*/
+.seccionGwenStacy{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 1000px;
+}
+
+.fondoSeccionGS{
+  position: absolute;
+  z-index: 1;
+  width: 100%; 
+}
+
+.cardsGS{
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  margin-left: -35%;
+}
+.cardGS1, .cardGS2, .cardGS3{
+  width: 95%;
+  position: relative;
+  left: -5%;
+}
+.cardGS1{
+  top:-10%;
+}
+.cardGS2{
+  top: -30%;
+}
+.cardGS3{
+  top:-50%
 }
 
 /*ANIMACION SPRITESHEET*/
