@@ -108,7 +108,8 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
 }
 
 #parallax1Layer0 img{
-  margin-left: 50px;
+  margin-left: 0px;
+  width: 100%;
   margin-top:7%;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -333,20 +334,24 @@ left:94.35px;
   margin-left: -35%;
 }
 .cardGS1, .cardGS2, .cardGS3{
-  width: 95%;
   position: relative;
-  left: -5%;
+  left: -23%;
 }
 .cardGS1{
-  top:-10%;
+  top:-8%;
 }
 .cardGS2{
-  top: -30%;
+  top: -24%;
 }
 .cardGS3{
-  top:-50%
+  top:-39%
 }
 
+.cardGS1:hover, .cardGS2:hover, .cardGS3:hover{
+  transform: rotate(-10deg);
+  z-index: 5;
+  cursor: pointer;
+}
 /*ANIMACION SPRITESHEET*/
 .sprite {
   position: relative;
