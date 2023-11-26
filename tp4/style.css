@@ -130,7 +130,7 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
 }
 #parallax1Layer2 .edifDer{
 position: absolute;
-left: 972px
+left: 969px
 }
 #parallax1Layer2 .ediIzq{
 position: absolute;
@@ -184,7 +184,7 @@ position: absolute;
 
 #parallax1Layer6 img{
   margin-top: 388px;
-  margin-left: 1051.83px;
+  margin-left: 1051px;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.9s ease, transform 0.9s ease;
@@ -337,6 +337,10 @@ left:94.35px;
   position: relative;
   left: -23%;
 }
+
+.parallax-elementGS{
+  transition: transform 0.5s ease-out;
+}
 .cardGS1{
   top:-8%;
 }
@@ -346,9 +350,9 @@ left:94.35px;
 .cardGS3{
   top:-39%
 }
-
 .cardGS1:hover, .cardGS2:hover, .cardGS3:hover{
-  transform: rotate(-10deg);
+  transform: translateY(-50px) rotate(-5deg);
+  width: 110%;
   z-index: 5;
   cursor: pointer;
 }
