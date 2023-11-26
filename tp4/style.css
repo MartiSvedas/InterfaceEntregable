@@ -356,6 +356,26 @@ left:94.35px;
   z-index: 5;
   cursor: pointer;
 }
+/*Seccion vengadores*/
+.seccionVengadores{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fondoVengadores{
+  background-color: #000;
+  width: 100%;
+}
+.ftVengadores{
+  position: relative;
+  justify-items: center;
+}
+.fondoFtVengadores{
+  position: absolute;
+  top: 0%;
+  left: 10%;
+}
+
 /*ANIMACION SPRITESHEET*/
 .sprite {
   position: relative;
