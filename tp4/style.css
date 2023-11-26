@@ -1,9 +1,11 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap'); 
   
- body{
-  margin: 0;
+  
+  body{
+     margin: 0;
   }
 header img{
   top: 0%;
@@ -119,7 +121,7 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
   margin-top: 634px;
   margin-left: 68%;
   transform: translateY(30px);
-  transition: transform 0.5s ease;
+  /* transition: transform 0.5s ease; */
 }
  #parallax1Layer2{ 
   /* display: flex;
@@ -219,7 +221,7 @@ position: absolute;
 .duendeVerde h1{
   width: 646px;
   font-family: 'Lato';
-  font-weight: 600;
+  font-weight: 700;
   font-size: 60px;
   color: #FFFFFF;
   position: absolute;
@@ -403,26 +405,59 @@ left:94.35px;
     background-position: -1170px;
   }
 }
+/* Mas amigos  */
 
 .masAmigos{
-  position: absolute;
-  top:2351px;
+  max-width: 1280px;
+  margin-top: 1200px;
+}
+.masAmigos h1, .masAmigos .masAmigosTexto h3, .masAmigos .masAmigosTexto p{
+  color: #000;
+  font-family: 'Lato';
+  font-style: normal;
 
 }
 .masAmigos h1{
   position: absolute;
   left: 104px;
-  /* width: 802px; */
-  color: #000;
-font-family: 'Lato';
-font-size: 60px;
-font-style: normal;
-font-weight: 600;
-line-height: 94.5%; /* 56.7px */
+  font-size: 60px;
+  font-weight: 700;
+  top: 4610px;
 }
 
-/* .masAmigos p{
-  position: absolute;
-  top: 2451px;
+.masAmigos .masAmigosTexto h3{
+  font-size: 40px;
+  font-weight: 400;
+  width: auto;
+  margin-bottom: 25px;
+}
 
-} */
+.masAmigos .masAmigosTexto {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: auto;
+  width: 467px;
+  overflow-y: scroll;
+  max-height: 400px;
+  margin-left: 711px;
+}
+#textContainer::-webkit-scrollbar {
+  overflow: hidden;
+}
+.masAmigosTexto .text{
+  transition: ease-in-out .4s;
+}
+
+#imageContainer{
+  margin-left: 108px;
+  position: sticky;
+
+}
+.masAmigosImg img {
+ position: absolute;
+ transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
