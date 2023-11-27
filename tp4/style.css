@@ -369,23 +369,65 @@ left:94.35px;
 }
 
 /*Seccion vengadores*/
+
 .seccionVengadores{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.fondoVengadores{
-  background-color: #000;
+  position: absolute;
+  top: 461%;
   width: 100%;
+  height: 166%;
+  background-color: #000;
+  clip-path: polygon(0 0, 100% 0%, 100% 92%, 0 81%);
 }
+
+
+.seccionVengadores h1{
+  color: #FFF;
+  font-family: 'Lato';
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  width: 667px;
+  margin-left: 107px;
+  line-height: 94.5%; 
+  margin-top: 222px;
+  position: relative;
+  height: 500%;
+}
+
 .ftVengadores{
   position: relative;
   justify-items: center;
 }
-.fondoFtVengadores{
+
+.fondoFtVengadores, .fondoFtVengadores1{
   position: absolute;
-  top: 0%;
   left: 10%;
+  top:  533%;
+  z-index:1;
+}
+.fondoFtVengadores1{
+  z-index: 2;
+}
+#panteraNegra{
+  margin-left: 558px;
+  margin-top:  -34.7%;
+  position: absolute;
+  z-index: 4;
+}
+
+#piernasLargas{
+top: 3277px;
+left: 127px;
+  position: absolute;
+  z-index: 1;
+
+
+}
+#hulk{
+  position: absolute;
+  z-index: 1;
+  top: 3474px;
+  left: 794px;
 }
 
 /*ANIMACION SPRITESHEET*/
@@ -419,7 +461,8 @@ left:94.35px;
 
 .masAmigos{
   max-width: 1280px;
-  margin-top: 1200px;
+  margin-top: 546px;
+  margin-left: 29px;
 }
 .masAmigos h1, .masAmigos .masAmigosTexto h3, .masAmigos .masAmigosTexto p{
   color: #000;
@@ -429,10 +472,10 @@ left:94.35px;
 }
 .masAmigos h1{
   position: absolute;
-  left: 104px;
+  left: 130px;
   font-size: 60px;
   font-weight: 700;
-  top: 4610px;
+  top: 3958px;
 }
 
 .masAmigos .masAmigosTexto h3{
@@ -455,7 +498,7 @@ left:94.35px;
   overflow: hidden;
 }
 .masAmigosTexto .text{
-  transition: ease-in-out .4s;
+  transition: ease-in-out .8s;
 }
 
 #imageContainer{
@@ -465,9 +508,6 @@ left:94.35px;
 }
 .masAmigosImg img {
  position: absolute;
- transition: opacity 0.5s ease-in-out;
 }
-
-
 
 
