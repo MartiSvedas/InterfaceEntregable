@@ -503,6 +503,19 @@ left: 7%;
   z-index: 10;
 }
 
+.spiderVariants{
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.ftSpiderVariants{
+  width: fit-content;
+  height: fit-content;
+}
+
 /*ANIMACION SPRITESHEET*/
 .sprite {
   position: relative;
