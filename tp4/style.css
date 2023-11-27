@@ -111,29 +111,24 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
 }
 
 #parallax1Layer0 img{
-  margin-left: 0px;
-  width: 100%;
-  margin-top:7%;
+  margin-left: 3%;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 #parallax1Layer1 img{
-  margin-top: 634px;
-  margin-left: 68%;
+  margin-top: 100%;
+  margin-left: 70%;
   transform: translateY(30px);
   /* transition: transform 0.5s ease; */
 }
- #parallax1Layer2{ 
-  /* display: flex;
-  justify-content: space-around;
-  width: 100%; */
-  margin-top: 144px;
-  
+#parallax1Layer2 .edifIzq{
+margin-top: 20%;
 }
 #parallax1Layer2 .edifDer{
 position: absolute;
-left: 969px
+left: 236%;
+top: 10%;
 }
 #parallax1Layer2 .ediIzq{
 position: absolute;
@@ -146,8 +141,8 @@ position: absolute;
 }
 
 #parallax1Layer3 img{
-  margin-top: 388px;
-  margin-left: 90px;
+  margin-top: 93%;
+  margin-left: 25%;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
@@ -155,8 +150,8 @@ position: absolute;
 
 
 #parallax1Layer4 img{
-  margin-top: 335px;
-  margin-left: 762px;
+  margin-top: 86%;
+  margin-left: 195%;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.9s ease, transform 0.9s ease;
@@ -186,8 +181,8 @@ position: absolute;
 }
 
 #parallax1Layer6 img{
-  margin-top: 388px;
-  margin-left: 1051px;
+  margin-top: 130%;
+  margin-left: 351%;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.9s ease, transform 0.9s ease;
@@ -261,34 +256,34 @@ line-height: 57px;
 
 #parallax1Layerduende img{
 
-  height: 921px;
-  margin-top: -260px;
-  margin-left: 724px;
+  height: 100%;
+  margin-top: -45%;
+  margin-left: 131%;
 }
 
 img.juegoDuende{
 position: relative;
 z-index: 5;
 top:203.72px;
-left:94.35px;
+left: 7%;
 }
 
 /*Seccion cards SM*/
 
 .juegoSpiderman{
   display: flex;
-  margin-top: 349px;
+  margin-top: 26%;
   justify-content: space-between;
   justify-self: center;
   position: absolute;
-  left: 114px;
-  right: 150px;
+  left: 11%;
+  right: 8.5%;
 }
 
 .juegoSpiderman .milesMoralesJugando{
   position: absolute;
   top: 0px;
-  left: 376px;
+  left: 34.5%;
 }
 
 .juegoSpiderman p{
@@ -363,11 +358,26 @@ left:94.35px;
 
 .seccionVengadores{
   position: absolute;
-  top: 461%;
+  top: 472%;;
   width: 100%;
   height: 166%;
   background-color: #000;
   clip-path: polygon(0 0, 100% 0%, 100% 92%, 0 81%);
+}
+
+
+.seccionVengadores h1{
+  color: #FFF;
+  font-family: 'Lato';
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  width: 667px;
+  margin-left: 11%;
+  line-height: 94.5%; 
+  margin-top: 16.6%;
+  position: relative;
+  height: 500%;
 }
 
 .ftVengadores{
@@ -378,22 +388,22 @@ left:94.35px;
 .fondoFtVengadores, .fondoFtVengadores1{
   position: absolute;
   left: 10%;
-  top:  533%;
+  top: 545%;
   z-index:1;
 }
 .fondoFtVengadores1{
   z-index: 2;
 }
 #panteraNegra{
-  margin-left: 558px;
+  margin-left: 44.5%;
   margin-top:  -34.7%;
   position: absolute;
   z-index: 4;
 }
 
 #piernasLargas{
-  top: 3277px;
-  left: 127px;
+    top: 530.2%;
+    left: 13%;
   position: absolute;
   z-index: 1;
 }
@@ -402,47 +412,6 @@ left:94.35px;
   z-index: 1;
   top: 3474px;
   left: 794px;
-}
-
-.seccionVengadores h1{
-  font-weight: 700;
-  width: 667px;
-  margin-left: 107px;
-  line-height: 94.5%; 
-  margin-top: 222px;
-  height: 500%;
-}
-
-.seccionVengadores h1, .comprarAhora h1{
-  color: #FFF;
-  font-family: 'Lato';
-  font-size: 60px;
-  font-style: normal;
-  position: relative;
-}
-
-/*Seccion ComprarAhora*/
-.comprarAhora h1{
-  z-index: 10;
-  margin-top: -25%;
-  margin-left: 10%;
-  font-weight: 400;
-  width: 816px;
-}
-
-.fondoComprarAhora{
-  position: relative;
-  width: 100%;
-  height: 478px;
-  background-color: #000;
-  clip-path: polygon(0 0%, 100% 26%, 100% 73%, 0% 100%);
-}
-
-.btn_comprarAhora{
-  position: relative;
-  left: 10%;
-  width: 292px;
-  z-index: 10;
 }
 
 /*ANIMACION SPRITESHEET*/
@@ -476,8 +445,8 @@ left:94.35px;
 
 .masAmigos{
   max-width: 1280px;
-  margin-top: 546px;
-  margin-left: 29px;
+  margin-top: 40%;
+  margin-left: 2%;
 }
 .masAmigos h1, .masAmigos .masAmigosTexto h3, .masAmigos .masAmigosTexto p{
   color: #000;
@@ -487,17 +456,18 @@ left:94.35px;
 }
 .masAmigos h1{
   position: absolute;
-  left: 130px;
+  left: 9.6%;
   font-size: 60px;
   font-weight: 700;
-  top: 3958px;
+  top: 641%;
+
 }
 
 .masAmigos .masAmigosTexto h3{
   font-size: 40px;
   font-weight: 400;
   width: auto;
-  margin-bottom: 25px;
+  margin-bottom: 1%;
 }
 
 .masAmigos .masAmigosTexto {
@@ -507,7 +477,7 @@ left:94.35px;
   width: 467px;
   overflow-y: scroll;
   max-height: 400px;
-  margin-left: 711px;
+  margin-left: 56%;
 }
 #textContainer::-webkit-scrollbar {
   overflow: hidden;
@@ -517,7 +487,7 @@ left:94.35px;
 }
 
 #imageContainer{
-  margin-left: 108px;
+  margin-left: 8.5%;
   position: sticky;
 
 }
