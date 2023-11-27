@@ -348,7 +348,7 @@ left:94.35px;
   transition: transform 0.5s ease-out;
 }
 .cardGS1{
-  margin-top:-51%;
+  margin-top:-52%;
 }
 .cardGS2{
   margin-top: -13.5%;
@@ -363,7 +363,7 @@ left:94.35px;
 }
 @keyframes hoverCardGS {
   0%{transform: translateY(0px) rotateY(0deg);}
-  50%{transform: translateY(15px) rotateY(25deg)}
+  50%{transform: translateY(5px) rotateY(25deg)}
   100%{transform: translateY(0px) rotateY(0deg)
   }
 }
