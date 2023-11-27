@@ -64,30 +64,31 @@ header img.fondo {
 .btn_comprar{
   position: fixed;
   z-index: 15;
+  width: 200px;
+  right: 0;
+  margin-right: 7%
+}
+.btn_comprar, .btn_comprarAhora{
+  height: 60px;
   color: #02187e;
   background-color: #ffe901;
   font-family:'Lato';
-  font-weight: bolder;
   font-size: 20px;
   border-radius: 30px;
   border: 8px solid #2982ff;
-  width: 200px;
-  height: 60px;
   box-shadow: 4px 4px #02187e;
   transition: background-color 1s, color 1s;
-  right: 0;
-  transition:transform 1s ease; 
-  margin-right: 7%
 }
 
-.btn_comprar:hover{
+.btn_comprar:hover, .btn_comprarAhora:hover{
   color: #ffe901;
   background-color: #02187e; 
   cursor: pointer;
 }
 
-.btn_comprar p{
+.btn_comprar p, .btn_comprarAhora p{
   margin: 0%;
+  font-weight: bolder;
 }
 .inicio{
   margin-top: 10%;
@@ -369,21 +370,6 @@ left:94.35px;
   clip-path: polygon(0 0, 100% 0%, 100% 92%, 0 81%);
 }
 
-
-.seccionVengadores h1{
-  color: #FFF;
-  font-family: 'Lato';
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 700;
-  width: 667px;
-  margin-left: 107px;
-  line-height: 94.5%; 
-  margin-top: 222px;
-  position: relative;
-  height: 500%;
-}
-
 .ftVengadores{
   position: relative;
   justify-items: center;
@@ -406,18 +392,57 @@ left:94.35px;
 }
 
 #piernasLargas{
-top: 3277px;
-left: 127px;
+  top: 3277px;
+  left: 127px;
   position: absolute;
   z-index: 1;
-
-
 }
 #hulk{
   position: absolute;
   z-index: 1;
   top: 3474px;
   left: 794px;
+}
+
+.seccionVengadores h1{
+  font-weight: 700;
+  width: 667px;
+  margin-left: 107px;
+  line-height: 94.5%; 
+  margin-top: 222px;
+  height: 500%;
+}
+
+.seccionVengadores h1, .comprarAhora h1{
+  color: #FFF;
+  font-family: 'Lato';
+  font-size: 60px;
+  font-style: normal;
+  position: relative;
+}
+
+/*Seccion ComprarAhora*/
+.comprarAhora h1{
+  z-index: 10;
+  margin-top: -25%;
+  margin-left: 10%;
+  font-weight: 400;
+  width: 816px;
+}
+
+.fondoComprarAhora{
+  position: relative;
+  width: 100%;
+  height: 478px;
+  background-color: #000;
+  clip-path: polygon(0 0%, 100% 26%, 100% 73%, 0% 100%);
+}
+
+.btn_comprarAhora{
+  position: relative;
+  left: 10%;
+  width: 292px;
+  z-index: 10;
 }
 
 /*ANIMACION SPRITESHEET*/
