@@ -106,6 +106,7 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
 
 #parallax1Layer0 img{
   margin-left: 3%;
+  margin-top: 4%;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
