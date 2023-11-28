@@ -718,8 +718,7 @@ footer p{
   right: 0;
   bottom: 0;
   margin:auto;
-  width: 24%;
-  height: 50%;
+  width: 22%;
   z-index: 1;
 
 }
@@ -739,8 +738,8 @@ footer p{
   background: linear-gradient(0deg,#447BBE 50%,#0d1544 100% );
   border: 1px solid #ccc;
   position: absolute;
-  height: 50%;
-  width: 23%;
+  height: 280px;
+  width: 280px;
   border-radius: 100%;
   animation: girar 1s infinite;
 }

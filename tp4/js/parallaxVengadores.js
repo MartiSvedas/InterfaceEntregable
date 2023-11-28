@@ -23,11 +23,4 @@ container.addEventListener('mousemove', (event) => { //cuando se mueve el mouse
   });
 });
 
-// Cuando el mouse no se está moviendo, reseteamos la transformación
-document.addEventListener('mouseout', () => {
-  layers.forEach((layer) => {
-    layer.style.transform = 'translate(0, 0)';
-  });
-});
-
 

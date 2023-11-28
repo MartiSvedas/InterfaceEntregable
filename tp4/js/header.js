@@ -1,10 +1,12 @@
-window.onscroll = function() {
+window.onscroll = function() { //cuando hago scroll en la ventana
+    //obtengo header, logo, menuHamburguesa y boton
     let header = document.querySelector('.fondo');
     let logo = document.querySelector('.logo');
-    // let logoPequeño=document.querySelector('.logoPequeño')
     let menuHamburguesa = document.querySelector('.btn_menu');
     let button = document.querySelector('.btn_comprar');
-    if (window.pageYOffset > 70) { 
+    //pageYOffset :representa el número de píxeles que el documento ha sido desplazado
+    if (window.pageYOffset > 70) {  //si los pixeles desplazados son mas de 70px
+        //realizo cambios de style a los respectivos elementos
         header.style.height='67px';
         menuHamburguesa.style.top= '-4px';
         menuHamburguesa.style.transform='scale(0.9)';
@@ -13,7 +15,7 @@ window.onscroll = function() {
         logo.style.transform = 'scale(0.3)';
         logo.style.top='-196px';
         logo.style.position='fixed'
-    }else {
+    }else { // si no retorno a los valores iniciales 
         header.style.height='';
         menuHamburguesa.style.top= '';
         menuHamburguesa.style.transform='';
