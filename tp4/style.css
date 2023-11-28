@@ -97,12 +97,6 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
 }
 /* presentacion */
 
-/* .spidermanInicio{
-  width: 1280px;
-} */
-/* .spidermanFondo{
-  margin: 0;
-} */
 .inicio{
   margin-top: 0;
 }
@@ -207,8 +201,8 @@ position: absolute;
   position: absolute;
 }
 #parallax1Layer8 img{
-  margin-top: 91px;
-  margin-left: 330px;
+ margin-top: 6%;
+    margin-left: -20%;
   opacity:0;
   transition: opacity 1.5s ease
 }
