@@ -12,8 +12,8 @@ window.onscroll = function() { //cuando hago scroll en la ventana
         menuHamburguesa.style.transform='scale(0.9)';
         button.style.transform= 'scale(0.8)';
         button.style.top='-4px';
-        logo.style.transform = 'scale(0.3)';
-        logo.style.top='-196px';
+        logo.style.transform = 'scale(0.2)';
+        logo.style.top='-200px';
         logo.style.position='fixed'
     }else { // si no retorno a los valores iniciales 
         header.style.height='';
