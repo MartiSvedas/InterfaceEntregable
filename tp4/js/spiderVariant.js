@@ -90,12 +90,3 @@ miles.addEventListener('mouseleave', () => {
 
 });
 
-// function cambiarEstilos(elemento) {
-//     elemento.style.background = '#C92B94;'; // Cambia el color de fondo al hacer hover
-  
-// }
-
-// function restaurarEstilos(elemento) {
-//     elemento.style.background= ''; // Restaura el color de fondo al salir del hover
-    
-// }

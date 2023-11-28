@@ -500,14 +500,9 @@ left: 7%;
   width: 292px;
   z-index: 10;
 }
-#variantGwen{
-  transition: all 0.5s ease; 
-}
-#variantPeter{
-  transition: all 0.5s ease; 
-}
-#variantMiles{
-  transition: all 0.5s ease; 
+
+#variantMiles, #variantPeter,#variantGwen{
+  transition: all 0.7s ease; 
 }
 .spiderVariants{
   display: flex;
