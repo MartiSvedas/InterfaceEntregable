@@ -1,11 +1,10 @@
 "use strict"
 
 function castParallax() {
-	window.addEventListener("scroll", function(event){
+	window.addEventListener("scroll", function(event){//al ahcer scroll
 
 		var top = this.pageYOffset; //obtiene la posición vertical de desplazamiento de la página en ese momento específico.
 		var gwen= document.getElementById('parallax1Layer3');
-		// var morales=document.getElementById('parallax1Layer4');
 		var layers = document.getElementsByClassName("parallaxLayer");
 		var layer, speed, yPos;
 		for (var i = 0; i < layers.length; i++) { //recorro todas mis capas
@@ -24,7 +23,8 @@ function castParallax() {
 
 document.body.onload = castParallax();
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){ //al cargar la pagina
+	//muestro cada imagen con una transicion
 	document.getElementById('parallax1Layer0').classList.add('mostrar');
 	document.getElementById('parallax1Layer1').classList.add('mostrar');
 	document.getElementById('parallax1Layer2').classList.add('mostrar');
