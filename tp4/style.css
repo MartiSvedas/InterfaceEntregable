@@ -202,7 +202,7 @@ position: absolute;
 }
 #parallax1Layer8 img{
  margin-top: 6%;
-    margin-left: -20%;
+    margin-left: -27%;
   opacity:0;
   transition: opacity 1.5s ease
 }
@@ -432,7 +432,7 @@ left: 7%;
 
 .masAmigos h1{
   position: relative;
-  left: 9.6%;
+  left:  7.8%;
   font-size: 60px;
   font-weight: 700;
 }
@@ -507,7 +507,6 @@ left: 7%;
   height: 135%;
   z-index: -1;
   position: absolute;
-  /* background: none; */
   clip-path: polygon(0 18%, 100% 0%, 100% 96%, 0 82%);
   top: 4745px;
   width: 100%;
