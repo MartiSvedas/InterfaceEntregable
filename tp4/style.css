@@ -608,6 +608,7 @@ left: 7%;
 }
 
 .sprite {
+  z-index: 45;
   position: relative;
   left: 44%;
   margin-top: 24%;
@@ -620,11 +621,7 @@ left: 7%;
 
 .sprite:hover{
   background-image: url(./imgs/spriteSMhover.png);
-  background-size: cover;
-  animation: spriteAnimation 3.5s steps(11) infinite;
-  cursor: pointer;
 }
-
 
 @keyframes spriteAnimation {
   0% {
