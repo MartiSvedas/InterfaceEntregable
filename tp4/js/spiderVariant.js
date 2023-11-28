@@ -8,7 +8,7 @@ const fondo=document.querySelector(".fondoVariant");
 
 gwen.addEventListener('mouseenter', () => {
     fondo.style.backgroundColor = '#FF00A7'; // Cambia el color de fondo al hacer hover
-    fondo.style.opacity='0.1';
+    fondo.style.opacity='0.2';
     bordes.forEach(borde => {
         borde.style.backgroundColor = '#C92B94'; // Cambia el color de los bordes al hacer hover
     });
@@ -34,7 +34,7 @@ gwen.addEventListener('mouseleave', () => {
 
 peter.addEventListener('mouseenter',()=>{
     fondo.style.backgroundColor = '#2552C8'; // Cambia el color de fondo al hacer hover
-    fondo.style.opacity='0.09';
+    fondo.style.opacity='0.2';
     bordes.forEach(borde => {
         borde.style.backgroundColor = '#2552C8'; // Cambia el color de los bordes al hacer hover
         borde.style.opacity='0.9';
