@@ -587,10 +587,30 @@ left: 7%;
   font-size: 17px;
 }
 
-/*ANIMACION SPRITESHEET*/
+.textPrefooter{
+  position: relative;
+  margin-top: -67%;
+  z-index: 5;
+  width: 578px;
+  font-family: 'Lato';
+  font-size: 20px;
+  margin-left: 27%;
+}
+
+.textPrefooter span{
+  text-decoration: underline;
+}
+
+.imgWarning{
+  position: relative;
+  margin-top: 0%;
+  margin-left: 27%;
+}
+
 .sprite {
   position: relative;
-  left: 50%;
+  left: 44%;
+  margin-top: 24%;
   width: 100px;
   height: 160px;
   background-image: url(./imgs/spriteSM.png);
