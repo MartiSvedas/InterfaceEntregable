@@ -421,7 +421,7 @@ left: 7%;
 .masAmigos{
   max-width: 1280px;
   position: relative;
-  margin-top: 55%;
+  margin-top: 50%;
   margin-left: 2%;
 }
 .masAmigos h1, .masAmigos .masAmigosTexto h3, .masAmigos .masAmigosTexto p{
@@ -509,7 +509,7 @@ left: 7%;
   position: absolute;
   /* background: none; */
   clip-path: polygon(0 18%, 100% 0%, 100% 96%, 0 82%);
-  top: 4805px;
+  top: 4745px;
   width: 100%;
 }
 .borde{
@@ -524,11 +524,11 @@ left: 7%;
 
 #borde1{
   rotate: -6deg;
-  top: 4853px;;
+  top: 4780px;;
 
 }
 #borde2{
-  top: 5516px;;
+  top: 5450px;
   rotate: 5deg;
   height: 34.139px;
 }
