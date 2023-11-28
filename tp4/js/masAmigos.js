@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
           [img1, img2, img3, img4].forEach(img => (img.style.opacity = 0));
           [text1, text2, text3, text4].forEach(title => (title.style.opacity = 0));
-                      switch (index) {
+          switch (index) {
             case 0:
               img1.style.opacity = 1;
               text1.style.opacity = 1;
