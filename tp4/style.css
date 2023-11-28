@@ -477,8 +477,6 @@ left: 7%;
 
 }
 
-
-
 /*Seccion ComprarAhora*/
 .comprarAhora h1{
   z-index: 10;
@@ -502,7 +500,15 @@ left: 7%;
   width: 292px;
   z-index: 10;
 }
-
+#variantGwen{
+  transition: all 0.5s ease; 
+}
+#variantPeter{
+  transition: all 0.5s ease; 
+}
+#variantMiles{
+  transition: all 0.5s ease; 
+}
 .spiderVariants{
   display: flex;
   flex-direction: row;
@@ -510,11 +516,41 @@ left: 7%;
   justify-content: center;
   margin-top: 10%;
 }
+.fondoVariant{
+  height: 135%;
+  z-index: -1;
+  position: absolute;
+  /* background: none; */
+  clip-path: polygon(0 18%, 100% 0%, 100% 96%, 0 82%);
+  top: 774%;
+  width: 100%;
+}
+.borde{
+  z-index: -1;
+  position: absolute;
+  margin: auto;
+  background: none;
+  width: 100%;
+  right: 1%;
+  height: 104.139px;
+}
 
+#borde1{
+  rotate: -6deg;
+  top: 782%;
+
+}
+#borde2{
+  top: 890%;
+  rotate: 5deg;
+  height: 34.139px;
+}
 .ftSpiderVariants{
   width: fit-content;
   height: fit-content;
 }
+
+
 /*Seccion prefooter*/
 .prefooter{
   margin-top: 5.5%;
