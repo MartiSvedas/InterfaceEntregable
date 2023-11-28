@@ -509,7 +509,7 @@ left: 7%;
   position: absolute;
   /* background: none; */
   clip-path: polygon(0 18%, 100% 0%, 100% 96%, 0 82%);
-  top: 774%;
+  top: 4805px;
   width: 100%;
 }
 .borde{
@@ -524,11 +524,11 @@ left: 7%;
 
 #borde1{
   rotate: -6deg;
-  top: 782%;
+  top: 4853px;;
 
 }
 #borde2{
-  top: 890%;
+  top: 5516px;;
   rotate: 5deg;
   height: 34.139px;
 }
