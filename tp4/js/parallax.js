@@ -1,7 +1,7 @@
 "use strict"
 
 function castParallax() {
-	window.addEventListener("scroll", function(event){//al ahcer scroll
+	window.addEventListener("scroll", function(event){//al hacer scroll
 
 		var top = this.pageYOffset; //obtiene la posición vertical de desplazamiento de la página en ese momento específico.
 		var gwen= document.getElementById('parallax1Layer3');
