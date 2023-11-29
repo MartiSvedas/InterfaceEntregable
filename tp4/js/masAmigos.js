@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const vista = new IntersectionObserver(entries => { // instancia de IntersectionObserver llamada vista. 
       //Esta instancia observa cambios en la intersección de elementos con el viewport (la parte visible de la página en la ventana del navegador).
-      //se ejecuta cada vez que un elemento observado entra o sale de la vista (viewport).
+      //Se ejecuta cada vez que un elemento observado entra o sale de la vista (viewport).
       entries.forEach(entry => { // entries es un array que contiene información sobre cada elemento observado (entry).
         if (entry.isIntersecting) {  //verifica si el elemento entry esta siendo observado
 
