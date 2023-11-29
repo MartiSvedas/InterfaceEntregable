@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
           [img1, img2, img3, img4].forEach(img => (img.style.opacity = 0)); //establece la opacidad inicial de 0
           [text1, text2, text3, text4].forEach(title => (title.style.opacity = 0)); //hace lo mismo con los textos
           switch (index) {
-            case 0: //en caso de que el indice sea 0 realizo los cambios correspondiente mostrando u ocultando los elementos. Se repite con todos los casos
+            case 0: //en caso de que el indice sea 0 realizo los cambios correspondiente mostrando u ocultando los elementos. Se repite con todos los casos(case 1, case 2 y case 3)
               img1.style.opacity = 1;
               text1.style.opacity = 1;
               break;
