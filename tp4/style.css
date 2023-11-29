@@ -106,13 +106,13 @@ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 24
   margin-left: 3%;
   margin-top: 4%;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 8s ease;
 }
 
 #parallax1Layer1 img{
   margin-top: 100%;
   margin-left: 70%;
-  transform: translateY(30px);
+  transform: translateY(50px);
   /* transition: transform 0.5s ease; */
 }
 #parallax1Layer2 .edifIzq{
@@ -129,16 +129,16 @@ position: absolute;
 }
 
 .inicio #parallax1Layer2 img{
-  transform: translateY(80px);
-  transition: transform 0.5s ease;
+  transform: translateY(90px);
+  transition: transform 8s ease;
 }
 
 #parallax1Layer3 img{
   margin-top: 93%;
   margin-left: 25%;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(70px);
+  transition: opacity 8s ease, transform 8s ease;
 }
 
 
@@ -146,8 +146,8 @@ position: absolute;
   margin-top: 86%;
   margin-left: 195%;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transform: translateY(70px);
+  transition: opacity 8s ease, transform 8s ease;
 }
 
 #parallax1Layer5 img{
@@ -155,8 +155,8 @@ position: absolute;
   margin-top: 403px;
   margin-left: 404px;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transform: translateY(70px);
+  transition: opacity 8s ease, transform 8s ease;
 }
 
 #parallax1Layer3.mostrar img,
@@ -177,8 +177,8 @@ position: absolute;
   margin-top: 130%;
   margin-left: 351%;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transform: translateY(70px);
+  transition: opacity 7s ease, transform 7s ease;
 }
 
 #parallax1Layer7 img{
@@ -186,8 +186,8 @@ position: absolute;
   margin-top: 375px;
   margin-left: 390,35px;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transform: translateY(70px);
+  transition: opacity 7s ease, transform 7s ease;
 }
 #parallax1Layer7,
 #parallax1Layer5,
@@ -203,7 +203,7 @@ position: absolute;
  margin-top: 6%;
     margin-left: -27%;
   opacity:0;
-  transition: opacity 1.5s ease
+  transition: opacity 7s ease;
 }
 
 /* Conoce a Spidey */
