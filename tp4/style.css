@@ -23,7 +23,7 @@ header{
   top: 0;
   width: 100%;
   z-index: 15;
-  transition: height 1s;
+  transition: height 1s ease;
 }
 
 header img.fondo {
@@ -40,10 +40,6 @@ header img.fondo {
   transition: opacity 0s ease;
 }
 
-.mostrard {
-  opacity: 1;
-  top: -16px;
-}
 
 .btnsHeader{
   display: flex;
@@ -52,6 +48,7 @@ header img.fondo {
   width: 78%;
   position: absolute;
   margin-left: 100px;
+  transition: transform 1s ease; 
 }
 
 .btn_menu{
@@ -66,7 +63,8 @@ header img.fondo {
   z-index: 15;
   width: 200px;
   right: 0;
-  margin-right: 7%
+  margin-right: 7%;
+
 }
 .btn_comprar, .btn_comprarAhora{
   height: 60px;

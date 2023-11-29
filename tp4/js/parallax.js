@@ -15,9 +15,6 @@ function castParallax() {
 		}
 		gwen.setAttribute('style', 'transform: translate3d( ' +- yPos + 'px,0px, 0px)'); //establece el estilo de de transformacion (translate3D) en la capa para aplicar el efecto parallax
 
-		document.querySelector('.btn_menu').classList.add('mostrar');
-		document.querySelector('.btn_comprar').classList.add('mostrar');
-		document.querySelector('.fondo').classList.add('mostrar');
 	});
 }
 
