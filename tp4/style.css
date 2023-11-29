@@ -456,6 +456,7 @@ left: 7%;
 }
 .masAmigosImg img {
   position: absolute;
+  margin-top: 2%;
 }
 #textContainer::-webkit-scrollbar {
   overflow: hidden;
