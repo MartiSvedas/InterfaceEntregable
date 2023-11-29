@@ -24,7 +24,7 @@ function castParallax() {
 document.body.onload = castParallax();
 
 document.addEventListener("DOMContentLoaded", function(){ //al cargar la pagina
-	//muestro cada imagen con una transicion
+	//muestro cada imagen
 	document.getElementById('parallax1Layer0').classList.add('mostrar');
 	document.getElementById('parallax1Layer1').classList.add('mostrar');
 	document.getElementById('parallax1Layer2').classList.add('mostrar');
